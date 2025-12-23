@@ -102,38 +102,5 @@
   
   
   
-  <entry>
-    <title>Ubuntu上传文件夹到FTP服务器指南</title>
-    <link href="/2025/07/19/ubuntu%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%B9%E5%88%B0ftp%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8C%87%E5%8D%97/"/>
-    <url>/2025/07/19/ubuntu%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%B9%E5%88%B0ftp%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8C%87%E5%8D%97/</url>
-    
-    <content type="html"><![CDATA[<blockquote><p>本文介绍使用<strong>lftp工具</strong>在Ubuntu系统中高效上传文件夹到FTP服务器的方法，通过<code>mirror</code>命令实现智能增量同步，适合日志备份、网站部署等场景。</p></blockquote><h2 id="🛠️-准备工作"><a href="#🛠️-准备工作" class="headerlink" title="🛠️ 准备工作"></a>🛠️ 准备工作</h2><h3 id="1-安装lftp工具"><a href="#1-安装lftp工具" class="headerlink" title="1. 安装lftp工具"></a>1. 安装lftp工具</h3><p>sudo apt update &amp;&amp; sudo apt install lftp -y</p><h3 id="2-确认本地文件夹路径"><a href="#2-确认本地文件夹路径" class="headerlink" title="2. 确认本地文件夹路径"></a>2. 确认本地文件夹路径</h3><p>ls -ld &#x2F;path&#x2F;to&#x2F;your&#x2F;local_folder  # 替换为你的实际路径</p><hr><h2 id="📤-核心上传命令"><a href="#📤-核心上传命令" class="headerlink" title="📤 核心上传命令"></a>📤 核心上传命令</h2><p>lftp -u USERNAME,PASSWORD <a href="ftp://server_ip/">ftp://SERVER_IP</a> -e “mirror -R –verbose –parallel&#x3D;3 LOCAL_PATH REMOTE_PATH ; quit”</p><h3 id="参数详解："><a href="#参数详解：" class="headerlink" title="参数详解："></a>参数详解：</h3><table><thead><tr><th>参数</th><th>说明</th></tr></thead><tbody><tr><td><code>-R</code></td><td>反向镜像（上传模式）</td></tr><tr><td><code>--verbose</code></td><td>显示详细传输日志</td></tr><tr><td><code>--parallel=3</code></td><td>启用3线程并行传输</td></tr><tr><td><code>LOCAL_PATH</code></td><td>本地文件夹绝对路径</td></tr><tr><td><code>REMOTE_PATH</code></td><td>服务器目标路径（<code>/</code>表示根目录）</td></tr></tbody></table><hr><h2 id="🧪-实用示例"><a href="#🧪-实用示例" class="headerlink" title="🧪 实用示例"></a>🧪 实用示例</h2><h3 id="案例：上传Nginx日志到FTP服务器"><a href="#案例：上传Nginx日志到FTP服务器" class="headerlink" title="案例：上传Nginx日志到FTP服务器"></a>案例：上传Nginx日志到FTP服务器</h3><p>lftp -u ftpuser,StrongPassword123 <a href="ftp://192.168.0.210/">ftp://192.168.0.210</a> -e “mirror -R &#x2F;var&#x2F;log&#x2F;nginx&#x2F; &#x2F;backups&#x2F;nginx_logs&#x2F; ; quit”</p><h3 id="效果说明："><a href="#效果说明：" class="headerlink" title="效果说明："></a>效果说明：</h3><ol><li>将本地 <code>/var/log/nginx/</code> 所有内容</li><li>递归上传至服务器 <code>/backups/nginx_logs/</code> 目录</li><li>自动跳过已存在且未修改的文件</li></ol><hr><h2 id="⚠️-注意事项"><a href="#⚠️-注意事项" class="headerlink" title="⚠️ 注意事项"></a>⚠️ 注意事项</h2><ol><li><p><strong>路径规范</strong></p><ul><li>本地路径使用绝对路径（以<code>/</code>开头）</li><li>服务器路径开头需有<code>/</code>（根目录需写为<code>/</code>）</li></ul></li><li><p><strong>连接问题排查</strong></p><h1 id="测试FTP连接"><a href="#测试FTP连接" class="headerlink" title="测试FTP连接"></a>测试FTP连接</h1><p>lftp -u user,pass <a href="ftp://server.ip/">ftp://server.ip</a></p><blockquote><p>ls &#x2F;<br>quit</p></blockquote></li><li><p><strong>高级选项</strong></p><p>–delete       # 同步删除服务器多余文件<br>–only-newer   # 仅传输更新文件<br>-x “*.tmp”     # 排除特定文件类型</p></li></ol><hr><hr><blockquote><p>通过<code>lftp mirror</code>命令，您已掌握高效可靠的文件夹上传方案。当处理TB级数据时，建议添加<code>--parallel=10</code>参数加速传输，更多技巧请使用<code>man lftp</code>查看手册。</p></blockquote><h3 id="主要优化点："><a href="#主要优化点：" class="headerlink" title="主要优化点："></a>主要优化点：</h3><ol><li><p><strong>视觉增强</strong></p><ul><li>添加emoji图标和封面图占位符</li><li>使用表格展示参数说明</li><li>增加代码块语法高亮</li><li>添加标签和分类系统</li></ul></li><li><p><strong>内容增强</strong></p><ul><li>添加连接测试方法</li><li>包含错误处理建议</li><li>提供SSH密钥认证方案</li><li>添加定时任务配置指南</li><li>包含文件排除等高级参数</li></ul></li><li><p><strong>安全性改进</strong></p><ul><li>示例中使用密码占位符（避免真实密码暴露）</li><li>推荐使用环境变量传递凭证</li><li>增加SFTP加密传输方案</li></ul></li><li><p><strong>实用功能</strong></p><ul><li>增量同步说明</li><li>并行传输配置</li><li>自动日期目录生成</li><li>日志详细模式开启</li></ul></li></ol>]]></content>
-    
-    
-    <categories>
-      
-      <category>服务器运维</category>
-      
-      <category>Ubuntu</category>
-      
-      <category>linux</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Ubuntu教程</tag>
-      
-      <tag>FTP传输</tag>
-      
-      <tag>服务器管理</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
   
 </search>

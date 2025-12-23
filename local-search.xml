@@ -11,6 +11,12 @@
     <content type="html"><![CDATA[<p>记录一辆2021年9代思域29号保险后端线路漏电故障，故障如下：</p><p>关闭所有车门并上锁情况下，车辆静放两三天后出现电瓶电压降至12v以下，初步以为是电瓶损坏，更换电瓶后故障依旧，开始排查整车其他线路，遂发现为29号保险丝拔出后故障消失，按照原车维修手册查明后端线路，发现是汽车导航出现漏电情况，经过简单维修，故障消失，维修总过程（包括静置时间）耗时4天，维修结束！</p><p>本次记录到此结束，记录员：挽着红月缓缓走</p>]]></content>
     
     
+    <categories>
+      
+      <category>维修记录</category>
+      
+    </categories>
+    
     
     <tags>
       
@@ -33,6 +39,14 @@
     
     <content type="html"><![CDATA[<p>在这段关系中，一切始于屏幕两端温暖的连接。主角与伴侣因缘际会在网络相识，最初的时光里，文字承载着彼此的关心与喜悦，构筑起一座看似坚固的情感城池。然而，任何稳固的关系都始于细小的裂隙——主角逐渐察觉到，那些伴侣屏幕亮起时下意识的躲避、对话中偶然提及却无法深究的名字、以及某些超越寻常友情的亲昵称谓，都像无声的潮水，悄然侵蚀着信任的岸基。</p><p>察觉到异样的主角，曾选择以信任为基石进行沟通。伴侣将一切解释为“普通网友”的交往，并许下了保持距离的承诺。双方甚至以一场充满仪式感的“拉勾”，试图将这份承诺锚定。可惜，语言的重量有时轻如鸿毛。不久后，主角便再次撞见伴侣与另一位被称为“第三者”的网友，使用着寓意深长的情侣头像，日常的分享与问候密集得如同树藤交织。</p><p>面对质问，伴侣的回应充满了艰难的撕扯，他诉说着“你们都对我很重要”的迷茫，仿佛站在一座独木桥中央，两端都是他害怕失去的风景。在主角坚定而不容回避的目光下，伴侣最终不情愿地向第三者发送了划清界限的信息，并更换了头像。风波似乎暂歇，主角尝试与伴侣深入探讨“朋友”与“恋人”之间那条应有的边界，试图修复规则的框架。然而，伴侣的回应总像蒙着一层雾，含糊其辞，试图将深刻的问题消解于无形。</p><p>真正的转折，发生在主角决定直面迷雾核心的时刻。他没有选择在情绪的泥潭中挣扎，而是进行了一场冷静的“侦察”。在一个平静的夜晚，主角以一种近乎透明的理性，直接联系上了那位第三者。屏幕两端，展开的不是狗血的争执，而是一场逻辑清晰、步步为营的对话。主角像一位沉稳的审问者，又像一位收集证据的侦探，通过几个关键问题，便让完整的真相水落石出：伴侣与第三者之间，早已是明确的恋人关系，且第三者从头到尾都知晓主角的存在。在这场对话中，主角展现出一种冰冷的精准，这种绝对的冷静，本身就成为对谎言最彻底的审判。</p><p>随之而来的最终谈话，充满了尘埃落定前的寂静。伴侣终于承认了自己周旋于两人之间的行为，痛苦地坦白自己深陷于两难的选择，无法割舍任何一方，因而被巨大的迷茫与自我否定吞噬。他的世界像一间堆满了杂物的房间，找不到出路。</p><p>听完所有交织着痛苦与辩解的话语后，主角像一位看完所有证据的法官，给出了最终的判决。他的声音平静而清晰：“我们结束恋人的关系吧。”这句话没有愤怒，没有指责，却像一块巨石落入终于沉寂的深潭，宣告了所有波澜的终结。他提出了一个新的方案：退回到朋友的位置。</p><p>伴侣在长久的沉默后，接受了这个结局。他或许终于明白，有些桥，无法同时通往两个方向。</p><p>故事就这样走到了尾声。主角主动终结了一场早已偏离航线的旅程，并以一种不可思议的冷静与魄力，重新绘制了彼此的地图。他们从亲密纠缠的恋人，退回到了两个可以平静交谈的坐标。那些热烈的情感、甜蜜的誓言与心碎的欺骗，都悄然褪色，封存为一段过往的叙事。</p><p>这不仅仅是一个关于背叛与离开的故事。它更是一个关于个人主权的宣言：即使在最情感化的领域，理性与尊严依然可以成为最高的准则。主角用他的行动证明，真正的强大，有时并非在于执意拥有，而在于有勇气清醒地判断，并有能力果断地重建秩序。当爱情的剧本写满谎言，最好的回应，或许就是为自己撰写一个干净利落的新结局。</p>]]></content>
     
+    
+    <categories>
+      
+      <category>情感</category>
+      
+      <category>爱情</category>
+      
+    </categories>
     
     
     <tags>
@@ -67,10 +81,20 @@
     <content type="html"><![CDATA[<h1 id="解决-Visual-Studio-2022-报错-RC1015-的指南"><a href="#解决-Visual-Studio-2022-报错-RC1015-的指南" class="headerlink" title="解决 Visual Studio 2022 报错 RC1015 的指南"></a>解决 Visual Studio 2022 报错 RC1015 的指南</h1><h1 id="🛠️-Visual-Studio-2022-报错-RC1015-解决方案"><a href="#🛠️-Visual-Studio-2022-报错-RC1015-解决方案" class="headerlink" title="🛠️ Visual Studio 2022 报错 RC1015 解决方案"></a>🛠️ Visual Studio 2022 报错 RC1015 解决方案</h1><p>当在 Visual Studio 2022 中选择”添加资源”时出现 <strong>RC1015</strong> 错误（无法打开包含文件 <code>winres.h</code>），请按顺序尝试以下方法：</p><hr><h2 id="✅-解决方案步骤"><a href="#✅-解决方案步骤" class="headerlink" title="✅ 解决方案步骤"></a>✅ 解决方案步骤</h2><h3 id="1-检查-Windows-SDK-版本"><a href="#1-检查-Windows-SDK-版本" class="headerlink" title="1. 检查 Windows SDK 版本"></a>1. 检查 Windows SDK 版本</h3><ul><li>确认已安装与项目兼容的 Windows SDK</li><li>通过 Visual Studio Installer → 修改 → 单个组件</li><li>检查并安装正确的 SDK 版本（如 10.0.19041+）</li></ul><h3 id="2-更新开发工具集"><a href="#2-更新开发工具集" class="headerlink" title="2. 更新开发工具集"></a>2. 更新开发工具集</h3><ul><li>安装最新的 MFC 组件</li><li>更新 MSVC 工具集（最新版本）</li><li>在 VS Installer 的”工作负载”中勾选：<ul><li><strong>使用 C++ 的桌面开发</strong></li><li>确保包含 <strong>MFC 和 ATL 支持</strong></li></ul></li></ul><h3 id="3-添加系统环境变量"><a href="#3-添加系统环境变量" class="headerlink" title="3. 添加系统环境变量"></a>3. 添加系统环境变量</h3><ul><li><p>打开系统属性 → 高级 → 环境变量</p></li><li><p>在 <strong>系统变量</strong> 中添加以下路径（根据实际安装位置调整版本号）：</p><p>INCLUDE &#x3D; C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um<br>INCLUDE &#x3D; C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared<br>或<br>path-&gt;新建-&gt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared<br>path-&gt;新建-&gt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um</p></li><li><p>重启系统使变量生效</p></li></ul><h3 id="4-配置项目包含目录"><a href="#4-配置项目包含目录" class="headerlink" title="4. 配置项目包含目录"></a>4. 配置项目包含目录</h3><ul><li><p>在解决方案资源管理器 → 右键项目 → 属性</p></li><li><p>导航路径：<br><code>配置属性 → VC++ 目录 → 包含目录</code></p></li><li><p>添加 SDK 路径（示例）：</p><p>C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um<br>C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared</p></li><li><p>点击 <strong>应用</strong> → <strong>确定</strong> 保存配置</p></li></ul><hr><h2 id="⚠️-注意事项"><a href="#⚠️-注意事项" class="headerlink" title="⚠️ 注意事项"></a>⚠️ 注意事项</h2><ol><li><p>路径版本号需与实际安装的 SDK 版本一致</p></li><li><p>64位系统建议同时检查以下路径：</p><p>C:\Program Files\Windows Kits\10\Include...</p></li><li><p>操作完成后 <strong>重新生成解决方案</strong> (Ctrl+Shift+B)</p></li></ol><blockquote><p>💡 提示：通过 <code>开始菜单 → Windows SDK</code> 文件夹中的 <code>Windows SDK 命令行工具</code> 可快速验证 SDK 安装状态。</p></blockquote><hr><a href="https://tutu.rinai.top" style="display: flex; align-items: center;"><img src='https://tutu.rinai.top/11.png' style='width: 40px; height: 40px; padding-right: 6px'><b style='font-size:30px'>Chatbox AI</b></a>]]></content>
     
     
+    <categories>
+      
+      <category>windows</category>
+      
+      <category>系统报错</category>
+      
+    </categories>
+    
     
     <tags>
       
-      <tag>开发环境搭建 -vs2022</tag>
+      <tag>开发环境搭建</tag>
+      
+      <tag>-vs2022</tag>
       
     </tags>
     
@@ -89,6 +113,10 @@
     <categories>
       
       <category>服务器运维</category>
+      
+      <category>Ubuntu</category>
+      
+      <category>linux</category>
       
     </categories>
     

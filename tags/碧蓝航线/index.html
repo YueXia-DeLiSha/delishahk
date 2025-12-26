@@ -1,0 +1,251 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>标签: 碧蓝航线 | Hexo</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="https://tutu.rinai.top/dls.webp"><link rel="stylesheet" href="/css/index.css?v=3.0.21"><link rel="canonical" href="https://yuexia-delisha.github.io/tags/%E7%A2%A7%E8%93%9D%E8%88%AA%E7%BA%BF/index.html"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css"><!-- Feature-specific CSS--><!-- aplayer--><!-- swiper--><!-- fancybox ui--><!-- katex--><!-- Open Graph--><meta name="description"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="Hexo"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="https://tutu.rinai.top/dls.webp"><link rel="apple-touch-icon" href="https://tutu.rinai.top/dls.webp" sizes="180x180"><script>console.log(' %c Solitude %c ' + '3.0.21' + ' %c https://github.com/everfu/hexo-theme-solitude',
+    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
+</script><script>(()=>{
+        const saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
+
+                if (!itemStr) {
+                    return undefined
+                }
+                const item = JSON.parse(itemStr)
+                const now = new Date()
+
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        };
+        window.utils = {
+            saveToLocal: saveToLocal,
+            getCSS: (url, id = false) => new Promise((resolve, reject) => {
+              const link = document.createElement('link')
+              link.rel = 'stylesheet'
+              link.href = url
+              if (id) link.id = id
+              link.onerror = reject
+              link.onload = link.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                link.onload = link.onreadystatechange = null
+                resolve()
+              }
+              document.head.appendChild(link)
+            }),
+            getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+              const script = document.createElement('script')
+              script.src = url
+              script.async = true
+              script.onerror = reject
+              script.onload = script.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                script.onload = script.onreadystatechange = null
+                resolve()
+              }
+
+              Object.keys(attr).forEach(key => {
+                script.setAttribute(key, attr[key])
+              })
+
+              document.head.appendChild(script)
+            }),
+            addGlobalFn: (key, fn, name = false, parent = window) => {
+                const globalFn = parent.globalFn || {}
+                const keyObj = globalFn[key] || {}
+
+                if (name && keyObj[name]) return
+
+                name = name || Object.keys(keyObj).length
+                keyObj[name] = fn
+                globalFn[key] = keyObj
+                parent.globalFn = globalFn
+            },
+            addEventListenerPjax: (ele, event, fn, option = false) => {
+              ele.addEventListener(event, fn, option)
+              utils.addGlobalFn('pjax', () => {
+                  ele.removeEventListener(event, fn, option)
+              })
+            },
+            diffDateFormat: (selector) => {
+                selector.forEach(item => {
+                    const date = new Date(item.getAttribute('datetime') || item.textContent);
+                    item.textContent = (date.getMonth() + 1).toString()+'/'+date.getDate().toString();
+                });
+            },
+        }
+    })()</script><!-- theme--><script>initTheme = () => {
+    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const cachedMode = utils.saveToLocal.get('theme');
+    if (cachedMode === undefined) {
+        const nowMode =
+            isDarkMode ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', nowMode);
+    } else {
+        document.documentElement.setAttribute('data-theme', cachedMode);
+    }
+    typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
+}
+initTheme()</script><script>const GLOBAL_CONFIG = {
+    root: '/',
+    algolia: undefined,
+    localsearch: undefined,
+    runtime: '2023-3-28 00:00:00',
+    lazyload: {
+        enable: false,
+        error: '/img/error_load.avif'
+    },
+    copyright: false,
+    highlight: {"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},
+    randomlink: false,
+    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可"},
+    aside: {
+        state: {
+            morning: "✨ 早上好，新的一天开始了",
+            noon: "🍲 午餐时间",
+            afternoon: "🌞 下午好",
+            night: "早点休息",
+            goodnight: "晚安 😴",
+        },
+        witty_words: [],
+        witty_comment: {
+            prefix: '好久不见，',
+            back: '欢迎再次回来，',
+        },
+    },
+    covercolor: {
+        enable: false
+    },
+    comment: false,
+    lightbox: 'null',
+    right_menu: false,
+    translate: {"translateDelay":0,"defaultEncoding":2},
+    lure: {"jump":"欢迎再来哦","back":"ヾ(≧∇≦*)ゝ期待你的下次观看"},
+    expire: false,
+};</script><script id="config-diff">var PAGE_CONFIG = {
+    is_post: false,
+    is_page: true,
+    is_home: false,
+    page: '',
+    toc: false,
+    comment: false,
+    ai_text: false,
+    color: false,
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body id="body"><div><div id="loading-box" onclick="preloader.endLoading();" style="zoom:1"><div class="loading-bg"><img class="loading-img nolazyload" src="https://tutu.rinai.top/dls.webp" alt="loading image"></div></div><script>const preloader = {
+    isLoaded: false,
+    endLoading: () => {
+        if (!preloader.isLoaded) {
+            document.getElementById('loading-box').classList.add('loaded');
+            preloader.isLoaded = true;
+            preloader.togglePaceDone();
+        }
+    },
+    initLoading: () => {
+        document.getElementById('loading-box').classList.remove('loaded');
+        preloader.isLoaded = false;
+        preloader.togglePaceDone();
+    },
+    togglePaceDone: () => {
+        document.getElementById('body').className = preloader.isLoaded ? 'pace-done' : '';
+    }
+}
+
+window.addEventListener('load', () => {
+    preloader.endLoading();
+});
+
+window.addEventListener('pjax:send', () => {
+    preloader.initLoading();
+});
+
+document.addEventListener('pjax:complete', () => {
+    preloader.endLoading();
+});
+
+setTimeout(() => {
+    preloader.endLoading();
+}, 5000);</script></div><div id="console"><div class="close-btn" onclick="sco.hideConsole()"><i class="solitude fas fa-xmark"></i></div><div class="console-card-group"><div class="console-card-group-right"><div class="console-card tags" onclick="sco.hideConsole()"><div class="card-content"><div class="author-content-item-tips">标签</div><div class="author-content-item-title">寻找感兴趣的领域</div></div><div class="card-tag-cloud"><a href="/tags/Ubuntu%E6%95%99%E7%A8%8B/">Ubuntu教程<sup>1</sup></a><a href="/tags/FTP%E4%BC%A0%E8%BE%93/">FTP传输<sup>1</sup></a><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86/">服务器管理<sup>1</sup></a><a href="/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">开发环境搭建<sup>1</sup></a><a href="/tags/vs2022/">-vs2022<sup>1</sup></a><a href="/tags/%E6%83%85%E6%84%9F/">情感<sup>1</sup></a><a href="/tags/%E6%83%85%E6%84%9F%E8%83%8C%E5%8F%9B/">情感背叛<sup>1</sup></a><a href="/tags/%E8%BE%B9%E7%95%8C%E6%84%9F/">边界感<sup>1</sup></a><a href="/tags/%E5%85%B3%E7%B3%BB%E4%B8%AD%E7%9A%84%E8%B0%8E%E8%A8%80/">关系中的谎言<sup>1</sup></a><a href="/tags/%E7%AC%AC%E4%B8%89%E8%80%85/">第三者<sup>1</sup></a><a href="/tags/%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%E5%8F%99%E8%BF%B0/">第一人称叙述<sup>1</sup></a><a href="/tags/%E5%85%B3%E7%B3%BB%E5%90%AF%E7%A4%BA%E5%BD%95/">关系启示录<sup>1</sup></a><a href="/tags/%E6%83%85%E6%84%9F%E4%B8%BB%E6%9D%83/">情感主权<sup>1</sup></a><a href="/tags/%E7%BB%B4%E4%BF%AE/">维修<sup>1</sup></a><a href="/tags/%E6%80%9D%E5%9F%9F/">思域<sup>1</sup></a><a href="/tags/%E6%B1%BD%E4%BF%AE/">汽修<sup>1</sup></a><a href="/tags/%E7%A2%A7%E8%93%9D%E8%88%AA%E7%BA%BF/">碧蓝航线<sup>1</sup></a><a href="/tags/%E6%B8%B8%E6%88%8F%E8%AE%BE%E7%BD%AE/">游戏设置<sup>1</sup></a><a href="/tags/%E5%AE%89%E5%8D%93%E6%95%99%E7%A8%8B/">安卓教程<sup>1</sup></a><a href="/tags/Shizuku/">Shizuku<sup>1</sup></a><a href="/tags/ADB%E8%B0%83%E8%AF%95/">ADB调试<sup>1</sup></a></div></div><div class="console-card history" onclick="sco.hideConsole()"><ul class="card-archive-list"><li class="item"><a href="/archives/2025/12/"><span class="date">2025/12</span><div class="count-group"><span class="count">3</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/11/"><span class="date">2025/11</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/07/"><span class="date">2025/07</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/"><span class="date">全部文章</span><div class="count-group"><span class="count">5</span><span class="unit">篇</span></div></a></li></ul></div></div></div><div class="button-group"><div class="console-btn-item"><span class="darkmode_switchbutton" onclick="sco.switchDarkMode()" title="昼夜切换"><i class="solitude fas fa-circle-half-stroke"></i></span></div><div class="console-btn-item" id="consoleHideAside"><span class="asideSwitch" onclick="sco.switchHideAside()" title="边栏显示控制"><i class="solitude fas fa-arrows-left-right-to-line"></i></span></div></div><div class="console-mask" onclick="sco.hideConsole()"></div></div><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude fas fa-circle-half-stroke"></i><span>显示模式</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文章</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友情链接</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="solitude  fas fa-user"></i><span>关于</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="card-tag-cloud"><a href="/tags/Ubuntu%E6%95%99%E7%A8%8B/">Ubuntu教程<sup>1</sup></a><a href="/tags/FTP%E4%BC%A0%E8%BE%93/">FTP传输<sup>1</sup></a><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86/">服务器管理<sup>1</sup></a><a href="/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">开发环境搭建<sup>1</sup></a><a href="/tags/vs2022/">-vs2022<sup>1</sup></a><a href="/tags/%E6%83%85%E6%84%9F/">情感<sup>1</sup></a><a href="/tags/%E6%83%85%E6%84%9F%E8%83%8C%E5%8F%9B/">情感背叛<sup>1</sup></a><a href="/tags/%E8%BE%B9%E7%95%8C%E6%84%9F/">边界感<sup>1</sup></a><a href="/tags/%E5%85%B3%E7%B3%BB%E4%B8%AD%E7%9A%84%E8%B0%8E%E8%A8%80/">关系中的谎言<sup>1</sup></a><a href="/tags/%E7%AC%AC%E4%B8%89%E8%80%85/">第三者<sup>1</sup></a><a href="/tags/%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%E5%8F%99%E8%BF%B0/">第一人称叙述<sup>1</sup></a><a href="/tags/%E5%85%B3%E7%B3%BB%E5%90%AF%E7%A4%BA%E5%BD%95/">关系启示录<sup>1</sup></a><a href="/tags/%E6%83%85%E6%84%9F%E4%B8%BB%E6%9D%83/">情感主权<sup>1</sup></a><a href="/tags/%E7%BB%B4%E4%BF%AE/">维修<sup>1</sup></a><a href="/tags/%E6%80%9D%E5%9F%9F/">思域<sup>1</sup></a><a href="/tags/%E6%B1%BD%E4%BF%AE/">汽修<sup>1</sup></a><a href="/tags/%E7%A2%A7%E8%93%9D%E8%88%AA%E7%BA%BF/">碧蓝航线<sup>1</sup></a><a href="/tags/%E6%B8%B8%E6%88%8F%E8%AE%BE%E7%BD%AE/">游戏设置<sup>1</sup></a><a href="/tags/%E5%AE%89%E5%8D%93%E6%95%99%E7%A8%8B/">安卓教程<sup>1</sup></a><a href="/tags/Shizuku/">Shizuku<sup>1</sup></a><a href="/tags/ADB%E8%B0%83%E8%AF%95/">ADB调试<sup>1</sup></a></div></div><span class="sidebar-menu-item-title">网站信息</span><div class="webinfo"><div class="webinfo-item"><div class="item-name">全站字数 :</div><div class="item-count">3.4k</div></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><a href="/" title="返回博客主页" id="site-name"><span class="title">挽着红月缓缓走的个人小站</span><i class="solitude fas fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">标签: 碧蓝航线</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文章</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友情链接</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="solitude  fas fa-user"></i><span>关于</span></a></li></ul></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="nav-totop" onclick="sco.toTop()"><a class="totopbtn"><i class="solitude fas fa-arrow-up"></i><span id="percent">0</span></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fas fa-bars"></i></a></div></div></div></nav></header><main class="layout" id="content-inner"><div id="tag"><div id="tag-page-tags"><a id="Ubuntu教程" href="/tags/Ubuntu%E6%95%99%E7%A8%8B/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>Ubuntu教程<span class="tagsPageCount">1</span></span></a><a id="FTP传输" href="/tags/FTP%E4%BC%A0%E8%BE%93/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>FTP传输<span class="tagsPageCount">1</span></span></a><a id="服务器管理" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>服务器管理<span class="tagsPageCount">1</span></span></a><a id="开发环境搭建" href="/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>开发环境搭建<span class="tagsPageCount">1</span></span></a><a id="-vs2022" href="/tags/vs2022/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>-vs2022<span class="tagsPageCount">1</span></span></a><a id="情感" href="/tags/%E6%83%85%E6%84%9F/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>情感<span class="tagsPageCount">1</span></span></a><a id="情感背叛" href="/tags/%E6%83%85%E6%84%9F%E8%83%8C%E5%8F%9B/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>情感背叛<span class="tagsPageCount">1</span></span></a><a id="边界感" href="/tags/%E8%BE%B9%E7%95%8C%E6%84%9F/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>边界感<span class="tagsPageCount">1</span></span></a><a id="关系中的谎言" href="/tags/%E5%85%B3%E7%B3%BB%E4%B8%AD%E7%9A%84%E8%B0%8E%E8%A8%80/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>关系中的谎言<span class="tagsPageCount">1</span></span></a><a id="第三者" href="/tags/%E7%AC%AC%E4%B8%89%E8%80%85/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>第三者<span class="tagsPageCount">1</span></span></a><a id="第一人称叙述" href="/tags/%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%E5%8F%99%E8%BF%B0/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>第一人称叙述<span class="tagsPageCount">1</span></span></a><a id="关系启示录" href="/tags/%E5%85%B3%E7%B3%BB%E5%90%AF%E7%A4%BA%E5%BD%95/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>关系启示录<span class="tagsPageCount">1</span></span></a><a id="情感主权" href="/tags/%E6%83%85%E6%84%9F%E4%B8%BB%E6%9D%83/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>情感主权<span class="tagsPageCount">1</span></span></a><a id="维修" href="/tags/%E7%BB%B4%E4%BF%AE/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>维修<span class="tagsPageCount">1</span></span></a><a id="思域" href="/tags/%E6%80%9D%E5%9F%9F/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>思域<span class="tagsPageCount">1</span></span></a><a id="汽修" href="/tags/%E6%B1%BD%E4%BF%AE/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>汽修<span class="tagsPageCount">1</span></span></a><a class="select" id="碧蓝航线" href="/tags/%E7%A2%A7%E8%93%9D%E8%88%AA%E7%BA%BF/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>碧蓝航线<span class="tagsPageCount">1</span></span></a><a id="游戏设置" href="/tags/%E6%B8%B8%E6%88%8F%E8%AE%BE%E7%BD%AE/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>游戏设置<span class="tagsPageCount">1</span></span></a><a id="安卓教程" href="/tags/%E5%AE%89%E5%8D%93%E6%95%99%E7%A8%8B/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>安卓教程<span class="tagsPageCount">1</span></span></a><a id="Shizuku" href="/tags/Shizuku/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>Shizuku<span class="tagsPageCount">1</span></span></a><a id="ADB调试" href="/tags/ADB%E8%B0%83%E8%AF%95/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>ADB调试<span class="tagsPageCount">1</span></span></a></div><div class="recent-posts" id="recent-posts"><div class="recent-post-item" onclick="pjax.loadUrl('/2025/12/26/%E7%A2%A7%E8%93%9D%E8%88%AA%E7%BA%BF%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%99%E7%A8%8B/')"><div class="post_cover"><a href="/2025/12/26/%E7%A2%A7%E8%93%9D%E8%88%AA%E7%BA%BF%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%99%E7%A8%8B/" title="碧蓝航线设置自定义教程"><img class="post_bg" src="https://tutu.rinai.top/tutu.php?tutu=blhx" alt="碧蓝航线设置自定义教程" loading="lazy"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><span class="original">游戏教程</span><a class="unvisited-post" href="/2025/12/26/%E7%A2%A7%E8%93%9D%E8%88%AA%E7%BA%BF%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%99%E7%A8%8B/" title="未读">未读</a></div><a class="article-title" href="/2025/12/26/%E7%A2%A7%E8%93%9D%E8%88%AA%E7%BA%BF%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%99%E7%A8%8B/" title="碧蓝航线设置自定义教程">碧蓝航线设置自定义教程</a></div><div class="article-meta-wrap"><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E7%A2%A7%E8%93%9D%E8%88%AA%E7%BA%BF/" title="" onclick="event.stopPropagation();"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>碧蓝航线</span></a><a class="article-meta__tags" href="/tags/%E6%B8%B8%E6%88%8F%E8%AE%BE%E7%BD%AE/" title="" onclick="event.stopPropagation();"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>游戏设置</span></a><a class="article-meta__tags" href="/tags/%E5%AE%89%E5%8D%93%E6%95%99%E7%A8%8B/" title="" onclick="event.stopPropagation();"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>安卓教程</span></a><a class="article-meta__tags" href="/tags/Shizuku/" title="" onclick="event.stopPropagation();"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>Shizuku</span></a><a class="article-meta__tags" href="/tags/ADB%E8%B0%83%E8%AF%95/" title="" onclick="event.stopPropagation();"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>ADB调试</span></a></span><span class="post-meta-date"><time datetime="2025-12-26T06:18:30.000Z">2025-12-26</time></span></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><div class="toPageGroup"><input id="toPageText" oninput="value=value.replace(/[^0-9]/g,'')" maxlength="3" title="跳转到指定页面" onkeyup="if (this.value === '0') this.value = ''"><a id="toPageButton" onclick="sco.toPage()"><i class="solitude fas fa-angles-right"></i></a></div></div></nav></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><div class="top-group"><div class="sayhi" id="sayhi" onclick="sco.changeWittyWord()"></div></div></div><div class="avatar"><img alt="头像" src="https://tutu.rinai.top/dls.webp"></div><div class="description"></div><div class="bottom-group"><span class="left"><div class="name">挽着红月缓缓走</div><div class="desc">终会相聚，与你同在</div></span><div class="social-icons is-center"></div></div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude fas fa-map"></i><span>最近发布</span></div><div class="aside-list"><a class="aside-list-item" href="/2025/12/26/%E7%A2%A7%E8%93%9D%E8%88%AA%E7%BA%BF%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%99%E7%A8%8B/" title="碧蓝航线设置自定义教程"><div class="thumbnail"><img alt="碧蓝航线设置自定义教程" src="https://tutu.rinai.top/tutu.php?tutu=blhx"></div><div class="content"><span class="title" href="/2025/12/26/%E7%A2%A7%E8%93%9D%E8%88%AA%E7%BA%BF%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%99%E7%A8%8B/" title="碧蓝航线设置自定义教程">碧蓝航线设置自定义教程</span><span class="categories" href="/2025/12/26/%E7%A2%A7%E8%93%9D%E8%88%AA%E7%BA%BF%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%99%E7%A8%8B/">游戏教程</span></div></a><a class="aside-list-item" href="/2025/12/21/%E6%80%9D%E5%9F%9F%E4%BF%AE%E8%BD%A6%E8%AE%B0%E5%BD%95/" title="思域修车记录"><div class="thumbnail"><img alt="思域修车记录" src="https://tutu.rinai.top/tutu.php?tutu=dls"></div><div class="content"><span class="title" href="/2025/12/21/%E6%80%9D%E5%9F%9F%E4%BF%AE%E8%BD%A6%E8%AE%B0%E5%BD%95/" title="思域修车记录">思域修车记录</span><span class="categories" href="/2025/12/21/%E6%80%9D%E5%9F%9F%E4%BF%AE%E8%BD%A6%E8%AE%B0%E5%BD%95/">维修记录</span></div></a><a class="aside-list-item" href="/2025/12/20/%E4%B8%80%E5%9C%BA%E4%BA%8B%E5%85%88%E5%AE%A3%E5%91%8A%E7%9A%84%E9%80%80%E5%9C%BA%EF%BC%9A%E5%BD%93%E7%88%B1%E5%B7%B2%E6%88%90%E4%BE%A6%E5%AF%9F/" title="一场事先宣告的退场：当爱已成侦察"><div class="thumbnail"><img alt="一场事先宣告的退场：当爱已成侦察" src="https://tutu.rinai.top/dls.jpg"></div><div class="content"><span class="title" href="/2025/12/20/%E4%B8%80%E5%9C%BA%E4%BA%8B%E5%85%88%E5%AE%A3%E5%91%8A%E7%9A%84%E9%80%80%E5%9C%BA%EF%BC%9A%E5%BD%93%E7%88%B1%E5%B7%B2%E6%88%90%E4%BE%A6%E5%AF%9F/" title="一场事先宣告的退场：当爱已成侦察">一场事先宣告的退场：当爱已成侦察</span><span class="categories" href="/2025/12/20/%E4%B8%80%E5%9C%BA%E4%BA%8B%E5%85%88%E5%AE%A3%E5%91%8A%E7%9A%84%E9%80%80%E5%9C%BA%EF%BC%9A%E5%BD%93%E7%88%B1%E5%B7%B2%E6%88%90%E4%BE%A6%E5%AF%9F/">情感</span></div></a><a class="aside-list-item" href="/2025/11/01/vs2022%E6%8A%A5%E9%94%99rc1015%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="vs2022报错rc1015解决方案"><div class="thumbnail"><img alt="vs2022报错rc1015解决方案" src="https://tutu.rinai.top/tutu.php?tutu=1999"></div><div class="content"><span class="title" href="/2025/11/01/vs2022%E6%8A%A5%E9%94%99rc1015%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="vs2022报错rc1015解决方案">vs2022报错rc1015解决方案</span><span class="categories" href="/2025/11/01/vs2022%E6%8A%A5%E9%94%99rc1015%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">windows</span></div></a><a class="aside-list-item" href="/2025/07/19/ubuntu%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%B9%E5%88%B0ftp%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8C%87%E5%8D%97/" title="Ubuntu上传文件夹到FTP服务器指南"><div class="thumbnail"><img alt="Ubuntu上传文件夹到FTP服务器指南" src="https://tutu.rinai.top/tutu.php?tutu=ECY"></div><div class="content"><span class="title" href="/2025/07/19/ubuntu%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%B9%E5%88%B0ftp%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8C%87%E5%8D%97/" title="Ubuntu上传文件夹到FTP服务器指南">Ubuntu上传文件夹到FTP服务器指南</span><span class="categories" href="/2025/07/19/ubuntu%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%B9%E5%88%B0ftp%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8C%87%E5%8D%97/">服务器运维</span></div></a></div></div><div class="card-widget card-tags card-archives card-webinfo card-allinfo"><div class="card-tag-cloud"><a href="/tags/Ubuntu%E6%95%99%E7%A8%8B/">Ubuntu教程<sup>1</sup></a><a href="/tags/FTP%E4%BC%A0%E8%BE%93/">FTP传输<sup>1</sup></a><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86/">服务器管理<sup>1</sup></a><a href="/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">开发环境搭建<sup>1</sup></a><a href="/tags/vs2022/">-vs2022<sup>1</sup></a><a href="/tags/%E6%83%85%E6%84%9F/">情感<sup>1</sup></a><a href="/tags/%E6%83%85%E6%84%9F%E8%83%8C%E5%8F%9B/">情感背叛<sup>1</sup></a><a href="/tags/%E8%BE%B9%E7%95%8C%E6%84%9F/">边界感<sup>1</sup></a><a href="/tags/%E5%85%B3%E7%B3%BB%E4%B8%AD%E7%9A%84%E8%B0%8E%E8%A8%80/">关系中的谎言<sup>1</sup></a><a href="/tags/%E7%AC%AC%E4%B8%89%E8%80%85/">第三者<sup>1</sup></a><a href="/tags/%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%E5%8F%99%E8%BF%B0/">第一人称叙述<sup>1</sup></a><a href="/tags/%E5%85%B3%E7%B3%BB%E5%90%AF%E7%A4%BA%E5%BD%95/">关系启示录<sup>1</sup></a><a href="/tags/%E6%83%85%E6%84%9F%E4%B8%BB%E6%9D%83/">情感主权<sup>1</sup></a><a href="/tags/%E7%BB%B4%E4%BF%AE/">维修<sup>1</sup></a><a href="/tags/%E6%80%9D%E5%9F%9F/">思域<sup>1</sup></a><a href="/tags/%E6%B1%BD%E4%BF%AE/">汽修<sup>1</sup></a><a href="/tags/%E7%A2%A7%E8%93%9D%E8%88%AA%E7%BA%BF/">碧蓝航线<sup>1</sup></a><a href="/tags/%E6%B8%B8%E6%88%8F%E8%AE%BE%E7%BD%AE/">游戏设置<sup>1</sup></a><a href="/tags/%E5%AE%89%E5%8D%93%E6%95%99%E7%A8%8B/">安卓教程<sup>1</sup></a><a href="/tags/Shizuku/">Shizuku<sup>1</sup></a><a href="/tags/ADB%E8%B0%83%E8%AF%95/">ADB调试<sup>1</sup></a></div><span id="more-tags-btn" onclick="sco.openAllTags()">查看全部</span><hr><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章总数 :</div><div class="item-count">5</div></div><div class="webinfo-item"><div class="item-name">建站天数 :</div><div class="item-count" id="runtimeshow"></div></div><div class="webinfo-item"><div class="item-name">最后更新 :</div><time class="item-count" datetime="2025-12-26T06:22:45.598Z"></time></div><div class="webinfo-item"><div class="item-name">全站字数 :</div><div class="item-count">3.4k</div></div></div></div></div></div></main><footer id="footer"><div id="st-footer"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2023 - 2025 By<a class="footer-bar-link" href="/" title="挽着红月缓缓走">挽着红月缓缓走</a></div><div class="beian-group"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://hexo.io/" title="框架：Hexo">框架：Hexo</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude" title="主题：Solitude">主题：Solitude</a></div></div><div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://https://github.com/yuexia-delisha" title="">挽着红月缓缓走</a></div></div></div></div><div class="comment-barrage needEndHide"></div></footer></div><div><!-- Critical scripts loaded synchronously--><script src="/js/utils.js?v=3.0.21"></script><script src="/js/main.js?v=3.0.21"></script><!-- Non-critical scripts loaded asynchronously--><script async src="/js/third_party/waterfall.min.js?v=3.0.21"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><!-- Feature-specific scripts loaded asynchronously--><script async src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script><script defer src="/js/tw_cn.js?v=3.0.21"></script><!-- UI enhancement scripts--><script defer src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><!-- Music player scripts--><!-- Cover color processing scripts--><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+utils.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+</script><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!-- Search functionality--><!-- Right menu functionality--><div class="js-pjax"></div></div><!-- pjax--><script>let pjax = null;
+
+function initPjax() {
+    if (typeof Pjax === 'undefined') {
+        console.warn('Pjax is not loaded yet, retrying...');
+        setTimeout(initPjax, 100);
+        return;
+    }
+
+    pjax = new Pjax({
+        elements: 'a:not([target="_blank"])',
+        selectors: ["title","#body-wrap","#site-config","meta[name=\"description\"]",".js-pjax","meta[property^=\"og:\"]","#config-diff",".rs_show",".rs_hide"],
+        cacheBust: false,
+        analytics: false,
+        scrollRestoration: false
+    })
+
+    // 将 pjax 实例挂载到全局
+    window.pjax = pjax;
+
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+        const newScript = document.createElement('script')
+        const content = item.text || item.textContent || item.innerHTML || ""
+        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+        newScript.appendChild(document.createTextNode(content))
+        item.parentNode.replaceChild(newScript, item)
+    })
+
+    document.addEventListener('pjax:complete', () => {
+        window.refreshFn()
+
+        document.querySelectorAll('script[data-pjax]').forEach(item => {
+            const newScript = document.createElement('script')
+            const content = item.text || item.textContent || item.innerHTML || ""
+            Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+            newScript.appendChild(document.createTextNode(content))
+            item.parentNode.replaceChild(newScript, item)
+        })
+
+        GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+    })
+
+    document.addEventListener('pjax:error', (e) => {
+        if (e.request.status === 404) {
+            pjax.loadUrl('/404.html')
+        }
+    })
+}
+
+// 初始化 Pjax
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPjax);
+} else {
+    initPjax();
+}</script><!-- google adsense--><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"basePath":"source/live2d_models/","scale":0.85,"jsonPath":"/live2dw/assets/delisha.model.json"},"dialog":{"enable":true,"hitokoto":true,"script":["欢迎光临~","今天过得怎么样？","戳我试试看！"]},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
+        <script>
+            const posts = ["2025/12/26/碧蓝航线设置自定义教程/","2025/12/21/思域修车记录/","2025/12/20/一场事先宣告的退场：当爱已成侦察/","2025/11/01/vs2022报错rc1015解决方案/","2025/07/19/ubuntu上传文件夹到ftp服务器指南/"];
+            function toRandomPost() {
+                const randomPost = posts[Math.floor(Math.random() * posts.length)];
+                pjax.loadUrl(GLOBAL_CONFIG.root + randomPost);
+            }
+        </script>

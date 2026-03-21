@@ -3128,11 +3128,6 @@ body {
   line-height: 2;
   -webkit-tap-highlight-color: transparent;
   margin: 0;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-user-select: none;
 }
 * {
   -webkit-box-sizing: border-box;
@@ -3190,6 +3185,12 @@ main {
 }
 ::-webkit-scrollbar-track {
   background-color: var(--efu-none);
+}
+img[data-lazy-src]:not(.loaded) {
+  filter: blur(8px) brightness(1);
+}
+img[data-lazy-src].error {
+  filter: none;
 }
 ::selection {
   background: var(--efu-main);

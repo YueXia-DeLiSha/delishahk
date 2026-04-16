@@ -1,52 +1,56 @@
 (() => {
   const startTime = new Date('2023-03-28 00:00:00').getTime();
   
-  // 尝试多种可能的页脚容器选择器
-  function findFooterContainer() {
-    const selectors = [
-      '.footer-links',           // 原主题可能使用
-      '.footer .copyright',      // 常见版权信息位置
-      '.site-footer',            // 部分主题的页脚类
-      'footer .footer-inner',    // 内层容器
-      'footer',                  // 最终降级使用整个footer
-    ];
-    
-    for (const sel of selectors) {
-      const el = document.querySelector(sel);
-      if (el) return el;
-    }
-    return null;
+  // 要查找的目标文字（根据你的配置文件 footer.links 中的内容修改）
+  const TARGET_TEXT = '可以分享文章或者赞赏支持一下哦';
+  
+  // 创建计时器容器（块级元素，独占一行）
+  function createRuntimeContainer() {
+    const div = document.createElement('div');
+    div.id = 'site-runtime-container';
+    div.style.marginTop = '8px';
+    div.style.fontSize = '14px';
+    div.style.opacity = '0.8';
+    div.style.textAlign = 'center'; // 手机居中，桌面可自行调整
+    div.innerHTML = '<span id="site-runtime">加载中...</span>';
+    return div;
   }
   
-  // 创建或获取显示元素
-  function getRuntimeElement() {
-    let el = document.getElementById('site-runtime');
-    if (el) return el;
+  // 查找目标元素并插入计时器容器
+  function insertRuntimeContainer() {
+    // 避免重复插入
+    if (document.getElementById('site-runtime-container')) return;
     
-    const container = findFooterContainer();
-    if (!container) {
-      console.warn('未找到页脚容器，计时器无法插入');
-      return null;
+    // 方法1：遍历所有链接，找到包含目标文字的 <a> 标签
+    const allLinks = document.querySelectorAll('footer a, footer span, footer p, footer div');
+    let targetElement = null;
+    
+    for (let el of allLinks) {
+      if (el.textContent && el.textContent.includes(TARGET_TEXT)) {
+        targetElement = el;
+        break;
+      }
     }
     
-    el = document.createElement('span');
-    el.id = 'site-runtime';
-    el.style.marginLeft = '8px';
-    el.style.whiteSpace = 'nowrap';
-    
-    // 尝试添加到版权信息后，否则追加到容器末尾
-    const copyright = container.querySelector('.copyright, .site-info, .footer-copyright');
-    if (copyright) {
-      copyright.appendChild(el);
-    } else {
-      container.appendChild(el);
+    // 方法2：如果没找到，降级使用页脚通用容器
+    if (!targetElement) {
+      console.warn(`未找到文字"${TARGET_TEXT}"，计时器将插入页脚底部`);
+      const footer = document.querySelector('footer');
+      if (footer) {
+        targetElement = footer.lastElementChild;
+      }
     }
     
-    return el;
+    if (!targetElement) return;
+    
+    const container = createRuntimeContainer();
+    // 插入到目标元素之后（作为兄弟元素）
+    targetElement.parentNode.insertBefore(container, targetElement.nextSibling);
   }
   
+  // 更新时间显示
   function updateRuntime() {
-    const el = getRuntimeElement();
+    const el = document.getElementById('site-runtime');
     if (!el) return;
     
     const diff = Date.now() - startTime;
@@ -56,21 +60,19 @@
     const seconds = Math.floor((diff % 60000) / 1000);
     const pad = (n) => String(n).padStart(2, '0');
     
-    el.innerHTML = ` | 本站已运行 ${days}天 ${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+    el.textContent = `本站已运行 ${days}天 ${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
   }
   
-  // 初始化（支持Pjax）
+  // 初始化
   function init() {
+    insertRuntimeContainer();
     updateRuntime();
-    // 避免重复创建计时器
     if (window._runtimeInterval) clearInterval(window._runtimeInterval);
     window._runtimeInterval = setInterval(updateRuntime, 1000);
   }
   
-  // 监听页面加载和Pjax完成事件
   document.addEventListener('DOMContentLoaded', init);
   document.addEventListener('pjax:complete', init);
-  // 如果页面已加载（脚本在DOM之后执行），立即执行
   if (document.readyState === 'complete' || document.readyState === 'interactive') {
     setTimeout(init, 100);
   }

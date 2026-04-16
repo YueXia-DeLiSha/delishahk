@@ -1,20 +1,5 @@
-/* 增强消息框样式 */
-.live2d-tips {
-  background-color: rgba(255, 105, 180, 0.8);
-  border-radius: 15px;
-  padding: 10px 15px;
-  font-size: 14px;
-  max-width: 200px;
+#site-runtime {
   text-align: center;
-  animation: popup 0.5s;
+  color: inherit;
+  font-family: inherit;
 }
-
-@keyframes popup {
-  0% { transform: translateY(20px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
-}
-
-#live2d-canvas {
-  transition: transform 0.3s ease;
-}
-

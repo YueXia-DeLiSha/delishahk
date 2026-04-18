@@ -333,13 +333,16 @@
         margin: -20px 10px !important;
         padding: 4px 8px !important;
     }
-    
+    #waifu-tool {
+        right: 5px !important;      /* 改为正数，让工具栏在模型右侧内部 */
+        top: 80px !important;       /* 适当下移，避免与模型重叠 */
+    }
     /* 工具栏图标放大，方便点击 */
     #waifu-tool span {
-        height: 40px !important;
+        height: 20px !important;
     }
     #waifu-tool svg {
-        height: 30px !important;
+        height: 20px !important;
         width: 30px !important;
     }
 }

@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.delishahk.com/live2d_models/model_list.json</loc>
+    
+    <lastmod>2026-04-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.delishahk.com/live2d_models/model/delisha/model_list.json</loc>
+    
+    <lastmod>2026-04-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.delishahk.com/live2d_models/model/undefined/model_list.json</loc>
+    
+    <lastmod>2026-04-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.delishahk.com/links/index.html</loc>
     
     <lastmod>2026-04-14</lastmod>
@@ -47,7 +74,16 @@
   </url>
   
   <url>
-    <loc>https://blog.delishahk.com/live2d_models/delisha/delisha.model.json</loc>
+    <loc>https://blog.delishahk.com/live2d_models/model/delisha/index.json</loc>
+    
+    <lastmod>2026-01-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.delishahk.com/live2d_models/model/undefined/index.json</loc>
     
     <lastmod>2026-01-01</lastmod>
     
@@ -65,9 +101,63 @@
   </url>
   
   <url>
-    <loc>https://blog.delishahk.com/live2d_models/delisha/physics.json</loc>
+    <loc>https://blog.delishahk.com/live2d_models/model/delisha/physics.json</loc>
     
     <lastmod>2025-06-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.delishahk.com/live2d_models/model/undefined/physics.json</loc>
+    
+    <lastmod>2025-06-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.delishahk.com/live2d-widget/README.html</loc>
+    
+    <lastmod>2022-11-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.delishahk.com/live2d-widget/package.json</loc>
+    
+    <lastmod>2022-11-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.delishahk.com/live2d-widget/waifu-tips.json</loc>
+    
+    <lastmod>2022-11-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.delishahk.com/live2d-widget/demo/demo.html</loc>
+    
+    <lastmod>2022-11-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.delishahk.com/live2d-widget/demo/login.html</loc>
+    
+    <lastmod>2022-11-12</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

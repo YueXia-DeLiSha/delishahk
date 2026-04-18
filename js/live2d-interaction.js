@@ -1,56 +1,66 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const waitForLive2D = setInterval(() => {
-    const canvas = document.querySelector('#live2d-canvas');
-    if (canvas) {
-      clearInterval(waitForLive2D);
-      initInteractions(canvas);
+// live2d-touch.js - 为德丽莎添加触摸反馈
+(function() {
+  // 等待 L2Dwidget 加载
+  function initTouchFeedback() {
+    if (!window.L2Dwidget) {
+      setTimeout(initTouchFeedback, 200);
+      return;
     }
-  }, 500);
-  
-  function initInteractions(canvas) {
-    // 点击脸部事件
-    canvas.addEventListener('click', (e) => {
-      const rect = canvas.getBoundingClientRect();
-      const yPercent = (e.clientY - rect.top) / rect.height;
+
+    // 显示自定义对话框
+    function showCustomMessage(text) {
+      // 创建一个浮层来显示消息
+      const msg = document.createElement('div');
+      msg.style.cssText = `
+        position: fixed; z-index: 99999; background: rgba(255,255,255,0.9);
+        color: #333; padding: 8px 15px; border-radius: 20px; border: 2px solid #ffc848;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1); font-size: 14px; max-width: 200px;
+        backdrop-filter: blur(5px); transition: opacity 0.3s; pointer-events: none;
+      `;
+      document.body.appendChild(msg);
       
-      if (yPercent < 0.4) {
-        showMessage(getRandomFaceMessage(), 2000);
-        addAnimation('scale(1.05)');
+      // 定位到模型附近
+      const canvas = document.querySelector('#live2d canvas, #live2d-widget canvas, canvas');
+      if (canvas) {
+        const rect = canvas.getBoundingClientRect();
+        msg.style.left = (rect.left - 10) + 'px';
+        msg.style.top = (rect.top - 50) + 'px';
+      } else {
+        msg.style.left = '50%'; msg.style.top = '20%'; msg.style.transform = 'translateX(-50%)';
+      }
+      
+      msg.textContent = text;
+      setTimeout(() => { msg.style.opacity = '0'; setTimeout(() => msg.remove(), 300); }, 2000);
+    }
+
+    // 定义点击不同部位时的反馈语（你可以自由修改这些台词）
+    const touchMessages = {
+      tap_body: ['呀，舰长，你碰到我了！', '嘿嘿，有什么事吗？', 'TeriTeri~'],
+      tap_face: ['呜…不要摸我的脸啦！', '学园长的脸是能随便摸的吗！'],
+      tap_head: ['嘿嘿，舰长！', '要摸摸头吗？'],
+      tap_belly: ['呀！那里不行！'],
+      tap_leg: ['腿有什么好碰的啦！']
+    };
+
+    // 监听点击事件
+    window.L2Dwidget.on('*', (eventName) => {
+      // 只处理tap事件
+      if (!eventName.startsWith('tap')) return;
+      
+      const messages = touchMessages[eventName];
+      if (messages && messages.length) {
+        const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+        showCustomMessage(randomMsg);
       }
     });
     
-    // 点击身体事件 (双击)
-    canvas.addEventListener('dblclick', (e) => {
-      showMessage(getRandomBodyMessage(), 1500);
-      addAnimation('translateX(10px)', 100);
-    });
-    
-    // 消息函数
-    function showMessage(text, duration) {
-      const dialog = document.querySelector('.live2d-tips');
-      if (dialog) {
-        dialog.textContent = text;
-        dialog.style.display = 'block';
-        setTimeout(() => dialog.style.display = 'none', duration);
-      }
-    }
-    
-    // 动画函数
-    function addAnimation(transform, delay = 300) {
-      canvas.style.transition = 'transform 0.3s ease';
-      canvas.style.transform = transform;
-      setTimeout(() => canvas.style.transform = '', delay);
-    }
-    
-    // 随机消息
-    function getRandomFaceMessage() {
-      const messages = ["别戳啦！", "再戳要生气了", "脸都肿了", "QWQ 好痛"];
-      return messages[Math.floor(Math.random() * messages.length)];
-    }
-    
-    function getRandomBodyMessage() {
-      const messages = ["禁止H！", "非礼啊！", "警察叔叔就是这个人", "H是不行的"];
-      return messages[Math.floor(Math.random() * messages.length)];
-    }
+    console.log('✅ 德丽莎触摸反馈已启用！');
   }
-});
+
+  // 启动
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTouchFeedback);
+  } else {
+    initTouchFeedback();
+  }
+})();

@@ -308,3 +308,38 @@
 		transform: translate(0, 0) rotate(0);
 	}
 }
+/* 手机屏幕适配（宽度小于 768px） */
+@media (max-width: 768px) {
+    /* 调整看板娘整体位置和缩放 */
+    #waifu {
+        bottom: 0 !important;
+        right: 0 !important;
+        transform: scale(0.7);          /* 整体缩小为 70% */
+        transform-origin: bottom right;  /* 以右下角为基准缩放 */
+        transition: transform 0.3s;
+    }
+    
+    /* 调整 canvas 画布大小（可选，配合 scale 使用） */
+    #live2d {
+        width: 200px !important;   /* 手机端宽度 200px */
+        height: 200px !important;  /* 手机端高度 200px */
+    }
+    
+    /* 调整对话框大小和字体 */
+    #waifu-tips {
+        width: 180px !important;
+        font-size: 12px !important;
+        line-height: 20px !important;
+        margin: -20px 10px !important;
+        padding: 4px 8px !important;
+    }
+    
+    /* 工具栏图标放大，方便点击 */
+    #waifu-tool span {
+        height: 40px !important;
+    }
+    #waifu-tool svg {
+        height: 30px !important;
+        width: 30px !important;
+    }
+}

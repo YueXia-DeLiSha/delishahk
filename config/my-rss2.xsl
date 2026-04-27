@@ -146,7 +146,7 @@
         <div class="site-meta">
           <span>📝 文章总数：<xsl:value-of select="count(/rss/channel/item)"/></span>
           <span>🕒 最后更新：<xsl:value-of select="/rss/channel/lastBuildDate"/></span>
-          <span>📡 <a href="{/rss/channel/link}/rss.xml" style="color:white;">订阅源</a></span>
+          <span>📡 <a href="{/rss/channel/link}/rss2.xml" style="color:white;">订阅源</a></span>
         </div>
       </div>
 

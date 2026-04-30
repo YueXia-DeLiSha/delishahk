@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/config/my-atom.xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <script xmlns="http://www.w3.org/1999/xhtml" src="/xslt-polyfill.min.js"></script>
   <author>
     <name>挽着红月缓缓走</name>
   </author>
@@ -10,6 +8,7 @@
   <link href="https://blog.delishahk.com/" rel="alternate"/>
   <link href="https://blog.delishahk.com/atom.xml" rel="self"/>
   <rights>All rights reserved 2026, 挽着红月缓缓走</rights>
+  <subtitle>德丽莎主题小站</subtitle>
   <title>德丽莎主题小站</title>
   <updated>2026-03-28T03:54:13.511Z</updated>
   <entry>

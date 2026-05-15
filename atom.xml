@@ -10,7 +10,28 @@
   <rights>All rights reserved 2026, 挽着红月缓缓走</rights>
   <subtitle>德丽莎主题小站</subtitle>
   <title>德丽莎主题小站</title>
-  <updated>2026-05-03T13:53:29.958Z</updated>
+  <updated>2026-05-15T17:32:45.174Z</updated>
+  <entry>
+    <author>
+      <name>挽着红月缓缓走</name>
+    </author>
+    <category term="德丽莎" scheme="https://blog.delishahk.com/tags/%E5%BE%B7%E4%B8%BD%E8%8E%8E/"/>
+    <category term="画廊" scheme="https://blog.delishahk.com/tags/%E7%94%BB%E5%BB%8A/"/>
+    <category term="更新" scheme="https://blog.delishahk.com/tags/%E6%9B%B4%E6%96%B0/"/>
+    <content>
+      <![CDATA[<p><img src="https://blog.delishahk.com/img/dls%20(57).webp" alt="德丽莎画廊重磅更新！" /></p>
+<h1 id="德丽莎画廊重磅更新！"><a href="#德丽莎画廊重磅更新！" class="headerlink" title="德丽莎画廊重磅更新！"></a>德丽莎画廊重磅更新！</h1><p>各位亲爱的舰长，好久不见！德丽莎学园长的画廊又迎来了一次重大升级。为了让各位能更流畅、更安心地欣赏学园长的每一个珍贵瞬间，我们近期对画廊进行了一次彻底的技术改造。下面，就让我带大家看看这次‘悄悄’完成的巨大变化吧！</p><h2 id="更新背景"><a href="#更新背景" class="headerlink" title="更新背景"></a>更新背景</h2><p>为什么选择现在进行更新呢？其实是因为我们原有的服务的稳定性无法满足舰长们日益增长的访问需求，尤其是回源服务器时会导致访问速度变慢，甚至出现访问失败的情况。为了提升舰长们的访问体验，我们决定引入Cloudflare的服务以便更好地为各位舰长的需求与服务质量提供保障。</p><h2 id="1-更新内容"><a href="#1-更新内容" class="headerlink" title="1.更新内容"></a>1.更新内容</h2><p>将服务进行换新，使用大名鼎鼎的Cloudflare的服务，使用R2服务存储图源，使用Cloudflare的cdn加速图源访问速度，使用Cloudflare的workers进行图源访问控制，使用Cloudflare的WAF并且全站启用了HTTPS为各位舰长提供稳定安全的访问<br>有舰长是不是想问为什么会选择R2作为存储呢？<br>因为R2与Cloudflare网络的深度集成进一步缩短了访问时间，尤其是对于海外访问来说，能够显著提升图源访问速度，提供更流畅的用户体验。</p><h3 id="1-1-图源访问速度"><a href="#1-1-图源访问速度" class="headerlink" title="1.1 图源访问速度"></a>1.1 图源访问速度</h3><p>更新前：图源访问速度较慢，尤其是在海外访问时，可能会出现较长的加载时间。<del>因为漫长的回源时间</del><br>更新后：图源访问速度显著提升，尤其是在海外访问时，加载时间大幅缩短，提供了更流畅的用户体验。</p><h3 id="1-2-图源访问稳定性"><a href="#1-2-图源访问稳定性" class="headerlink" title="1.2 图源访问稳定性"></a>1.2 图源访问稳定性</h3><p>更新前：图源访问不稳定，可能会出现访问失败或加载错误的情况。<br>更新后：图源访问稳定性大幅提升，访问失败或加载错误的情况显著减少，用户可以更可靠地访问图源。</p><h3 id="1-3-安全性"><a href="#1-3-安全性" class="headerlink" title="1.3 安全性"></a>1.3 安全性</h3><p>更新后:安全性进一步加强，立志给各位舰长们提供一个最安全的访问环境<br>使用WAF(可以理解为门卫)拦截常见的SQL注入、XSS攻击等，保护图源安全。本站平均每日拦截攻击请求数千次，极大提升了图源的安全性。</p><h3 id="1-4-用户体验"><a href="#1-4-用户体验" class="headerlink" title="1.4 用户体验"></a>1.4 用户体验</h3><p>更新后，舰长们在访问图源时获得了更流畅、更稳定的体验，全天候访问几乎感受不到宕机，服务质量显著提升。<br>画廊链接还是<a href="https://tutu.delishahk.com,欢迎各位舰长前往体验更新后的画廊,感受更快更稳定的访问速度和更好的用户体验!/">https://tutu.delishahk.com，欢迎各位舰长前往体验更新后的画廊，感受更快更稳定的访问速度和更好的用户体验！</a><br>还请各位舰长继续支持德丽莎！谢谢！<br>舰长们如果有喜欢的图可以联系作者添加到画廊里哦！<br>如果对更新有任何疑问或建议，欢迎在评论区留言，我们会尽快回复并改进！<br>联系方式：<a href="mailto:&#109;&#97;&#x69;&#x6c;&#64;&#x64;&#101;&#x6c;&#105;&#115;&#x68;&#x61;&#104;&#107;&#x2e;&#99;&#111;&#x6d;">mail@delishahk.com</a> 或者前往作者的<a href="https://github.com/yuexia-delisha">github</a><br>最后，感谢各位舰长一直以来的支持和理解，我们会继续努力为大家提供更好的服务！</p>]]>
+    </content>
+    <id>https://blog.delishahk.com/00000003/</id>
+    <link href="https://blog.delishahk.com/00000003/" rel="alternate"/>
+    <link href="https://blog.delishahk.com/img/dls%20(57).webp" rel="enclosure" type="image/webp"/>
+    <published>2026-05-15T16:43:49.000Z</published>
+    <summary>
+      <![CDATA[<h1 id="德丽莎画廊重磅更新！"><a href="#德丽莎画廊重磅更新！" class="headerlink" title="德丽莎画廊重磅更新！"></a>德丽莎画廊重磅更新！</h1><p>各位亲爱的舰长，好久不见！德丽莎学园长的画廊又迎来了一次重大升级。为了让各位]]>
+    </summary>
+    <title>德丽莎画廊重磅更新！</title>
+    <updated>2026-05-15T17:32:45.174Z</updated>
+  </entry>
   <entry>
     <author>
       <name>挽着红月缓缓走</name>
@@ -19,10 +40,10 @@
     <category term="崩坏三" scheme="https://blog.delishahk.com/tags/%E5%B4%A9%E5%9D%8F%E4%B8%89/"/>
     <content>
       <![CDATA[<p><img src="https://blog.delishahk.com/img/dls%20(5).webp" alt="德丽莎 · 天命学园长画廊" /></p>
-<h1 id="德丽莎-·-天命学园长画廊-誓约的修女"><a href="#德丽莎-·-天命学园长画廊-誓约的修女" class="headerlink" title="德丽莎 · 天命学园长画廊 | 誓约的修女"></a>德丽莎 · 天命学园长画廊 | 誓约的修女</h1><blockquote><p>与你一同收藏德丽莎的无数可爱瞬间。</p></blockquote><h2 id="🌸-为什么会有这个画廊？"><a href="#🌸-为什么会有这个画廊？" class="headerlink" title="🌸 为什么会有这个画廊？"></a>🌸 为什么会有这个画廊？</h2><p>从第一次在《崩坏3》中遇见德丽莎·阿波卡利斯，我就被她那份纯真、温柔与坚韧深深吸引。她是极东支部的学园长，是背负「犹大的誓约」的S级女武神，更是一个会为身高、为零食、为伙伴们喜怒哀乐的真实女孩。</p><p>我一直想做一个<strong>纯粹的空间</strong>，能随时翻看德丽莎的各种姿态——不是简单的图片堆砌，而是带着仪式感的小小画廊。于是，我写了这个页面，挂在了自己的API上。</p><h2 id="✨-画廊有什么特色？"><a href="#✨-画廊有什么特色？" class="headerlink" title="✨ 画廊有什么特色？"></a>✨ 画廊有什么特色？</h2><ul><li><strong>随机德丽莎立绘</strong>：每次点击◀或▶，都会从我的图片API中请求一张新的德丽莎图片（完全随机，每次都有惊喜）。</li><li><strong>优雅的交互</strong>：画廊设计成暖色调相框风格，带有加载动画和温柔提示，就像学园长在轻轻对你说“慢一点哦”。</li><li><strong>完全免费</strong>：所有图片都存储在我的服务器上，通过 <code>api.rinai.top</code> 提供，没有任何广告和付费内容。</li><li><strong>适配手机与电脑</strong>：无论你是在大屏幕还是手机上看，排版都会自动调整，触摸按钮也做了优化。</li></ul><h2 id="🖼️-如何使用？"><a href="#🖼️-如何使用？" class="headerlink" title="🖼️ 如何使用？"></a>🖼️ 如何使用？</h2><ol><li>直接戳页面中<strong>左箭头（◀）<strong>或</strong>右箭头（▶）</strong>，新的德丽莎图片就会加载出来。</li><li>为了照顾服务器和大家的体验，我设置了<strong>每秒最多请求1次</strong>，第一次加载会稍慢，之后就好啦。</li><li>如果图片偶尔加载失败（比如网络波动），会显示一个可爱的占位图，再点一次就好了。</li><li>画廊底部有<strong>德丽莎主题博客</strong>和<strong>个人小博客</strong>的链接，欢迎来坐坐。</li></ol><h2 id="📡-技术小纸条"><a href="#📡-技术小纸条" class="headerlink" title="📡 技术小纸条"></a>📡 技术小纸条</h2><ul><li>图片来自接口：<code>https://api.rinai.top/api/v1/?img=dls</code>（无需额外参数，直接返回图片）。</li><li>前端代码使用原生JavaScript，没有任何第三方依赖，保证轻量和安全。</li><li>画廊部署在 <code>tutu.delishahk.com</code> 上，使用HTTPS加密，确保访问安全。</li></ul><h2 id="💖-写在最后"><a href="#💖-写在最后" class="headerlink" title="💖 写在最后"></a>💖 写在最后</h2><p>这个画廊是我对德丽莎热爱的一份延伸。如果你也喜欢她，希望这些小图片能给你带来片刻的治愈。如果你有任何建议，或者也想分享你收藏的德丽莎图片，欢迎通过<a href="/about/">关于页面</a>的联系方式告诉我。</p><p>今后我也会不定期往API里添加新的德丽莎官方图、同人图（版权归原创者所有），让画廊一直有新鲜感。</p><p><strong>德丽莎世界第一可爱！</strong> 🌙</p><hr><blockquote><p>画廊入口： <a href="https://tutu.delishahk.com/">点击进入德丽莎画廊</a><br>德丽莎主题博客： <a href="https://blog.delishahk.com/">blog.delishahk.com</a><br>技术问题反馈： <a href="mailto:&#x6d;&#97;&#x69;&#108;&#64;&#100;&#x65;&#x6c;&#105;&#x73;&#x68;&#x61;&#x68;&#107;&#x2e;&#99;&#x6f;&#x6d;">mail@delishahk.com</a></p></blockquote><hr>]]>
+<h1 id="德丽莎-·-天命学园长画廊-誓约的修女"><a href="#德丽莎-·-天命学园长画廊-誓约的修女" class="headerlink" title="德丽莎 · 天命学园长画廊 | 誓约的修女"></a>德丽莎 · 天命学园长画廊 | 誓约的修女</h1><blockquote><p>与你一同收藏德丽莎的无数可爱瞬间。</p></blockquote><h2 id="🌸-为什么会有这个画廊？"><a href="#🌸-为什么会有这个画廊？" class="headerlink" title="🌸 为什么会有这个画廊？"></a>🌸 为什么会有这个画廊？</h2><p>从第一次在《崩坏3》中遇见德丽莎·阿波卡利斯，我就被她那份纯真、温柔与坚韧深深吸引。她是极东支部的学园长，是背负「犹大的誓约」的S级女武神，更是一个会为身高、为零食、为伙伴们喜怒哀乐的真实女孩。</p><p>我一直想做一个<strong>纯粹的空间</strong>，能随时翻看德丽莎的各种姿态——不是简单的图片堆砌，而是带着仪式感的小小画廊。于是，我写了这个页面，挂在了自己的API上。</p><h2 id="✨-画廊有什么特色？"><a href="#✨-画廊有什么特色？" class="headerlink" title="✨ 画廊有什么特色？"></a>✨ 画廊有什么特色？</h2><ul><li><strong>随机德丽莎立绘</strong>：每次点击◀或▶，都会从我的图片API中请求一张新的德丽莎图片（完全随机，每次都有惊喜）。</li><li><strong>优雅的交互</strong>：画廊设计成暖色调相框风格，带有加载动画和温柔提示，就像学园长在轻轻对你说“慢一点哦”。</li><li><strong>完全免费</strong>：所有图片都存储在我的服务器上，通过 <code>api.rinai.top</code> 提供，没有任何广告和付费内容。</li><li><strong>适配手机与电脑</strong>：无论你是在大屏幕还是手机上看，排版都会自动调整，触摸按钮也做了优化。</li></ul><h2 id="🖼️-如何使用？"><a href="#🖼️-如何使用？" class="headerlink" title="🖼️ 如何使用？"></a>🖼️ 如何使用？</h2><ol><li>直接戳页面中<strong>左箭头（◀）<strong>或</strong>右箭头（▶）</strong>，新的德丽莎图片就会加载出来。</li><li>为了照顾服务器和大家的体验，我设置了<strong>每秒最多请求1次</strong>，第一次加载会稍慢，之后就好啦。</li><li>如果图片偶尔加载失败（比如网络波动），会显示一个可爱的占位图，再点一次就好了。</li><li>画廊底部有<strong>德丽莎主题博客</strong>和<strong>个人小博客</strong>的链接，欢迎来坐坐。</li></ol><h2 id="📡-技术小纸条"><a href="#📡-技术小纸条" class="headerlink" title="📡 技术小纸条"></a>📡 技术小纸条</h2><ul><li>图片来自接口：<code>https://api.rinai.top/api/v1/?img=dls</code>（无需额外参数，直接返回图片）。</li><li>前端代码使用原生JavaScript，没有任何第三方依赖，保证轻量和安全。</li><li>画廊部署在 <code>tutu.delishahk.com</code> 上，使用HTTPS加密，确保访问安全。</li></ul><h2 id="💖-写在最后"><a href="#💖-写在最后" class="headerlink" title="💖 写在最后"></a>💖 写在最后</h2><p>这个画廊是我对德丽莎热爱的一份延伸。如果你也喜欢她，希望这些小图片能给你带来片刻的治愈。如果你有任何建议，或者也想分享你收藏的德丽莎图片，欢迎通过<a href="/about/">关于页面</a>的联系方式告诉我。</p><p>今后我也会不定期往API里添加新的德丽莎官方图、同人图（版权归原创者所有），让画廊一直有新鲜感。</p><p><strong>德丽莎世界第一可爱！</strong> 🌙</p><hr><blockquote><p>画廊入口： <a href="https://tutu.delishahk.com/">点击进入德丽莎画廊</a><br>德丽莎主题博客： <a href="https://blog.delishahk.com/">blog.delishahk.com</a><br>技术问题反馈： <a href="mailto:&#109;&#97;&#105;&#x6c;&#x40;&#100;&#101;&#x6c;&#105;&#115;&#104;&#x61;&#104;&#x6b;&#x2e;&#x63;&#111;&#x6d;">mail@delishahk.com</a></p></blockquote><hr>]]>
     </content>
-    <id>https://blog.delishahk.com/2026/05/03/000000006/</id>
-    <link href="https://blog.delishahk.com/2026/05/03/000000006/" rel="alternate"/>
+    <id>https://blog.delishahk.com/000000006/</id>
+    <link href="https://blog.delishahk.com/000000006/" rel="alternate"/>
     <link href="https://blog.delishahk.com/img/dls%20(5).webp" rel="enclosure" type="image/webp"/>
     <published>2026-05-03T13:17:41.000Z</published>
     <summary>
@@ -39,8 +60,8 @@
     <content>
       <![CDATA[<h1 id="德丽莎生日快乐"><a href="#德丽莎生日快乐" class="headerlink" title="德丽莎生日快乐"></a>德丽莎生日快乐</h1><h3 id="今天是世界第一可爱的生日，不知不觉陪伴德丽莎又走过一年，在圣芙蕾雅学园遇见她时，还是会因为被调侃为小孩子身高会害羞的学园长成长为现在的大主教，虽然还是会因为被调侃小孩子身高而害羞，这也是她的个性，很可爱！"><a href="#今天是世界第一可爱的生日，不知不觉陪伴德丽莎又走过一年，在圣芙蕾雅学园遇见她时，还是会因为被调侃为小孩子身高会害羞的学园长成长为现在的大主教，虽然还是会因为被调侃小孩子身高而害羞，这也是她的个性，很可爱！" class="headerlink" title="今天是世界第一可爱的生日，不知不觉陪伴德丽莎又走过一年，在圣芙蕾雅学园遇见她时，还是会因为被调侃为小孩子身高会害羞的学园长成长为现在的大主教，虽然还是会因为被调侃小孩子身高而害羞，这也是她的个性，很可爱！"></a>今天是世界第一可爱的生日，不知不觉陪伴德丽莎又走过一年，在圣芙蕾雅学园遇见她时，还是会因为被调侃为小孩子身高会害羞的学园长成长为现在的大主教，虽然还是会因为被调侃小孩子身高而害羞，这也是她的个性，很可爱！</h3><p><img src="/img/dls002.webp" alt="德丽莎生日快乐！"></p><h2 id="让我们为她送上祝福——德丽莎，生日快乐！"><a href="#让我们为她送上祝福——德丽莎，生日快乐！" class="headerlink" title="让我们为她送上祝福——德丽莎，生日快乐！"></a>让我们为她送上祝福——德丽莎，生日快乐！</h2>]]>
     </content>
-    <id>https://blog.delishahk.com/2026/03/28/000000012/</id>
-    <link href="https://blog.delishahk.com/2026/03/28/000000012/" rel="alternate"/>
+    <id>https://blog.delishahk.com/000000012/</id>
+    <link href="https://blog.delishahk.com/000000012/" rel="alternate"/>
     <link href="https://blog.delishahk.com/img/dls%20(84).webp" rel="enclosure" type="image/webp"/>
     <published>2026-03-28T03:11:51.000Z</published>
     <summary>
@@ -57,8 +78,8 @@
     <content>
       <![CDATA[<h1 id="德丽莎最可爱的装甲介绍"><a href="#德丽莎最可爱的装甲介绍" class="headerlink" title="德丽莎最可爱的装甲介绍"></a>德丽莎最可爱的装甲介绍</h1><p>在众多的德丽莎装甲中，我最喜欢的莫过于这个白丝主教服了<br><img src="/img/dls02.webp" alt="白丝主教德丽莎" title="德丽莎世界第一可爱！"></p><h3 id="你看这细腻的白丝搭配上如此可爱的主教大人，很难让人不喜欢啊！"><a href="#你看这细腻的白丝搭配上如此可爱的主教大人，很难让人不喜欢啊！" class="headerlink" title="你看这细腻的白丝搭配上如此可爱的主教大人，很难让人不喜欢啊！"></a>你看这细腻的白丝搭配上如此可爱的主教大人，很难让人不喜欢啊！</h3><h2 id="香香软软的德丽莎，嘿嘿嘿，想必摸起来也是软软的吧，当然我说的是脸😋"><a href="#香香软软的德丽莎，嘿嘿嘿，想必摸起来也是软软的吧，当然我说的是脸😋" class="headerlink" title="香香软软的德丽莎，嘿嘿嘿，想必摸起来也是软软的吧，当然我说的是脸😋"></a>香香软软的德丽莎，嘿嘿嘿，想必摸起来也是软软的吧，当然我说的是脸😋</h2><h3 id="小小的软软的，真想一把抱起来好好贴贴呢"><a href="#小小的软软的，真想一把抱起来好好贴贴呢" class="headerlink" title="小小的软软的，真想一把抱起来好好贴贴呢"></a>小小的软软的，真想一把抱起来好好贴贴呢</h3><h4 id="接下来附上一张gif图"><a href="#接下来附上一张gif图" class="headerlink" title="接下来附上一张gif图"></a>接下来附上一张gif图</h4><p><img src="/img/dls01.gif" alt="德丽莎旋转"></p>]]>
     </content>
-    <id>https://blog.delishahk.com/2026/03/16/00000000002/</id>
-    <link href="https://blog.delishahk.com/2026/03/16/00000000002/" rel="alternate"/>
+    <id>https://blog.delishahk.com/00000000002/</id>
+    <link href="https://blog.delishahk.com/00000000002/" rel="alternate"/>
     <link href="https://blog.delishahk.com/img/dls%20(57).webp" rel="enclosure" type="image/webp"/>
     <published>2026-03-16T01:12:12.000Z</published>
     <summary>
@@ -77,8 +98,8 @@
       <![CDATA[<p><img src="https://blog.delishahk.com/img/dls%20(2).webp" alt="《我最喜欢的角色德丽莎以及我是为什么建立这个站点》" /></p>
 <h2 id="《我最喜欢的角色德丽莎》"><a href="#《我最喜欢的角色德丽莎》" class="headerlink" title="《我最喜欢的角色德丽莎》"></a>《我最喜欢的角色德丽莎》</h2><p>亲爱的访客，你好。</p><p>无论你是偶然路过，还是同好相逢，欢迎来到这个小小的、为一位特定角色而设的角落：<strong>DelishaHK.com</strong>。</p><p>在互联网无数宏大喧嚷的站点中，我为何要固执地为她开辟这样一块“自留地”？这个看似冲动的决定，答案其实很简单，它就藏在我与《崩坏3》相遇、并与那个名为<strong>德丽莎·阿波卡利斯</strong>的女孩相识的故事里。</p><p>一切始于一个再普通不过的下午。彼时，我对“崩坏”的世界一无所知，只是在朋友的推荐下，点开了那个图标。初入游戏，宏大却略显复杂的设定、接连登场的人物，让我有些应接不暇。直到我完成了某个早期章节，屏幕上出现了一个娇小的身影——白色的双马尾，蓝宝石般的眼眸，一身带着些许宗教感的修女服，手中却提着比她人还巨大的十字架武器“犹大的誓约”。</p><p>第一印象？很复杂。她外表是无可争议的可爱，但那份可爱之下，却透着一种与外貌不符的沉重与肃穆。她说话有时会带着长辈般的威严，偶尔又会流露出孩子气的任性。这种“反差”，成了最初吸引我的钩子。</p><p>但真正让我<strong>喜欢</strong>上德丽莎的，并非仅仅是这份反差萌。而是在后续的剧情里，我一步步走近了她的灵魂。</p><p>我看见了她“学园长”身份下的责任与孤独。作为天命极东支部的领导者，她以稚嫩的肩膀扛起了庇护女武神们的重任。她并非全知全能，也会犹豫，会犯错，但她从未退缩。那份“想要守护所有人”的纯粹信念，在一次次危机中熠熠生辉，格外动人。</p><p>我更为她那被诅咒的“阿波卡利斯”血脉所牵动。她是复制人，是卡莲基因的承载者，这个身份带给她无尽的痛苦、自我怀疑与挣扎。她一直在抗争，抗争命运的桎梏，抗争血脉中的阴影，只为证明“我是德丽莎”，而不是任何人的影子。这份抗争的勇气，让她超越了简单的“可爱”标签，拥有了悲剧英雄般的深度。</p><p>还有那些不经意间流露的瞬间：她偷偷收藏苦瓜味的零食，她对自己身高的执念，她在可靠与冒失之间反复横跳……这些细微的、人性化的碎片，让她彻底从一个“角色”，变成了一个仿佛可以触及的、有温度的。</p><p>于是，喜欢变得具体了。我喜欢她挥舞犹大时的凛然，也喜欢她私下里的笨拙；喜欢她作为领袖的坚强，也心疼她身为个体的脆弱。这份喜欢，促使我想为她做点什么，不止于在游戏里抽卡、练级。我想有一个地方，能系统地存放关于她的一切思考、分析、回忆与创作；想有一个空间，能与同样被她打动的人，分享每一次心动。</p><p>这，便是 <strong>DelishaHK.com</strong> 诞生的全部理由。</p><p>“Delisha”，是我心中对她名字最亲切的音译。而“HK”，自然首要指向我们相遇的这个世界——<strong>Honkai Impact 3rd</strong>。同时，它也像一个开放式的注解，或许可以是 <strong>Holy Knight</strong>（圣洁的骑士），指向她守护的信念；让这个域名在“崩坏”的主旋律下，多了一层有趣的泛音。</p><p>所以，这个博客将是我与德丽莎的“记忆档案馆”与“共鸣箱”。在这里，我可能会：</p><ul><li>分析她剧情中的高光时刻与成长弧光。</li><li>考据那些关于她武器、圣痕与背景的故事。</li><li>分享基于她的二次创作灵感与作品。</li><li>或者，仅仅是在某个午后，记录下又一次被她某句台词击中的心情。<br>  未来，这个站点会和她一起，慢慢生长。</li></ul><p>—— 于初次启程之时</p>]]>
     </content>
-    <id>https://blog.delishahk.com/2026/01/22/0000001/</id>
-    <link href="https://blog.delishahk.com/2026/01/22/0000001/" rel="alternate"/>
+    <id>https://blog.delishahk.com/0000001/</id>
+    <link href="https://blog.delishahk.com/0000001/" rel="alternate"/>
     <link href="https://blog.delishahk.com/img/dls%20(2).webp" rel="enclosure" type="image/webp"/>
     <published>2026-01-22T10:14:16.000Z</published>
     <summary>

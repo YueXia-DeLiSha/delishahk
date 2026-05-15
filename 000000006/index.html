@@ -1,0 +1,357 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>德丽莎 · 天命学园长画廊 | 德丽莎主题小站</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="/img/dls.webp"><link rel="stylesheet" href="/css/index.css?v=3.0.21"><link rel="canonical" href="https://blog.delishahk.com/000000006/index.html"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.7.2/css/all.min.css"><!-- Feature-specific CSS--><!-- aplayer--><!-- swiper--><!-- fancybox ui--><!-- katex--><!-- Open Graph--><meta name="description" content="德丽莎 · 天命学园长画廊 | 誓约的修女 与你一同收藏德丽莎的无数可爱瞬间。 🌸 为什么会有这个画廊？从第一次在《崩坏3》中遇见德丽莎·阿波卡利斯，我就被她那份纯真、温柔与坚韧深深吸引。她是极东支部的学园长，是背负「犹大的誓约」的S级女武神，更是一个会为身高、为零食、为伙伴们喜怒哀乐的真实女孩"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="德丽莎主题小站"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="/img/dls.webp"><link rel="apple-touch-icon" href="/img/dls.webp" sizes="180x180"><script>console.log(' %c Solitude %c ' + '3.0.21' + ' %c https://github.com/everfu/hexo-theme-solitude',
+    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
+</script><link rel="stylesheet" href="/live2d-widget/waifu.css"><script>(()=>{
+        const saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
+
+                if (!itemStr) {
+                    return undefined
+                }
+                const item = JSON.parse(itemStr)
+                const now = new Date()
+
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        };
+        window.utils = {
+            saveToLocal: saveToLocal,
+            getCSS: (url, id = false) => new Promise((resolve, reject) => {
+              const link = document.createElement('link')
+              link.rel = 'stylesheet'
+              link.href = url
+              if (id) link.id = id
+              link.onerror = reject
+              link.onload = link.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                link.onload = link.onreadystatechange = null
+                resolve()
+              }
+              document.head.appendChild(link)
+            }),
+            getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+              const script = document.createElement('script')
+              script.src = url
+              script.async = true
+              script.onerror = reject
+              script.onload = script.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                script.onload = script.onreadystatechange = null
+                resolve()
+              }
+
+              Object.keys(attr).forEach(key => {
+                script.setAttribute(key, attr[key])
+              })
+
+              document.head.appendChild(script)
+            }),
+            addGlobalFn: (key, fn, name = false, parent = window) => {
+                const globalFn = parent.globalFn || {}
+                const keyObj = globalFn[key] || {}
+
+                if (name && keyObj[name]) return
+
+                name = name || Object.keys(keyObj).length
+                keyObj[name] = fn
+                globalFn[key] = keyObj
+                parent.globalFn = globalFn
+            },
+            addEventListenerPjax: (ele, event, fn, option = false) => {
+              ele.addEventListener(event, fn, option)
+              utils.addGlobalFn('pjax', () => {
+                  ele.removeEventListener(event, fn, option)
+              })
+            },
+            diffDateFormat: (selector) => {
+                selector.forEach(item => {
+                    const date = new Date(item.getAttribute('datetime') || item.textContent);
+                    item.textContent = (date.getMonth() + 1).toString()+'/'+date.getDate().toString();
+                });
+            },
+        }
+    })()</script><!-- theme--><script>initTheme = () => {
+    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const cachedMode = utils.saveToLocal.get('theme');
+    if (cachedMode === undefined) {
+        const nowMode =
+            isDarkMode ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', nowMode);
+    } else {
+        document.documentElement.setAttribute('data-theme', cachedMode);
+    }
+    typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
+}
+initTheme()</script><script>const GLOBAL_CONFIG = {
+    root: '/',
+    algolia: undefined,
+    localsearch: undefined,
+    runtime: 'Tue Mar 28 2023 08:00:00 GMT+0800 (香港标准时间)',
+    lazyload: {
+        enable: true,
+        error: '/img/error_load.avif'
+    },
+    copyright: {"limit":50,"author":"作者: 挽着红月缓缓走","link":"链接: ","source":"来源: 德丽莎主题小站","info":"著作权归作者所有。 商业转载请联系作者获得授权，非商业转载请注明出处。"},
+    highlight: {"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},
+    randomlink: false,
+    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可"},
+    aside: {
+        state: {
+            morning: "✨ 早上好，新的一天开始了舰长",
+            noon: "🍲 记得吃午餐哦，舰长",
+            afternoon: "🌞 下午好呀，舰长",
+            night: "早点休息哦，舰长",
+            goodnight: "晚安啦舰长 😴",
+        },
+        witty_words: [],
+        witty_comment: {
+            prefix: '好久不见，',
+            back: '欢迎再次回来，',
+        },
+    },
+    covercolor: {
+        enable: false
+    },
+    comment: false,
+    lightbox: 'null',
+    right_menu: false,
+    translate: {"translateDelay":0,"defaultEncoding":2},
+    lure: {"jump":"欢迎再来哦","back":"ヾ(≧∇≦*)ゝ你回来啦"},
+    expire: false,
+};</script><script id="config-diff">var PAGE_CONFIG = {
+    is_post: true,
+    is_page: false,
+    is_home: false,
+    page: '',
+    toc: true,
+    comment: true,
+    ai_text: false,
+    color: false,
+}</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="德丽莎主题小站" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="德丽莎主题小站" type="application/rss+xml">
+</head><body id="body"><div><div id="loading-box" onclick="preloader.endLoading();" style="zoom:1"><div class="loading-bg"><img class="loading-img nolazyload" src="/img/dls.webp" alt="loading image"></div></div><script>const preloader = {
+    isLoaded: false,
+    endLoading: () => {
+        if (!preloader.isLoaded) {
+            document.getElementById('loading-box').classList.add('loaded');
+            preloader.isLoaded = true;
+            preloader.togglePaceDone();
+        }
+    },
+    initLoading: () => {
+        document.getElementById('loading-box').classList.remove('loaded');
+        preloader.isLoaded = false;
+        preloader.togglePaceDone();
+    },
+    togglePaceDone: () => {
+        document.getElementById('body').className = preloader.isLoaded ? 'pace-done' : '';
+    }
+}
+
+window.addEventListener('load', () => {
+    preloader.endLoading();
+});
+
+window.addEventListener('pjax:send', () => {
+    preloader.initLoading();
+});
+
+document.addEventListener('pjax:complete', () => {
+    preloader.endLoading();
+});
+
+setTimeout(() => {
+    preloader.endLoading();
+}, 5000);</script></div><div id="console"><div class="close-btn" onclick="sco.hideConsole()"><i class="solitude fas fa-xmark"></i></div><div class="console-card-group"><div class="console-card-group-right"><div class="console-card tags" onclick="sco.hideConsole()"><div class="card-content"><div class="author-content-item-tips">标签</div><div class="author-content-item-title">寻找感兴趣的领域</div></div><div class="card-tag-cloud"><a href="/tags/%E5%BE%B7%E4%B8%BD%E8%8E%8E/">德丽莎<sup>4</sup></a><a href="/tags/%E5%B4%A9%E5%9D%8F%E4%B8%89/">崩坏三<sup>1</sup></a><a href="/tags/%E7%94%BB%E5%BB%8A/">画廊<sup>1</sup></a><a href="/tags/%E6%9B%B4%E6%96%B0/">更新<sup>1</sup></a><a href="/tags/%E5%B4%A9%E5%9D%8F3/">崩坏3<sup>1</sup></a><a href="/tags/%E5%BE%B7%E4%B8%BD%E8%8E%8E/">-德丽莎<sup>1</sup></a></div></div><div class="console-card history" onclick="sco.hideConsole()"><ul class="card-archive-list"><li class="item"><a href="/archives/2026/05/"><span class="date">2026/05</span><div class="count-group"><span class="count">2</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2026/03/"><span class="date">2026/03</span><div class="count-group"><span class="count">2</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2026/01/"><span class="date">2026/01</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/"><span class="date">全部文章</span><div class="count-group"><span class="count">5</span><span class="unit">篇</span></div></a></li></ul></div></div></div><div class="button-group"><div class="console-btn-item"><span class="darkmode_switchbutton" onclick="sco.switchDarkMode()" title="昼夜切换"><i class="solitude fas fa-circle-half-stroke"></i></span></div><div class="console-btn-item" id="consoleHideAside"><span class="asideSwitch" onclick="sco.switchHideAside()" title="边栏显示控制"><i class="solitude fas fa-arrows-left-right-to-line"></i></span></div></div><div class="console-mask" onclick="sco.hideConsole()"></div></div><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude fas fa-circle-half-stroke"></i><span>显示模式</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文章</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友情链接</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="solitude  fas fa-user"></i><span>关于</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>RSS订阅</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/rss/"><i class="solitude  fas fa-rss"></i><span>RSS</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="card-tag-cloud"><a href="/tags/%E5%BE%B7%E4%B8%BD%E8%8E%8E/">德丽莎<sup>4</sup></a><a href="/tags/%E5%B4%A9%E5%9D%8F%E4%B8%89/">崩坏三<sup>1</sup></a><a href="/tags/%E7%94%BB%E5%BB%8A/">画廊<sup>1</sup></a><a href="/tags/%E6%9B%B4%E6%96%B0/">更新<sup>1</sup></a><a href="/tags/%E5%B4%A9%E5%9D%8F3/">崩坏3<sup>1</sup></a><a href="/tags/%E5%BE%B7%E4%B8%BD%E8%8E%8E/">-德丽莎<sup>1</sup></a></div></div><span class="sidebar-menu-item-title">网站信息</span><div class="webinfo"><div class="webinfo-item"><div class="item-name">全站字数 :</div><div class="item-count">2.9k</div></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><a href="/" title="返回博客主页" id="site-name"><span class="title">德丽莎小站</span><i class="solitude fas fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">德丽莎 · 天命学园长画廊</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文章</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友情链接</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="solitude  fas fa-user"></i><span>关于</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>RSS订阅</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/rss/"><i class="solitude  fas fa-rss"></i><span>RSS</span></a></li></ul></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="nav-totop" onclick="sco.toTop()"><a class="totopbtn"><i class="solitude fas fa-arrow-up"></i><span id="percent">0</span></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fas fa-bars"></i></a></div></div></div></nav><div class="coverdiv" id="coverdiv"><img class="nolazyload" id="post-cover" src="/img/dls%20(5).webp" alt="德丽莎 · 天命学园长画廊"></div><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original" title="该文章为原创文章，注意版权协议">原创</a><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%BE%B7%E4%B8%BD%E8%8E%8E/"><span class="tags-name tags-punctuation"><i class="solitude fas fa-hashtag"></i>德丽莎</span></a><a class="post-meta__tags" href="/tags/%E5%B4%A9%E5%9D%8F%E4%B8%89/"><span class="tags-name tags-punctuation"><i class="solitude fas fa-hashtag"></i>崩坏三</span></a></div></div></div></div><h1 class="post-title">德丽莎 · 天命学园长画廊</h1><div id="post-meta"><div class="meta-secondline"><span class="post-meta-date" title="发布于 2026-05-03 21:17:41"><i class="post-meta-icon solitude fas fa-calendar-days"></i><time datetime="2026-05-03T13:17:41.000Z">2026-05-03T13:17:41.000Z</time></span><span class="post-meta-wordcount"><i class="post-meta-icon solitude fas fa-file-word" title="文章字数"></i><span class="word-count">723</span><span class="post-meta-separator"></span></span></div></div></div><div class="post-radius-bottom"></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content article-container"><h1 id="德丽莎-·-天命学园长画廊-誓约的修女"><a href="#德丽莎-·-天命学园长画廊-誓约的修女" class="headerlink" title="德丽莎 · 天命学园长画廊 | 誓约的修女"></a>德丽莎 · 天命学园长画廊 | 誓约的修女</h1><blockquote>
+<p>与你一同收藏德丽莎的无数可爱瞬间。</p>
+</blockquote>
+<h2 id="🌸-为什么会有这个画廊？"><a href="#🌸-为什么会有这个画廊？" class="headerlink" title="🌸 为什么会有这个画廊？"></a>🌸 为什么会有这个画廊？</h2><p>从第一次在《崩坏3》中遇见德丽莎·阿波卡利斯，我就被她那份纯真、温柔与坚韧深深吸引。她是极东支部的学园长，是背负「犹大的誓约」的S级女武神，更是一个会为身高、为零食、为伙伴们喜怒哀乐的真实女孩。</p>
+<p>我一直想做一个<strong>纯粹的空间</strong>，能随时翻看德丽莎的各种姿态——不是简单的图片堆砌，而是带着仪式感的小小画廊。于是，我写了这个页面，挂在了自己的API上。</p>
+<h2 id="✨-画廊有什么特色？"><a href="#✨-画廊有什么特色？" class="headerlink" title="✨ 画廊有什么特色？"></a>✨ 画廊有什么特色？</h2><ul>
+<li><strong>随机德丽莎立绘</strong>：每次点击◀或▶，都会从我的图片API中请求一张新的德丽莎图片（完全随机，每次都有惊喜）。</li>
+<li><strong>优雅的交互</strong>：画廊设计成暖色调相框风格，带有加载动画和温柔提示，就像学园长在轻轻对你说“慢一点哦”。</li>
+<li><strong>完全免费</strong>：所有图片都存储在我的服务器上，通过 <code>api.rinai.top</code> 提供，没有任何广告和付费内容。</li>
+<li><strong>适配手机与电脑</strong>：无论你是在大屏幕还是手机上看，排版都会自动调整，触摸按钮也做了优化。</li>
+</ul>
+<h2 id="🖼️-如何使用？"><a href="#🖼️-如何使用？" class="headerlink" title="🖼️ 如何使用？"></a>🖼️ 如何使用？</h2><ol>
+<li>直接戳页面中<strong>左箭头（◀）<strong>或</strong>右箭头（▶）</strong>，新的德丽莎图片就会加载出来。</li>
+<li>为了照顾服务器和大家的体验，我设置了<strong>每秒最多请求1次</strong>，第一次加载会稍慢，之后就好啦。</li>
+<li>如果图片偶尔加载失败（比如网络波动），会显示一个可爱的占位图，再点一次就好了。</li>
+<li>画廊底部有<strong>德丽莎主题博客</strong>和<strong>个人小博客</strong>的链接，欢迎来坐坐。</li>
+</ol>
+<h2 id="📡-技术小纸条"><a href="#📡-技术小纸条" class="headerlink" title="📡 技术小纸条"></a>📡 技术小纸条</h2><ul>
+<li>图片来自接口：<code>https://api.rinai.top/api/v1/?img=dls</code>（无需额外参数，直接返回图片）。</li>
+<li>前端代码使用原生JavaScript，没有任何第三方依赖，保证轻量和安全。</li>
+<li>画廊部署在 <code>tutu.delishahk.com</code> 上，使用HTTPS加密，确保访问安全。</li>
+</ul>
+<h2 id="💖-写在最后"><a href="#💖-写在最后" class="headerlink" title="💖 写在最后"></a>💖 写在最后</h2><p>这个画廊是我对德丽莎热爱的一份延伸。如果你也喜欢她，希望这些小图片能给你带来片刻的治愈。如果你有任何建议，或者也想分享你收藏的德丽莎图片，欢迎通过<a href="/about/">关于页面</a>的联系方式告诉我。</p>
+<p>今后我也会不定期往API里添加新的德丽莎官方图、同人图（版权归原创者所有），让画廊一直有新鲜感。</p>
+<p><strong>德丽莎世界第一可爱！</strong> 🌙</p>
+<hr>
+<blockquote>
+<p>画廊入口： <a target="_blank" rel="noopener" href="https://tutu.delishahk.com/">点击进入德丽莎画廊</a><br>德丽莎主题博客： <a href="https://blog.delishahk.com/">blog.delishahk.com</a><br>技术问题反馈： <a href="mailto:&#109;&#97;&#105;&#x6c;&#x40;&#100;&#101;&#x6c;&#105;&#115;&#104;&#x61;&#104;&#x6b;&#x2e;&#x63;&#111;&#x6d;">mail@delishahk.com</a></p>
+</blockquote>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author_group"><div class="post-copyright__author_img"><img class="post-copyright__author_img_front" src= "" data-lazy-src="/img/dls.webp"></div><div class="post-copyright__author_name">挽着红月缓缓走</div><div class="post-copyright__author_desc">德丽莎主题小站</div></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div id="quit-box" onclick="RemoveRewardMask()"></div><div class="reward-link mode"><a class="reward-link-button" href="/rss2.xml"><i class="solitude fas fa-seedling"></i>订阅</a></div></div></div><div class="social-share"><a class="social-share-ico icon-qq" target="_blank" rel="noopener" href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fblog.delishahk.com%2F000000006%2F&amp;title=%E5%BE%B7%E4%B8%BD%E8%8E%8E%20%C2%B7%20%E5%A4%A9%E5%91%BD%E5%AD%A6%E5%9B%AD%E9%95%BF%E7%94%BB%E5%BB%8A&amp;desc=undefined&amp;summary=undefined&amp;site=%E5%BE%B7%E4%B8%BD%E8%8E%8E%20%C2%B7%20%E5%A4%A9%E5%91%BD%E5%AD%A6%E5%9B%AD%E9%95%BF%E7%94%BB%E5%BB%8A&amp;pics=%2Fimg%2Fdls%20(5).webp" title="分享到QQ"><i class="solitude fab fa-qq"></i></a><a class="social-share-ico icon-weibo" target="_blank" rel="noopener" href="http://service.weibo.com/share/share.php?url=https%3A%2F%2Fblog.delishahk.com%2F000000006%2F&amp;title=%E5%BE%B7%E4%B8%BD%E8%8E%8E%20%C2%B7%20%E5%A4%A9%E5%91%BD%E5%AD%A6%E5%9B%AD%E9%95%BF%E7%94%BB%E5%BB%8A&amp;pic=%2Fimg%2Fdls%20(5).webp" title="分享到微博"><i class="solitude fab fa-weibo"></i></a><a class="social-share-ico icon-whatsapp" target="_blank" rel="noopener" href="https://api.whatsapp.com/send?text=%E5%BE%B7%E4%B8%BD%E8%8E%8E%20%C2%B7%20%E5%A4%A9%E5%91%BD%E5%AD%A6%E5%9B%AD%E9%95%BF%E7%94%BB%E5%BB%8A https%3A%2F%2Fblog.delishahk.com%2F000000006%2F" title="分享到WhatsApp"><i class="solitude fab fa-whatsapp"></i></a></div><div class="post-copyright__notice"><span class="post-copyright-info">本文是原创文章，采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">CC BY-NC-SA 4.0</a>协议，完整转载请注明来自<a href="/">德丽莎主题小站</a></span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%BE%B7%E4%B8%BD%E8%8E%8E/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>德丽莎<span class="tagsPageCount">4</span></span></a><a class="post-meta__tags" href="/tags/%E5%B4%A9%E5%9D%8F%E4%B8%89/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>崩坏三<span class="tagsPageCount">1</span></span></a></div></div></div><nav class="needEndHide pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/00000003/"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">德丽莎画廊重磅更新！</div></div></a></div><div class="next-post pull-right"><a href="/000000012/"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">德丽莎，生日快乐！</div></div></a></div></nav>
+        <div class="relatedPosts">
+            <div class="headline">
+                <i class="solitude fas fa-star"></i>
+                <span>喜欢这篇的人也看了</span>
+                <div class="relatedPosts-link">
+                    <a onclick="event.preventDefault(); toRandomPost();" href="javascript:void(0);" rel="external nofollow" data-pjax-state="">随便逛逛</a>
+                </div>
+            </div>
+            <div class="relatedPosts-list">
+            <div>
+                <a href="/00000003/" title="德丽莎画廊重磅更新！">
+                    <img class="cover" src= "" data-lazy-src="/img/dls%20(57).webp" alt="cover">
+                    <div class="content is-center">
+                        <div class="title">德丽莎画廊重磅更新！</div>
+                    </div>
+                </a>
+            </div>
+            <div>
+                <a href="/000000012/" title="德丽莎，生日快乐！">
+                    <img class="cover" src= "" data-lazy-src="/img/dls%20(84).webp" alt="cover">
+                    <div class="content is-center">
+                        <div class="title">德丽莎，生日快乐！</div>
+                    </div>
+                </a>
+            </div>
+            </div>
+        </div><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="solitude fas fa-comment"></i><span> 评论</span></div></div><div class="comment-wrap"><div id="twikoo-wrap"></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><div class="top-group"><div class="sayhi" id="sayhi" onclick="sco.changeWittyWord()"></div></div></div><div class="avatar"><img alt="头像" src= "" data-lazy-src="/img/dls.webp"></div><div class="description"></div><div class="bottom-group"><span class="left"><div class="name">挽着红月缓缓走</div><div class="desc">终会相聚，与你同在</div></span><div class="social-icons is-center"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="solitude fas fa-bars"></i><span>文章目录</span></div><div class="toc-content" id="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%B7%E4%B8%BD%E8%8E%8E-%C2%B7-%E5%A4%A9%E5%91%BD%E5%AD%A6%E5%9B%AD%E9%95%BF%E7%94%BB%E5%BB%8A-%E8%AA%93%E7%BA%A6%E7%9A%84%E4%BF%AE%E5%A5%B3"><span class="toc-text">德丽莎 · 天命学园长画廊 | 誓约的修女</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8C%B8-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E6%9C%89%E8%BF%99%E4%B8%AA%E7%94%BB%E5%BB%8A%EF%BC%9F"><span class="toc-text">🌸 为什么会有这个画廊？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9C%A8-%E7%94%BB%E5%BB%8A%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%B9%E8%89%B2%EF%BC%9F"><span class="toc-text">✨ 画廊有什么特色？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%96%BC%EF%B8%8F-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%EF%BC%9F"><span class="toc-text">🖼️ 如何使用？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%A1-%E6%8A%80%E6%9C%AF%E5%B0%8F%E7%BA%B8%E6%9D%A1"><span class="toc-text">📡 技术小纸条</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%92%96-%E5%86%99%E5%9C%A8%E6%9C%80%E5%90%8E"><span class="toc-text">💖 写在最后</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude fas fa-map"></i><span>最近发布</span></div><div class="aside-list"><a class="aside-list-item" href="/00000003/" title="德丽莎画廊重磅更新！"><div class="thumbnail"><img alt="德丽莎画廊重磅更新！" src= "" data-lazy-src="/img/dls%20(57).webp"></div><div class="content"><span class="title" href="/00000003/" title="德丽莎画廊重磅更新！">德丽莎画廊重磅更新！</span></div></a><a class="aside-list-item" href="/000000006/" title="德丽莎 · 天命学园长画廊"><div class="thumbnail"><img alt="德丽莎 · 天命学园长画廊" src= "" data-lazy-src="/img/dls%20(5).webp"></div><div class="content"><span class="title" href="/000000006/" title="德丽莎 · 天命学园长画廊">德丽莎 · 天命学园长画廊</span></div></a><a class="aside-list-item" href="/000000012/" title="德丽莎，生日快乐！"><div class="thumbnail"><img alt="德丽莎，生日快乐！" src= "" data-lazy-src="/img/dls%20(84).webp"></div><div class="content"><span class="title" href="/000000012/" title="德丽莎，生日快乐！">德丽莎，生日快乐！</span></div></a><a class="aside-list-item" href="/00000000002/" title="最可爱的德丽莎装甲"><div class="thumbnail"><img alt="最可爱的德丽莎装甲" src= "" data-lazy-src="/img/dls%20(57).webp"></div><div class="content"><span class="title" href="/00000000002/" title="最可爱的德丽莎装甲">最可爱的德丽莎装甲</span></div></a><a class="aside-list-item" href="/0000001/" title="《我最喜欢的角色德丽莎以及我是为什么建立这个站点》"><div class="thumbnail"><img alt="《我最喜欢的角色德丽莎以及我是为什么建立这个站点》" src= "" data-lazy-src="/img/dls%20(2).webp"></div><div class="content"><span class="title" href="/0000001/" title="《我最喜欢的角色德丽莎以及我是为什么建立这个站点》">《我最喜欢的角色德丽莎以及我是为什么建立这个站点》</span></div></a></div></div></div></div></main><footer id="footer"><div id="st-footer"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2023 - 2026 By<a class="footer-bar-link" href="/" title="挽着红月缓缓走">挽着红月缓缓走</a></div><div class="beian-group"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://hexo.io/" title="框架：Hexo">框架：Hexo</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude" title="主题：Solitude">主题：Solitude</a></div></div><div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/yuexia-delisha" title="">挽着红月缓缓走</a><a class="footer-bar-link" href="/about/" title="">如果觉得文章对你有帮助</a><a class="footer-bar-link" href="/about/" title="">可以分享文章或者赞赏支持一下哦</a></div></div></div></div><div class="comment-barrage needEndHide"></div></footer></div><div><!-- Critical scripts loaded synchronously--><script src="/js/utils.js?v=3.0.21"></script><script src="/js/main.js?v=3.0.21"></script><!-- Non-critical scripts loaded asynchronously--><script async src="/js/third_party/waterfall.min.js?v=3.0.21"></script><script src="https://cdn.staticfile.org/pjax/0.2.8/pjax.min.js"></script><!-- Feature-specific scripts loaded asynchronously--><script defer src="/js/tw_cn.js?v=3.0.21"></script><!-- UI enhancement scripts--><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><script defer src="https://cdn.bootcdn.net/ajax/libs/node-snackbar/0.1.16/snackbar.min.js"></script><!-- Music player scripts--><!-- Cover color processing scripts--><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+utils.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+</script><script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script><!-- Search functionality--><!-- Right menu functionality--><script src="/live2d-widget/autoload.js"></script><div class="js-pjax"><script>(() => {
+    const getCount = () => {
+        const ele = document.querySelectorAll('.twikoo-count')
+        if (!ele) return
+        twikoo.getCommentsCount({
+            envId: 'https://rinaidelisha.netlify.app/.netlify/functions/twikoo',
+            region: '',
+            urls: [window.location.pathname],
+            includeReply: false
+        }).then(res => {
+            ele.forEach(item => item.textContent = res[0].count)
+        }).catch(err => {
+            console.error(err)
+        })
+    }
+    const init = () => {
+        twikoo.init(Object.assign({
+            el: '#twikoo-wrap',
+            envId: 'https://rinaidelisha.netlify.app/.netlify/functions/twikoo',
+            region: '',
+            path: window.location.pathname,
+            onCommentLoaded: () => {
+                GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+            }
+        }, null))
+
+        
+        sco.owoBig({
+            body: '.OwO-body',
+            item: '.OwO-items li'
+        })
+
+        false && barrageTwikoo()
+    }
+
+    const loadTwikoo = () => {
+        if (typeof twikoo === 'object') setTimeout(init,0)
+        else utils.getScript('https://fastly.jsdelivr.net/npm/twikoo@1.7.0/dist/twikoo.all.min.js').then(init)
+    }
+
+    if ('Twikoo' === 'Twikoo' || true) {
+        if (true) utils.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+        else loadTwikoo()
+    } else {
+        window.loadTwoComment = loadTwikoo
+    }
+})()
+</script></div></div><!-- pjax--><script>let pjax = null;
+
+function initPjax() {
+    if (typeof Pjax === 'undefined') {
+        console.warn('Pjax is not loaded yet, retrying...');
+        setTimeout(initPjax, 100);
+        return;
+    }
+
+    pjax = new Pjax({
+        elements: 'a:not([target="_blank"])',
+        selectors: ["title","#body-wrap","#site-config","meta[name=\"description\"]",".js-pjax","meta[property^=\"og:\"]","#config-diff",".rs_show",".rs_hide"],
+        cacheBust: false,
+        analytics: false,
+        scrollRestoration: false
+    })
+
+    // 将 pjax 实例挂载到全局
+    window.pjax = pjax;
+
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+        const newScript = document.createElement('script')
+        const content = item.text || item.textContent || item.innerHTML || ""
+        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+        newScript.appendChild(document.createTextNode(content))
+        item.parentNode.replaceChild(newScript, item)
+    })
+
+    document.addEventListener('pjax:complete', () => {
+        window.refreshFn()
+
+        document.querySelectorAll('script[data-pjax]').forEach(item => {
+            const newScript = document.createElement('script')
+            const content = item.text || item.textContent || item.innerHTML || ""
+            Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+            newScript.appendChild(document.createTextNode(content))
+            item.parentNode.replaceChild(newScript, item)
+        })
+
+        GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+    })
+
+    document.addEventListener('pjax:error', (e) => {
+        if (e.request.status === 404) {
+            pjax.loadUrl('/404.html')
+        }
+    })
+}
+
+// 初始化 Pjax
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPjax);
+} else {
+    initPjax();
+}</script><!-- google adsense--></body></html>
+        <script>
+            const posts = ["00000003/","000000006/","000000012/","00000000002/","0000001/"];
+            function toRandomPost() {
+                const randomPost = posts[Math.floor(Math.random() * posts.length)];
+                pjax.loadUrl(GLOBAL_CONFIG.root + randomPost);
+            }
+        </script>

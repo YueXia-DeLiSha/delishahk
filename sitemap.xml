@@ -92,15 +92,6 @@
   </url>
   
   <url>
-    <loc>https://blog.delishahk.com/live2d_models/model/delisha/model_list.json</loc>
-    
-    <lastmod>2026-04-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.delishahk.com/live2d_models/model/undefined/model_list.json</loc>
     
     <lastmod>2026-04-18</lastmod>
@@ -110,7 +101,16 @@
   </url>
   
   <url>
-    <loc>https://blog.delishahk.com/live2d_models/model/delisha/index.json</loc>
+    <loc>https://blog.delishahk.com/live2d_models/model/delisha/model_list.json</loc>
+    
+    <lastmod>2026-04-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.delishahk.com/live2d_models/model/undefined/index.json</loc>
     
     <lastmod>2026-01-01</lastmod>
     
@@ -119,7 +119,7 @@
   </url>
   
   <url>
-    <loc>https://blog.delishahk.com/live2d_models/model/undefined/index.json</loc>
+    <loc>https://blog.delishahk.com/live2d_models/model/delisha/index.json</loc>
     
     <lastmod>2026-01-01</lastmod>
     
@@ -137,7 +137,7 @@
   </url>
   
   <url>
-    <loc>https://blog.delishahk.com/live2d_models/model/delisha/physics.json</loc>
+    <loc>https://blog.delishahk.com/live2d_models/model/undefined/physics.json</loc>
     
     <lastmod>2025-06-18</lastmod>
     
@@ -146,7 +146,7 @@
   </url>
   
   <url>
-    <loc>https://blog.delishahk.com/live2d_models/model/undefined/physics.json</loc>
+    <loc>https://blog.delishahk.com/live2d_models/model/delisha/physics.json</loc>
     
     <lastmod>2025-06-18</lastmod>
     

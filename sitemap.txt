@@ -15,8 +15,8 @@ https://blog.delishahk.com/live2d_models/model/undefined/index.json
 https://blog.delishahk.com/index.html
 https://blog.delishahk.com/live2d_models/model/delisha/physics.json
 https://blog.delishahk.com/live2d_models/model/undefined/physics.json
-https://blog.delishahk.com/live2d-widget/README.html
 https://blog.delishahk.com/live2d-widget/package.json
+https://blog.delishahk.com/live2d-widget/README.html
 https://blog.delishahk.com/live2d-widget/demo/demo.html
 https://blog.delishahk.com/live2d-widget/demo/login.html
 https://blog.delishahk.com/

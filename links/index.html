@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>友情链接 · 挽着红月缓缓走</title>
+    <meta name="referrer" content="no-referrer-when-downgrade">
     <link rel="icon" type="image/webp" href="https://blog.delishahk.com/img/dls.webp">
     <!-- 这里不引入任何 Hexo 主题资源，保证完全独立 -->
     <link rel="stylesheet" href="https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" />
@@ -18,7 +19,8 @@
                 font-family: 'LXGW WenKai Screen',-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif !important;
                 color: #1a1a1a;
                 line-height: 1.6;
-                background-color: transparent;
+                background-color: #fff;
+                /* ✅ 默认亮色背景，暗色模式通过 data-theme 覆盖 */
                 /* ✅ 关键：使用 100vw 宽度 + 负 margin 抵消主题容器 padding */
                 width: 100vw !important;
                 position: relative;
@@ -28,6 +30,7 @@
                 margin-right: -50vw !important;
                 padding: 2rem 1rem 3rem;
                 overflow-x: hidden;
+                transition: background-color 0.3s ease;
             }
 
             /* ✅ 彻底清空所有子元素的 Hexo 默认样式干扰 */
@@ -264,6 +267,7 @@
                 object-fit: cover;
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
                 background: #f9fafb;
+                transition: border-color 0.3s ease, background 0.3s ease;
             }
 
             /* ✅【修复】不带背景图的名字：强制黑色，居中 */
@@ -308,8 +312,20 @@
                 left: 0;
                 right: 0;
                 height: 55%;
-                background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.35), transparent);
                 pointer-events: none;
+                transition: background 0.3s ease;
+            }
+
+            #link-page-scoped[data-theme="dark"] .lp-card-bg::after {
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent);
+            }
+
+            /* ✅ 暗色模式下信息浮层加半透明深色底，确保文字可读 */
+            #link-page-scoped[data-theme="dark"] .lp-card-info-overlay {
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 100%);
+                margin: -0.6rem -0.85rem;
+                padding: 0.6rem 0.85rem;
             }
 
             /* Text strip at bottom of card */
@@ -322,6 +338,7 @@
                 justify-content: space-between;
                 border-top: 1px solid #eee;
                 min-height: 44px;
+                transition: background 0.3s ease, border-color 0.3s ease;
             }
 
             #link-page-scoped .lp-friend-card:hover {
@@ -510,6 +527,29 @@
             #link-page-scoped[data-theme="dark"] {
                 --theme-body-bg: #1e1e1e;
                 color: #d1d5db;
+                background-color: #111827 !important; /* ✅ 核心：整个容器变为深灰，不透出父级白色背景 */
+            }
+
+            /* ✅ 全局平滑过渡：所有可变色元素统一 0.3s ease 切换 */
+            #link-page-scoped .lp-card,
+            #link-page-scoped .lp-friend-card,
+            #link-page-scoped .lp-card-text,
+            #link-page-scoped .lp-code-block,
+            #link-page-scoped .lp-topbar,
+            #link-page-scoped .lp-topbar-site,
+            #link-page-scoped footer,
+            #link-page-scoped .lp-friend-avatar,
+            #link-page-scoped .lp-friend-name,
+            #link-page-scoped .lp-visit-link,
+            #link-page-scoped .lp-card-bg,
+            #link-page-scoped .lp-brand-name-overlay,
+            #link-page-scoped .lp-group-title,
+            #link-page-scoped .lp-site-header h1,
+            #link-page-scoped .lp-site-header p,
+            #link-page-scoped .lp-card h2,
+            #link-page-scoped .lp-disclaimer-list li,
+            #link-page-scoped .lp-disclaimer-list strong {
+                transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
             }
 
             #link-page-scoped[data-theme="dark"] .lp-site-header h1,
@@ -593,11 +633,21 @@
             }
 
             #link-page-scoped[data-theme="dark"] .lp-friend-card:not(.lp-has-bg) .lp-friend-avatar {
-                border-color: #2a2a2a;
+                border-color: #374151;
+                background: #111827;
+            }
+
+            #link-page-scoped[data-theme="dark"] .lp-friend-card.lp-has-bg .lp-friend-avatar {
+                border-color: rgba(255, 255, 255, 0.7);
             }
 
             #link-page-scoped[data-theme="dark"] .lp-brand-name-overlay {
                 color: #f3f4f6;
+            }
+
+            /* ✅ 暗色模式下卡片区文字说明也变浅灰 */
+            #link-page-scoped[data-theme="dark"] .lp-card-text > span {
+                color: #9ca3af !important;
             }
 
             /* 右上角工具条深色适配 */

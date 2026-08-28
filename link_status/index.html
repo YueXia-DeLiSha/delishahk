@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>友情链接 · 挽着红月缓缓走</title>
+    <meta name="description" content="挽着红月缓缓走 - 友情链接页面，收录朋友们的个人博客与技术站点。" />
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="icon" type="image/webp" href="https://blog.delishahk.com/img/dls.webp" />
+    <link rel="preconnect" href="https://blog.delishahk.com" />
+    <link rel="stylesheet" href="https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" />
+    <style>
+        /* ===== 全局重置 ===== */
+        #link-page-scoped {
+            font-family: 'LXGW WenKai Screen',-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+            color: #1a1a1a;
+            line-height: 1.6;
+            background-color: var(--lp-root-bg, #ffffff);
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            padding: 2rem 1rem 3rem;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease;
+        }
+        #link-page-scoped * { box-sizing: border-box; margin: 0; padding: 0; }
+        #link-page-scoped a { color: inherit; text-decoration: none; }
+        #link-page-scoped img { display: block; max-width: 100%; }
+
+        /* ===== HEADER ===== */
+        #link-page-scoped .lp-site-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        #link-page-scoped .lp-site-header h1 {
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            font-weight: 700;
+            color: #111;
+            letter-spacing: -0.02em;
+        }
+        #link-page-scoped .lp-site-header p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* ===== INFO SECTION ===== */
+        #link-page-scoped .lp-info-section {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            width: 100%;
+        }
+        @media (min-width: 768px) {
+            #link-page-scoped .lp-info-section { grid-template-columns: repeat(2, 1fr); }
+        }
+        #link-page-scoped .lp-card {
+            background: var(--theme-body-bg, #fff);
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.25rem;
+            word-break: normal;
+        }
+        #link-page-scoped .lp-card h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #111;
+            margin-bottom: 0.6rem;
+        }
+        #link-page-scoped .lp-card p {
+            color: #4b5563;
+            font-size: 0.88rem;
+            margin-bottom: 0.6rem;
+            line-height: 1.65;
+        }
+        #link-page-scoped .lp-code-block {
+            background: #f3f4f6;
+            border-radius: 6px;
+            padding: 0.75rem 0.9rem;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 0.8rem;
+            line-height: 1.7;
+            color: #374151;
+            overflow-x: auto;
+            white-space: pre;
+        }
+        #link-page-scoped .lp-disclaimer-list { list-style: none; counter-reset: lp-disc; }
+        #link-page-scoped .lp-disclaimer-list li {
+            margin-bottom: 0.55rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.83rem;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+        #link-page-scoped .lp-disclaimer-list li::before {
+            content: counter(lp-disc);
+            counter-increment: lp-disc;
+            position: absolute;
+            left: 0; top: 0.05rem;
+            width: 1.1rem; height: 1.1rem;
+            background: #eef2ff;
+            color: #4338ca;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            font-weight: 600;
+        }
+        #link-page-scoped .lp-disclaimer-list strong { color: #111; }
+
+        /* ===== FILTER TOGGLE ===== */
+        #link-page-scoped .lp-filter-bar {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        #link-page-scoped .lp-filter-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.35rem 0.85rem;
+            border: 1px solid #d1d5db;
+            border-radius: 999px;
+            background: transparent;
+            color: #4b5563;
+            font-size: 0.82rem;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+        #link-page-scoped .lp-filter-btn:hover {
+            border-color: #9ca3af;
+            color: #111;
+        }
+        #link-page-scoped .lp-filter-btn.active {
+            border-color: #111;
+            background: #111;
+            color: #fff;
+        }
+        #link-page-scoped .lp-filter-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        #link-page-scoped .lp-filter-dot.green { background: #22c55e; }
+        #link-page-scoped .lp-filter-dot.red   { background: #ef4444; }
+        #link-page-scoped .lp-filter-dot.gray  { background: #9ca3af; }
+
+        /* ===== FRIEND CARDS ===== */
+        #link-page-scoped .lp-friend-card {
+            background: var(--theme-body-bg, #fff);
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            transition: box-shadow 0.2s ease, border-color 0.2s ease, opacity 0.25s ease, transform 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            height: 280px;
+            margin-bottom: 1.5rem;
+        }
+        #link-page-scoped .lp-friends-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        @media (min-width: 640px)  { #link-page-scoped .lp-friends-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { #link-page-scoped .lp-friends-grid { grid-template-columns: repeat(3, 1fr); } }
+
+        /* ---- Unreachable dim effect ---- */
+        #link-page-scoped .lp-friend-card[data-reachable="false"] {
+            opacity: 0.55;
+            filter: grayscale(0.4);
+        }
+        #link-page-scoped .lp-friend-card.lp-hidden {
+            display: none;
+        }
+
+        /* Background image area */
+        #link-page-scoped .lp-card-bg {
+            flex: 9;
+            position: relative;
+            background-color: #fafafa;
+            overflow: hidden;
+        }
+        #link-page-scoped .lp-friend-card.lp-has-bg .lp-card-bg {
+            background-image: var(--lp-bg-image);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #f8f9fa;
+        }
+
+        /* No-bg fallback */
+        #link-page-scoped .lp-friend-card:not(.lp-has-bg) .lp-card-bg {
+            flex: 1 !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: #ffffff;
+            min-height: 0;
+        }
+        #link-page-scoped .lp-friend-card:not(.lp-has-bg) .lp-card-info-overlay {
+            position: static;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+            max-width: 90%;
+        }
+        #link-page-scoped .lp-friend-card:not(.lp-has-bg) .lp-friend-avatar {
+            width: 72px; height: 72px;
+            border-radius: 50%;
+            border: 3px solid #f3f4f6;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        #link-page-scoped .lp-friend-card:not(.lp-has-bg) .lp-friend-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #111827;
+            line-height: 1.3;
+            max-width: 180px;
+        }
+        #link-page-scoped .lp-brand-logo-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.65rem;
+            height: 100%;
+            padding: 1rem;
+        }
+        #link-page-scoped .lp-brand-logo-icon {
+            width: 44px; height: 44px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+        #link-page-scoped .lp-brand-name-overlay {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #111;
+        }
+
+        /* Bottom gradient overlay */
+        #link-page-scoped .lp-card-bg::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 55%;
+            background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+            pointer-events: none;
+        }
+
+        /* Info overlay */
+        #link-page-scoped .lp-card-info-overlay {
+            position: absolute;
+            bottom: 0; left: 0;
+            width: fit-content;
+            max-width: 240px;
+            padding: 0.6rem 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            z-index: 10;
+            pointer-events: auto;
+        }
+        #link-page-scoped .lp-friend-avatar {
+            width: 42px; height: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255,255,255,0.9);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            flex-shrink: 0;
+        }
+        #link-page-scoped .lp-friend-name {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.3;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.45);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 170px;
+        }
+
+        /* Card text footer */
+        #link-page-scoped .lp-card-text {
+            flex: 1;
+            padding: 0.4rem 1rem;
+            background: var(--theme-body-bg, #fafafa);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #eee;
+            min-height: 44px;
+        }
+
+        /* Reachability badge inside card-text */
+        #link-page-scoped .lp-status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 0.1rem 0.5rem;
+            border-radius: 999px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        #link-page-scoped .lp-status-badge.lp-status-ok {
+            background: #f0fdf4;
+            color: #16a34a;
+            border: 1px solid #bbf7d0;
+        }
+        #link-page-scoped .lp-status-badge.lp-status-err {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+        #link-page-scoped .lp-status-badge .lp-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        #link-page-scoped .lp-status-ok .lp-dot { background: #22c55e; }
+        #link-page-scoped .lp-status-err .lp-dot { background: #ef4444; animation: lp-pulse 1.5s infinite; }
+
+        @keyframes lp-pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        #link-page-scoped .lp-friend-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            border-color: #d1d5db;
+        }
+
+        /* Visit link */
+        #link-page-scoped .lp-visit-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.82rem;
+            color: #374151;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            white-space: nowrap;
+            z-index: 11;
+            pointer-events: auto;
+        }
+        #link-page-scoped .lp-visit-link:hover { color: #111; }
+        #link-page-scoped .lp-visit-link::after {
+            content: '→';
+            font-size: 0.85rem;
+            transition: transform 0.2s ease;
+        }
+        #link-page-scoped .lp-visit-link:hover::after { transform: translateX(2px); }
+
+        /* Group title */
+        #link-page-scoped .lp-group-title {
+            font-size: clamp(1.2rem, 4vw, 1.4rem);
+            font-weight: 600;
+            color: #111;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.25rem;
+            margin-top: 2.5rem;
+            position: relative;
+            padding-left: 0.9rem;
+            clear: both;
+        }
+        #link-page-scoped .lp-group-title::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 50%;
+            transform: translateY(-50%);
+            width: 4px; height: 22px;
+            background: linear-gradient(to bottom, #111, #666);
+            border-radius: 2px;
+        }
+
+        /* ===== STATS BAR ===== */
+        #link-page-scoped .lp-stats-bar {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            padding: 1rem 1.25rem;
+            background: var(--theme-body-bg, #fff);
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            align-items: center;
+        }
+        #link-page-scoped .lp-stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.82rem;
+            color: #6b7280;
+        }
+        #link-page-scoped .lp-stat-num {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #111;
+        }
+        #link-page-scoped .lp-stat-divider {
+            width: 1px;
+            height: 18px;
+            background: #e5e7eb;
+        }
+
+        /* ===== FRIEND CIRCLE (Articles) ===== */
+        #link-page-scoped .lp-circle-section {
+            margin-top: 2rem;
+            padding-top: 0;
+        }
+        #link-page-scoped .lp-circle-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+        #link-page-scoped .lp-circle-header h2.lp-group-title {
+            margin-top: 0;
+        }
+        #link-page-scoped .lp-load-more-btn {
+            padding: 0.4rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            background: transparent;
+            color: #4b5563;
+            font-size: 0.82rem;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        #link-page-scoped .lp-load-more-btn:hover {
+            border-color: #111;
+            color: #111;
+        }
+
+        #link-page-scoped .lp-articles-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+        }
+        @media (min-width: 640px) {
+            #link-page-scoped .lp-articles-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1024px) {
+            #link-page-scoped .lp-articles-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        #link-page-scoped .lp-article-card {
+            background: var(--theme-body-bg, #fff);
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1rem 1.15rem;
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+            transition: box-shadow 0.2s ease, border-color 0.2s ease;
+            cursor: pointer;
+        }
+        #link-page-scoped .lp-article-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            border-color: #d1d5db;
+        }
+        #link-page-scoped .lp-article-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+            border: 1px solid #e5e7eb;
+        }
+        #link-page-scoped .lp-article-body {
+            flex: 1;
+            min-width: 0;
+        }
+        #link-page-scoped .lp-article-title {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #111;
+            line-height: 1.45;
+            margin-bottom: 0.3rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            word-break: break-word;
+        }
+        #link-page-scoped .lp-article-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        #link-page-scoped .lp-article-author {
+            font-size: 0.75rem;
+            color: #6b7280;
+        }
+        #link-page-scoped .lp-article-date {
+            font-size: 0.72rem;
+            color: #9ca3af;
+        }
+        #link-page-scoped .lp-article-arrow {
+            color: #d1d5db;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            align-self: center;
+            transition: color 0.2s, transform 0.2s;
+        }
+        #link-page-scoped .lp-article-card:hover .lp-article-arrow {
+            color: #111;
+            transform: translateX(2px);
+        }
+
+        #link-page-scoped .lp-no-more-hint {
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 0.82rem;
+            color: #9ca3af;
+        }
+
+        /* Loading skeleton */
+        #link-page-scoped .lp-loading-skeleton {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        #link-page-scoped .lp-skeleton-card {
+            background: var(--theme-body-bg, #fff);
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1rem 1.15rem;
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+        #link-page-scoped .lp-skeleton-avatar {
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            background: #e5e7eb;
+            flex-shrink: 0;
+        }
+        #link-page-scoped .lp-skeleton-body { flex: 1; }
+        #link-page-scoped .lp-skeleton-line {
+            height: 12px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+        #link-page-scoped .lp-skeleton-line:last-child { margin-bottom: 0; width: 60%; }
+
+        /* ===== FOOTER ===== */
+        #link-page-scoped footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e5e7eb;
+            text-align: center;
+            font-size: 0.82rem;
+            color: #9ca3af;
+        }
+
+        /* ===== TOPBAR ===== */
+        #link-page-scoped .lp-topbar {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: var(--theme-body-bg, #fff);
+            border: 1px solid #e5e7eb;
+            border-radius: 999px;
+            padding: 0.3rem 0.35rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        #link-page-scoped .lp-topbar-site {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.28rem 0.85rem 0.28rem 0.3rem;
+            border-radius: 999px;
+            background: #f3f4f6;
+            color: #111;
+            font-size: 0.83rem;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        #link-page-scoped .lp-topbar-site:hover { background: #e5e7eb; }
+        #link-page-scoped .lp-topbar-avatar {
+            width: 26px; height: 26px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+            border: 1px solid rgba(0,0,0,0.08);
+        }
+        #link-page-scoped .lp-theme-toggle {
+            width: 32px; height: 32px;
+            border: none;
+            border-radius: 50%;
+            background: transparent;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #374151;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        #link-page-scoped .lp-theme-toggle:hover { background: #f3f4f6; }
+        #link-page-scoped .lp-theme-toggle svg { width: 16px; height: 16px; display: block; }
+        #link-page-scoped .lp-icon-sun { display: none; }
+
+        /* ===== DARK MODE ===== */
+        #link-page-scoped[data-theme="dark"] {
+            --theme-body-bg: #1e1e1e;
+            --lp-root-bg: #1e1e1e;
+            color: #d1d5db;
+        }
+        #link-page-scoped[data-theme="dark"] .lp-site-header h1,
+        #link-page-scoped[data-theme="dark"] .lp-card h2,
+        #link-page-scoped[data-theme="dark"] .lp-group-title { color: #f3f4f6; }
+        #link-page-scoped[data-theme="dark"] .lp-site-header p { color: #9ca3af; }
+        #link-page-scoped[data-theme="dark"] .lp-card { border-color: #333; }
+        #link-page-scoped[data-theme="dark"] .lp-card p { color: #a1a1aa; }
+        #link-page-scoped[data-theme="dark"] .lp-code-block { background: #2a2a2a; color: #d1d5db; }
+        #link-page-scoped[data-theme="dark"] .lp-disclaimer-list li { color: #a1a1aa; }
+        #link-page-scoped[data-theme="dark"] .lp-disclaimer-list li::before { background: #1e293b; color: #818cf8; }
+        #link-page-scoped[data-theme="dark"] .lp-disclaimer-list strong { color: #f3f4f6; }
+        #link-page-scoped[data-theme="dark"] .lp-friend-card { border-color: #333; }
+        #link-page-scoped[data-theme="dark"] .lp-friend-card:hover { border-color: #4b5563; box-shadow: 0 4px 12px rgba(0,0,0,0.35); }
+        #link-page-scoped[data-theme="dark"] .lp-card-text { border-top-color: #333; background: var(--theme-body-bg, #1e1e1e); }
+        #link-page-scoped[data-theme="dark"] .lp-card-text span { color: #9ca3af; }
+        #link-page-scoped[data-theme="dark"] .lp-visit-link { color: #9ca3af; }
+        #link-page-scoped[data-theme="dark"] .lp-visit-link:hover { color: #fff; }
+        #link-page-scoped[data-theme="dark"] .lp-group-title::before { background: linear-gradient(to bottom, #f3f4f6, #6b7280); }
+        #link-page-scoped[data-theme="dark"] footer { border-top-color: #333; color: #6b7280; }
+        #link-page-scoped[data-theme="dark"] .lp-friend-card:not(.lp-has-bg) .lp-card-bg { background: #1e1e1e; }
+        #link-page-scoped[data-theme="dark"] .lp-friend-card:not(.lp-has-bg) .lp-friend-name { color: #f3f4f6; }
+        #link-page-scoped[data-theme="dark"] .lp-friend-card:not(.lp-has-bg) .lp-friend-avatar { border-color: #2a2a2a; }
+        #link-page-scoped[data-theme="dark"] .lp-brand-name-overlay { color: #f3f4f6; }
+        #link-page-scoped[data-theme="dark"] .lp-card-bg { background-color: #2a2a2a !important; }
+        #link-page-scoped[data-theme="dark"] .lp-friend-card.lp-has-bg .lp-card-bg { background-color: #2a2a2a !important; }
+        #link-page-scoped[data-theme="dark"] .lp-topbar { border-color: #333; box-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+        #link-page-scoped[data-theme="dark"] .lp-topbar-site { background: #2a2a2a; color: #f3f4f6; }
+        #link-page-scoped[data-theme="dark"] .lp-topbar-site:hover { background: #333; }
+        #link-page-scoped[data-theme="dark"] .lp-theme-toggle { color: #d1d5db; }
+        #link-page-scoped[data-theme="dark"] .lp-theme-toggle:hover { background: #2a2a2a; }
+        #link-page-scoped[data-theme="dark"] .lp-icon-sun { display: block; }
+        #link-page-scoped[data-theme="dark"] .lp-icon-moon { display: none; }
+        /* Dark mode: stats bar */
+        #link-page-scoped[data-theme="dark"] .lp-stats-bar { border-color: #333; background: var(--theme-body-bg, #1e1e1e); }
+        #link-page-scoped[data-theme="dark"] .lp-stat-num { color: #f3f4f6; }
+        #link-page-scoped[data-theme="dark"] .lp-stat-divider { background: #333; }
+        #link-page-scoped[data-theme="dark"] .lp-stat-item { color: #9ca3af; }
+        /* Dark mode: article cards */
+        #link-page-scoped[data-theme="dark"] .lp-article-card { border-color: #333; }
+        #link-page-scoped[data-theme="dark"] .lp-article-card:hover { border-color: #4b5563; }
+        #link-page-scoped[data-theme="dark"] .lp-article-title { color: #f3f4f6; }
+        #link-page-scoped[data-theme="dark"] .lp-article-avatar { border-color: #333; }
+        #link-page-scoped[data-theme="dark"] .lp-skeleton-card { border-color: #333; background: var(--theme-body-bg, #1e1e1e); }
+        #link-page-scoped[data-theme="dark"] .lp-skeleton-avatar { background: #333; }
+        #link-page-scoped[data-theme="dark"] .lp-skeleton-line { background: #333; }
+        /* Dark mode: filter buttons */
+        #link-page-scoped[data-theme="dark"] .lp-filter-btn { border-color: #4b5563; color: #a1a1aa; }
+        #link-page-scoped[data-theme="dark"] .lp-filter-btn:hover { border-color: #9ca3af; color: #f3f4f6; }
+        #link-page-scoped[data-theme="dark"] .lp-filter-btn.active { border-color: #f3f4f6; background: #f3f4f6; color: #111; }
+        /* Dark mode: load more button */
+        #link-page-scoped[data-theme="dark"] .lp-load-more-btn { border-color: #4b5563; color: #a1a1aa; }
+        #link-page-scoped[data-theme="dark"] .lp-load-more-btn:hover { border-color: #f3f4f6; color: #f3f4f6; }
+
+        /* Scroll loader */
+        #link-page-scoped .lp-scroll-loader {
+            display: none;
+            text-align: center;
+            padding: 0.75rem 0;
+            font-size: 0.82rem;
+            color: #9ca3af;
+        }
+        #link-page-scoped .lp-loader-spinner {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border: 2px solid #d1d5db;
+            border-top-color: #111;
+            border-radius: 50%;
+            animation: lp-spin 0.6s linear infinite;
+            vertical-align: middle;
+            margin-right: 0.35rem;
+        }
+        @keyframes lp-spin {
+            to { transform: rotate(360deg); }
+        }
+        #link-page-scoped[data-theme="dark"] .lp-scroll-loader { color: #6b7280; }
+        #link-page-scoped[data-theme="dark"] .lp-loader-spinner {
+            border-color: #4b5563;
+            border-top-color: #f3f4f6;
+        }
+
+        /* Badge dark mode */
+        #link-page-scoped[data-theme="dark"] .lp-status-badge.lp-status-ok { background: #052e16; border-color: #166534; color: #4ade80; }
+        #link-page-scoped[data-theme="dark"] .lp-status-badge.lp-status-err { background: #450a0a; border-color: #991b1b; color: #f87171; }
+
+        /* Mobile responsive */
+        @media (max-width: 480px) {
+            #link-page-scoped .lp-topbar { top: 0.6rem; right: 0.6rem; }
+            #link-page-scoped .lp-site-header { margin-bottom: 1.5rem; }
+            #link-page-scoped .lp-info-section { margin-bottom: 2rem; }
+            #link-page-scoped .lp-friend-card { height: 260px; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="link-page-scoped" data-theme="light">
+
+    <!-- 右上角工具条 -->
+    <div class="lp-topbar">
+        <a class="lp-topbar-site" href="https://blog.rinai.top" title="返回首页">
+            <img class="lp-topbar-avatar" src="https://blog.delishahk.com/img/dls.webp" alt="网站头像" />
+            <span>返回首页</span>
+        </a>
+        <button class="lp-theme-toggle" id="lp-theme-toggle" type="button" title="切换明暗主题" aria-label="切换明暗主题">
+            <svg class="lp-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="lp-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+    </div>
+
+    <!-- HEADER -->
+    <header class="lp-site-header">
+        <h1>友情链接</h1>
+        <p>朋友们的站点，欢迎回访</p>
+    </header>
+
+    <!-- INFO SECTION -->
+    <section class="lp-info-section">
+        <!-- 申请格式 -->
+        <article class="lp-card">
+            <h2>申请友链格式说明</h2>
+            <p>请提供以下格式的友链说明，发送到
+                <a href="mailto:mail@delishahk.com" style="color:#4338ca;text-decoration:underline;">mail@delishahk.com</a>
+                (推荐) 与
+                <a href="mailto:mail@rinai.top" style="color:#4338ca;text-decoration:underline;">mail@rinai.top</a>
+                或
+                <a href="mailto:l750243132@outlook.com" style="color:#4338ca;text-decoration:underline;">l750243132@outlook.com</a>
+                （长时间未回复选这个）（页面其他联系方式亦可）
+            </p>
+            <div class="lp-code-block">博客名：挽着红月缓缓走
+简介：终会相聚，与你同在
+链接：https://blog.rinai.top
+图片：https://blog.delishahk.com/img/dls.webp
+网站截图：https://blog.delishahk.com/img/bh3rd(6).webp（可选）
+rss：https://blog.rinai.top/rss2.xml（可选）</div>
+        </article>
+
+        <!-- 免责声明 -->
+        <article class="lp-card">
+            <h2>免责声明</h2>
+            <ol class="lp-disclaimer-list">
+                <li><strong>合规声明：</strong> 申请友链即表示你已仔细检查并保证：你的网站所有内容均完全符合中华人民共和国现行法律法规，绝不存在危害国家安全、破坏社会稳定、恐怖主义、极端主义、淫秽色情、赌博、诈骗、传销、侵犯他人合法权益等违法违规内容。</li>
+                <li><strong>责任承担：</strong> 如因友链网站自身内容违规，导致本网站受到任何行政处罚、诉讼、索赔或声誉损失，该网站所有者应承担全部法律责任，并赔偿本网站因此遭受的全部损失（包括但不限于罚款、律师费、和解金、维权成本）。</li>
+                <li><strong>审核权利：</strong> 本网站有权独立审核、拒绝、撤销任何友链，无须说明理由；一旦发现或收到举报（含初步证据）友链网站存在违规内容，本网站有权立即删除链接且不另行通知。</li>
+                <li><strong>独立主体：</strong> 本网站与友链网站为各自独立的主体，友链仅为网络访问便利，不构成本网站对链接内容的认可、保证或承担连带责任。用户通过友链访问第三方网站，风险自担。</li>
+                <li><strong>变更通知：</strong> 友链网站内容如有变更（尤其是向合规性降低方向变化），持有人应主动书面或邮件通知本网站；未通知导致的一切后果由该方承担。</li>
+                <li><strong>同意条款：</strong> 提交申请 / 在本页面展示链接，即视为已完整阅读并同意本声明。</li>
+                <li><strong>访客免责：</strong> 本页面所有友链均指向第三方网站，点击即表示您已知晓并自愿承担访问第三方网站可能带来的一切风险（包括但不限于内容违规、隐私泄露、恶意代码、财产损失等）。本网站不对任何第三方网站的内容、安全性、合法性及可用性负责，亦不承担任何直接或间接的连带责任。若因点击友链产生纠纷或损失，请直接与目标网站所有者解决。</li>
+            </ol>
+        </article>
+    </section>
+
+    <!-- FRIENDS LIST -->
+    <section class="lp-links-section">
+
+        <h2 class="lp-group-title">友情链接</h2>
+
+        <!-- 可达性筛选栏 -->
+        <div class="lp-filter-bar">
+            <button class="lp-filter-btn active" data-filter="all" type="button">
+                <span class="lp-filter-dot gray"></span> 全部
+            </button>
+            <button class="lp-filter-btn" data-filter="reachable" type="button">
+                <span class="lp-filter-dot green"></span> 可达
+            </button>
+            <button class="lp-filter-btn" data-filter="unreachable" type="button">
+                <span class="lp-filter-dot red"></span> 不可达
+            </button>
+        </div>
+
+        <!-- Stats bar -->
+        <div class="lp-stats-bar" id="lp-stats-bar">
+            <!-- Injected via JS -->
+            <div class="lp-loading-skeleton" style="flex:1;min-width:200px;">
+                <div class="lp-skeleton-card"><div class="lp-skeleton-avatar"></div><div class="lp-skeleton-body"><div class="lp-skeleton-line"></div><div class="lp-skeleton-line"></div></div></div>
+            </div>
+        </div>
+
+        <div class="lp-friends-grid" id="lp-friends-grid">
+
+            <!-- 1. 圣芙蕾雅学园 -->
+            <article class="lp-friend-card lp-has-bg" data-name="圣芙蕾雅学园" style="--lp-bg-image: url('https://blog.delishahk.com/img/dls(57).webp');">
+                <div class="lp-card-bg">
+                    <div class="lp-card-info-overlay">
+                        <img src="https://blog.delishahk.com/img/favicon.ico" alt="圣芙蕾雅学园" class="lp-friend-avatar" loading="lazy" />
+                        <h3 class="lp-friend-name">圣芙蕾雅学园</h3>
+                    </div>
+                </div>
+                <div class="lp-card-text">
+                    <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
+                        <span class="lp-status-badge lp-status-ok" data-badge-type="ok"><span class="lp-dot"></span> 可达</span>
+                        <span style="color:#666;font-size:0.8rem;" class="lp-card-desc">终会相聚，与你同在</span>
+                    </div>
+                    <a href="https://blog.delishahk.com" target="_blank" rel="noopener noreferrer" class="lp-visit-link">前往</a>
+                </div>
+            </article>
+
+            <!-- 2. Bleaz's Blog -->
+            <article class="lp-friend-card" data-name="Bleaz's Blog">
+                <div class="lp-card-bg">
+                    <div class="lp-card-info-overlay">
+                        <img src="https://api.bleaz.top/img/links/logo.jpg" alt="Bleaz's Blog" class="lp-friend-avatar" loading="lazy" />
+                        <h3 class="lp-friend-name">Bleaz's Blog</h3>
+                    </div>
+                </div>
+                <div class="lp-card-text">
+                    <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
+                        <span class="lp-status-badge lp-status-ok" data-badge-type="ok"><span class="lp-dot"></span> 可达</span>
+                        <span style="color:#666;font-size:0.8rem;" class="lp-card-desc">不畏过往，不惧将来</span>
+                    </div>
+                    <a href="https://blog.bleaz.net" target="_blank" rel="noopener noreferrer" class="lp-visit-link">前往</a>
+                </div>
+            </article>
+
+            <!-- 3. Lucas的小博客 -->
+            <article class="lp-friend-card lp-has-bg" data-name="Lucas的小博客" style="--lp-bg-image: url('https://pic1.imgdb.cn/item/68f9e7e93203f7be0091d1ad.png');">
+                <div class="lp-card-bg">
+                    <div class="lp-card-info-overlay">
+                        <img src="https://pic1.imgdb.cn/item/68fe309a3203f7be00a0c198.png" alt="Lucas的小博客" class="lp-friend-avatar" loading="lazy" />
+                        <h3 class="lp-friend-name">Lucas的小博客</h3>
+                    </div>
+                </div>
+                <div class="lp-card-text">
+                    <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
+                        <span class="lp-status-badge lp-status-ok" data-badge-type="ok"><span class="lp-dot"></span> 可达</span>
+                        <span style="color:#666;font-size:0.8rem;" class="lp-card-desc">欲买桂花同载酒，终不似，少年游</span>
+                    </div>
+                    <a href="https://blog.lris625.top/" target="_blank" rel="noopener noreferrer" class="lp-visit-link">前往</a>
+                </div>
+            </article>
+
+            <!-- 4. BiuXin 与光｜生活分享 -->
+            <article class="lp-friend-card" data-name="BiuXin 与光｜生活分享">
+                <div class="lp-card-bg">
+                    <div class="lp-card-info-overlay">
+                        <img src="https://x.xinb.de/i/2024/11/06/027080.gif" alt="BiuXin 与光" class="lp-friend-avatar" loading="lazy" />
+                        <h3 class="lp-friend-name">BiuXin 与光｜生活分享</h3>
+                    </div>
+                </div>
+                <div class="lp-card-text">
+                    <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
+                        <span class="lp-status-badge lp-status-ok" data-badge-type="ok"><span class="lp-dot"></span> 可达</span>
+                        <span style="color:#666;font-size:0.8rem;" class="lp-card-desc">一个记录生活、分享心情与日常点滴的博客</span>
+                    </div>
+                    <a href="https://blog.biuxin.com" target="_blank" rel="noopener noreferrer" class="lp-visit-link">前往</a>
+                </div>
+            </article>
+
+            <!-- 5. AnKode -->
+            <article class="lp-friend-card" data-name="AnKode">
+                <div class="lp-card-bg">
+                    <div class="lp-card-info-overlay">
+                        <img src="https://blog.anxko.cn/logo.png" alt="AnKode" class="lp-friend-avatar" loading="lazy" />
+                        <h3 class="lp-friend-name">AnKode</h3>
+                    </div>
+                </div>
+                <div class="lp-card-text">
+                    <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
+                        <span class="lp-status-badge lp-status-ok" data-badge-type="ok"><span class="lp-dot"></span> 可达</span>
+                        <span style="color:#666;font-size:0.8rem;" class="lp-card-desc">欢迎你！来自远方的朋友 ₍˄·͈༝·͈˄*₎◞ ̑̑</span>
+                    </div>
+                    <a href="https://blog.anxko.cn/" target="_blank" rel="noopener noreferrer" class="lp-visit-link">前往</a>
+                </div>
+            </article>
+
+            <!-- 6. 一刻 -->
+            <article class="lp-friend-card lp-has-bg" data-name="一刻" style="--lp-bg-image: url('https://p.xanz.top/images/19383f807edb3.webp');">
+                <div class="lp-card-bg">
+                    <div class="lp-card-info-overlay">
+                        <img src="https://blog.xanz.xyz/icon/android-chrome-192x192.png" alt="一刻" class="lp-friend-avatar" loading="lazy" />
+                        <h3 class="lp-friend-name">一刻</h3>
+                    </div>
+                </div>
+                <div class="lp-card-text">
+                    <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
+                        <span class="lp-status-badge lp-status-ok" data-badge-type="ok"><span class="lp-dot"></span> 可达</span>
+                        <span style="color:#666;font-size:0.8rem;" class="lp-card-desc">沉浮与世，驻足一刻</span>
+                    </div>
+                    <a href="https://blog.xanz.xyz" target="_blank" rel="noopener noreferrer" class="lp-visit-link">前往</a>
+                </div>
+            </article>
+
+            <!-- 7. 文轩夜话 -->
+            <article class="lp-friend-card" data-name="文轩夜话">
+                <div class="lp-card-bg">
+                    <div class="lp-card-info-overlay">
+                        <img src="https://blog.awaae001.top/avater.webp" alt="文轩夜话" class="lp-friend-avatar" loading="lazy" />
+                        <h3 class="lp-friend-name">文轩夜话</h3>
+                    </div>
+                </div>
+                <div class="lp-card-text">
+                    <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
+                        <span class="lp-status-badge lp-status-ok" data-badge-type="ok"><span class="lp-dot"></span> 可达</span>
+                        <span style="color:#666;font-size:0.8rem;" class="lp-card-desc">可知是梦，何来的清醒？</span>
+                    </div>
+                    <a href="https://blog.awaae001.top" target="_blank" rel="noopener noreferrer" class="lp-visit-link">前往</a>
+                </div>
+            </article>
+
+            <!-- 8. 傲雪の -->
+            <article class="lp-friend-card lp-has-bg" data-name="傲雪の" style="--lp-bg-image: url('https://images.oxue.de/file/siteshot.webp');">
+                <div class="lp-card-bg">
+                    <div class="lp-card-info-overlay">
+                        <img src="https://av.oxue.de/155360005" alt="傲雪の" class="lp-friend-avatar" loading="lazy" />
+                        <h3 class="lp-friend-name">傲雪の</h3>
+                    </div>
+                </div>
+                <div class="lp-card-text">
+                    <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
+                        <span class="lp-status-badge lp-status-ok" data-badge-type="ok"><span class="lp-dot"></span> 可达</span>
+                        <span style="color:#666;font-size:0.8rem;" class="lp-card-desc">无聊的一天搭配神经的我～</span>
+                    </div>
+                    <a href="https://www.oxue.de" target="_blank" rel="noopener noreferrer" class="lp-visit-link">前往</a>
+                </div>
+            </article>
+
+            <!-- 9. 清羽飞扬 -->
+            <article class="lp-friend-card lp-has-bg" data-name="清羽飞扬" style="--lp-bg-image: url('https://blog.liushen.fun/info/siteshot.jpg');">
+                <div class="lp-card-bg">
+                    <div class="lp-card-info-overlay">
+                        <img src="https://blog.liushen.fun/info/avatar.ico" alt="清羽飞扬" class="lp-friend-avatar" loading="lazy" />
+                        <h3 class="lp-friend-name">清羽飞扬</h3>
+                    </div>
+                </div>
+                <div class="lp-card-text">
+                    <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
+                        <span class="lp-status-badge lp-status-ok" data-badge-type="ok"><span class="lp-dot"></span> 可达</span>
+                        <span style="color:#666;font-size:0.8rem;" class="lp-card-desc">柳影曳曳，清酒孤灯，扬笔撒墨，心境如霜</span>
+                    </div>
+                    <a href="https://blog.liushen.fun/" target="_blank" rel="noopener noreferrer" class="lp-visit-link">前往</a>
+                </div>
+            </article>
+
+            <!-- 10. 倾听风雨 -->
+            <article class="lp-friend-card" data-name="倾听风雨">
+                <div class="lp-card-bg">
+                    <div class="lp-card-info-overlay">
+                        <img src="https://q1.qlogo.cn/g?b=qq&nk=3931968261&s=640" alt="倾听风雨" class="lp-friend-avatar" loading="lazy" />
+                        <h3 class="lp-friend-name">倾听风雨</h3>
+                    </div>
+                </div>
+                <div class="lp-card-text">
+                    <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
+                        <span class="lp-status-badge lp-status-ok" data-badge-type="ok"><span class="lp-dot"></span> 可达</span>
+                        <span style="color:#666;font-size:0.8rem;" class="lp-card-desc">被发现了huh！</span>
+                    </div>
+                    <a href="https://blog.qtfyu.top" target="_blank" rel="noopener noreferrer" class="lp-visit-link">前往</a>
+                </div>
+            </article>
+
+            <!-- 11. lcrworld's blog -->
+            <article class="lp-friend-card" data-name="lcrworld's blog">
+                <div class="lp-card-bg">
+                    <div class="lp-card-info-overlay">
+                        <img src="https://lcrworld.xyz/default-avatar.jpeg" alt="lcrworld's blog" class="lp-friend-avatar" loading="lazy" />
+                        <h3 class="lp-friend-name">lcrworld's blog</h3>
+                    </div>
+                </div>
+                <div class="lp-card-text">
+                    <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
+                        <span class="lp-status-badge lp-status-ok" data-badge-type="ok"><span class="lp-dot"></span> 可达</span>
+                        <span style="color:#666;font-size:0.8rem;" class="lp-card-desc">lcrworld的个人博客，分享文章，记录日常</span>
+                    </div>
+                    <a href="https://lcrworld.xyz" target="_blank" rel="noopener noreferrer" class="lp-visit-link">前往</a>
+                </div>
+            </article>
+
+        </div><!-- /.lp-friends-grid -->
+
+    </section>
+
+    <!-- ==================== FRIEND CIRCLE (Article Feed) ==================== -->
+    <section class="lp-circle-section">
+        <div class="lp-circle-header">
+            <h2 class="lp-group-title">友圈动态</h2>
+        </div>
+
+        <!-- Articles Grid -->
+        <div class="lp-articles-grid" id="lp-articles-grid">
+            <!-- Skeleton loading state -->
+            <div class="lp-loading-skeleton" id="lp-articles-skeleton">
+                <div class="lp-skeleton-card"><div class="lp-skeleton-avatar"></div><div class="lp-skeleton-body"><div class="lp-skeleton-line"></div><div class="lp-skeleton-line"></div></div></div>
+                <div class="lp-skeleton-card"><div class="lp-skeleton-avatar"></div><div class="lp-skeleton-body"><div class="lp-skeleton-line"></div><div class="lp-skeleton-line"></div></div></div>
+                <div class="lp-skeleton-card"><div class="lp-skeleton-avatar"></div><div class="lp-skeleton-body"><div class="lp-skeleton-line"></div><div class="lp-skeleton-line"></div></div></div>
+            </div>
+        </div>
+        <div class="lp-no-more-hint" id="lp-no-more" style="display:none;">已加载全部动态 ✨</div>
+        <!-- Scroll sentinel & loader -->
+        <div id="lp-scroll-sentinel" style="height:1px;margin-top:1rem;"></div>
+        <div class="lp-scroll-loader" id="lp-scroll-loader" style="display:none;text-align:center;padding:0.75rem 0;font-size:0.82rem;color:#9ca3af;">
+            <span class="lp-loader-spinner"></span> 加载中…
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        &copy; 挽着红月缓缓走
+    </footer>
+
+    <!-- Theme Toggle + Data Fetching Script -->
+    <script>
+    (function() {
+        var root = document.getElementById('link-page-scoped');
+        if (!root) return;
+
+        /* ========== THEME TOGGLE ========== */
+        var toggleBtn = document.getElementById('lp-theme-toggle');
+        function applyTheme(theme) {
+            root.setAttribute('data-theme', theme);
+            try { localStorage.setItem('lp-theme', theme); } catch(e) {}
+        }
+        var saved = null;
+        try { saved = localStorage.getItem('lp-theme'); } catch(e) {}
+        if (!saved) {
+            saved = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+        }
+        applyTheme(saved);
+        toggleBtn.addEventListener('click', function() {
+            applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        });
+
+        /* ========== REACHABILITY DATA ========== */
+        var LINK_API = 'https://cdn.jsdelivr.net/gh/YueXia-DeLiSha/Friend-Circle-Lite@page/link.json';
+        var ARTICLE_API = 'https://cdn.jsdelivr.net/gh/YueXia-DeLiSha/Friend-Circle-Lite@page/all.json';
+
+        // Author -> avatar URL map (from link.json link_page)
+        var authorAvatarMap = {};
+
+        // Fetch link.json and update badges + filterability
+        function initReachability() {
+            fetch(LINK_API)
+                .then(function(r) { return r.json(); })
+                .then(function(data) {
+                    var stats = data.statistical_data || {};
+                    var links = data.link_data || [];
+
+                    // Update stats bar
+                    var statsBar = document.getElementById('lp-stats-bar');
+                    statsBar.innerHTML =
+                        '<div class="lp-stat-item"><span class="lp-stat-num">' + stats.link_total_num + '</span> 友链总数</div>' +
+                        '<div class="lp-stat-divider"></div>' +
+                        '<div class="lp-stat-item"><span class="lp-stat-num" style="color:#22c55e;">' + stats.link_reachable_num + '</span> 可达</div>' +
+                        '<div class="lp-stat-divider"></div>' +
+                        '<div class="lp-stat-item"><span class="lp-stat-num" style="color:#ef4444;">' + stats.link_unreachable_num + '</span> 不可达</div>' +
+                        '<div class="lp-stat-divider"></div>' +
+                        '<div class="lp-stat-item" style="margin-left:auto;font-size:0.75rem;color:#9ca3af;">最后检测 ' + (stats.link_last_checked_time || '') + '</div>';
+
+                    // Build reachable map, author-avatar map & latency map
+                    var reachMap = {};
+                    var latencyMap = {};
+                    links.forEach(function(item) {
+                        reachMap[item.name] = item.reachable !== undefined ? item.reachable : true;
+                        if (item.link_page) {
+                            authorAvatarMap[item.name] = item.link_page;
+                        }
+                        if (typeof item.latency === 'number') {
+                            latencyMap[item.name] = item.latency;
+                        }
+                    });
+
+                    // Apply reachability to cards
+                    var cards = document.querySelectorAll('#lp-friends-grid .lp-friend-card');
+                    cards.forEach(function(card) {
+                        var name = card.getAttribute('data-name');
+                        if (reachMap[name] === false) {
+                            card.setAttribute('data-reachable', 'false');
+                            var badge = card.querySelector('.lp-status-badge');
+                            if (badge) {
+                                badge.className = 'lp-status-badge lp-status-err';
+                                badge.innerHTML = '<span class="lp-dot"></span> 不可达';
+                            }
+                        } else {
+                            card.setAttribute('data-reachable', 'true');
+                            // Append latency info after badge
+                            var lat = latencyMap[name];
+                            var badgeEl = card.querySelector('.lp-status-badge');
+                            var desc = card.querySelector('.lp-card-desc');
+                            if (badgeEl && typeof lat === 'number' && desc) {
+                                var ms = Math.round(lat * 1000);
+                                badgeEl.title = '延迟: ' + ms + 'ms';
+                                desc.textContent += ' · ' + ms + 'ms';
+                            }
+                        }
+                    });
+                })
+                .catch(function(err) {
+                    console.warn('Failed to load reachability data:', err);
+                    var statsBar = document.getElementById('lp-stats-bar');
+                    statsBar.style.display = 'none';
+                });
+        }
+
+        /* ========== FILTER BUTTONS ========== */
+        function initFilters() {
+            var btns = document.querySelectorAll('.lp-filter-btn');
+            btns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var filter = this.getAttribute('data-filter');
+
+                    // Update active state
+                    btns.forEach(function(b) { b.classList.remove('active'); });
+                    this.classList.add('active');
+
+                    var cards = document.querySelectorAll('#lp-friends-grid .lp-friend-card');
+                    cards.forEach(function(card) {
+                        if (filter === 'all') {
+                            card.classList.remove('lp-hidden');
+                        } else if (filter === 'reachable') {
+                            card.classList.toggle('lp-hidden', card.getAttribute('data-reachable') !== 'true');
+                        } else if (filter === 'unreachable') {
+                            card.classList.toggle('lp-hidden', card.getAttribute('data-reachable') === 'true');
+                        }
+                    });
+                });
+            });
+        }
+
+        /* ========== FRIEND CIRCLE ARTICLES ========== */
+        var ARTICLES_PER_PAGE = 12;
+        var loadedIndex = 0;
+        var allArticles = [];
+        var isLoading = false;
+        var isFinished = false;
+
+        function renderArticles(articles, append) {
+            var grid = document.getElementById('lp-articles-grid');
+            var skeleton = document.getElementById('lp-articles-skeleton');
+            var noMore = document.getElementById('lp-no-more');
+            var loader = document.getElementById('lp-scroll-loader');
+
+            if (!append) {
+                grid.innerHTML = '';
+                loadedIndex = 0;
+                isFinished = false;
+            }
+
+            if (articles.length === 0 && !append) {
+                grid.innerHTML = '<div style="text-align:center;padding:2rem;color:#9ca3af;font-size:0.85rem;">暂无动态</div>';
+                noMore.style.display = 'block';
+                return;
+            }
+
+            if (!append && skeleton) skeleton.remove();
+
+            var fragment = document.createDocumentFragment();
+            articles.forEach(function(article) {
+                // Resolve real avatar URL from link data; fallback to empty
+                var realAvatar = authorAvatarMap[article.author] || '';
+                var card = document.createElement('div');
+                card.className = 'lp-article-card';
+                card.onclick = function() { window.open(article.link, '_blank'); };
+                card.innerHTML =
+                    '<img class="lp-article-avatar" src="' + escapeAttr(realAvatar) + '" alt="" loading="lazy" onError="this.src=\'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect fill=%22%23e5e7eb%22 width=%22100%22 height=%22100%22/><text x=%2250%22 y=%2255%22 text-anchor=%22middle%22 fill=%22%239ca3af%22 font-size=%2236%22>?</text></svg>\'>" />' +
+                    '<div class="lp-article-body">' +
+                        '<div class="lp-article-title" title="' + escapeAttr(article.title) + '">' + escapeHtml(article.title) + '</div>' +
+                        '<div class="lp-article-meta">' +
+                            '<span class="lp-article-author">' + escapeHtml(article.author) + '</span>' +
+                            '<span class="lp-article-date">' + escapeHtml((article.created || '').substring(0, 10)) + '</span>' +
+                        '</div>' +
+                    '</div>' +
+                    '<span class="lp-article-arrow">›</span>';
+                fragment.appendChild(card);
+            });
+
+            grid.appendChild(fragment);
+            loadedIndex += articles.length;
+
+            // Update sentinel visibility
+            if (loadedIndex >= allArticles.length) {
+                isFinished = true;
+                noMore.style.display = 'block';
+                loader.style.display = 'none';
+            } else {
+                isFinished = false;
+                noMore.style.display = 'none';
+            }
+        }
+
+        function loadNextPage() {
+            if (isLoading || isFinished) return;
+            isLoading = true;
+
+            var loader = document.getElementById('lp-scroll-loader');
+            loader.style.display = 'block';
+
+            // Simulate a small delay for better UX
+            setTimeout(function() {
+                if (!allArticles.length) {
+                    fetch(ARTICLE_API)
+                        .then(function(r) { return r.json(); })
+                        .then(function(data) {
+                            allArticles = data.article_data || [];
+                            allArticles.sort(function(a, b) {
+                                return new Date(b.created) - new Date(a.created);
+                            });
+                            renderArticles(allArticles.slice(0, ARTICLES_PER_PAGE), false);
+                        })
+                        .finally(function() { isLoading = false; });
+                } else {
+                    var nextBatch = allArticles.slice(loadedIndex, loadedIndex + ARTICLES_PER_PAGE);
+                    renderArticles(nextBatch, true);
+                    isLoading = false;
+                }
+            }, 200);
+        }
+
+        function escapeHtml(str) {
+            var div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+        function escapeAttr(str) {
+            return str.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        }
+
+        /* ========== INTERSECTION OBSERVER FOR AUTO-LOAD ========== */
+        function initAutoLoad() {
+            var sentinel = document.getElementById('lp-scroll-sentinel');
+            if (!sentinel) return;
+
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting && !isLoading && !isFinished) {
+                        loadNextPage();
+                    }
+                });
+            }, {
+                rootMargin: '200px'
+            });
+
+            observer.observe(sentinel);
+        }
+
+        /* ========== INITIAL LOAD ========== */
+        function fetchInitialArticles() {
+            if (allArticles.length > 0) return;
+            isLoading = true;
+            var loader = document.getElementById('lp-scroll-loader');
+            loader.style.display = 'block';
+            fetch(ARTICLE_API)
+                .then(function(r) { return r.json(); })
+                .then(function(data) {
+                    allArticles = data.article_data || [];
+                    allArticles.sort(function(a, b) {
+                        return new Date(b.created) - new Date(a.created);
+                    });
+                    renderArticles(allArticles.slice(0, ARTICLES_PER_PAGE), false);
+                    isLoading = false;
+                })
+                .catch(function(err) {
+                    console.warn('Failed to load articles:', err);
+                    isLoading = false;
+                    var skeleton = document.getElementById('lp-articles-skeleton');
+                    if (skeleton) skeleton.remove();
+                    var grid = document.getElementById('lp-articles-grid');
+                    grid.innerHTML = '<div style="text-align:center;padding:2rem;color:#9ca3af;font-size:0.85rem;">动态加载失败，请稍后重试</div>';
+                });
+        }
+
+        /* ========== INIT ========== */
+        initFilters();
+        initReachability();
+        fetchInitialArticles();
+        initAutoLoad();
+
+    })();
+    </script>
+
+</div>
+<!-- /#link-page-scoped -->
+</body>
+</html>

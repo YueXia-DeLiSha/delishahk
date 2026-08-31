@@ -3124,7 +3124,7 @@ body {
   background: var(--efu-background);
   color: var(--efu-fontcolor);
   font-size: 16px;
-  font-family: "LXGW WenKai Screen", "Noto Serif SC",serif;
+  font-family: "LXGW WenKai Screen",,serif;
   line-height: 2;
   -webkit-tap-highlight-color: transparent;
   margin: 0;
@@ -3240,7 +3240,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: "Courier Prime", "Maple Mono",monospace;
+  font-family: "Courier Prime",monospace;
   font-size: 16px;
 }
 small {
@@ -9331,7 +9331,7 @@ span.tagsPageCount {
   padding: 0.5rem;
   text-align: center;
   font-size: 14px;
-  font-family: "LXGW WenKai Screen", "Noto Serif SC",serif;
+  font-family: "LXGW WenKai Screen",,serif;
 }
 @media screen and (max-width: 768px) {
   #body-wrap.error #error-wrap .error-content .error-info {
@@ -14038,7 +14038,7 @@ figure.highlight .code-expand-btn:not(.expand-done) ~ pre {
 .tk-content code,
 .tk-content kbd,
 .tk-content samp {
-  font-family: "Courier Prime", "Maple Mono",monospace;
+  font-family: "Courier Prime",monospace;
 }
 .tk-content pre {
   background: var(--efu-secondbg);

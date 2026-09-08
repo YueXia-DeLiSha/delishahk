@@ -1,0 +1,345 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>布洛妮娅带你了解光猫背后的秘密 | 圣芙蕾雅学园</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="/img/dls.webp"><link rel="stylesheet" href="/css/index.css?v=3.0.21"><link rel="canonical" href="https://blog.delishahk.com/ITMS/index.html"><link rel="stylesheet" href="https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/font-awesome/6.7.2/css/all.min.css"><!-- Feature-specific CSS--><!-- aplayer--><!-- swiper--><!-- fancybox ui--><!-- katex--><!-- Open Graph--><meta name="description" content="“PON灯常亮，但网断了。”——一份从天命数据库脱敏流出的战术日志。布洛妮娅以指挥官视角完整复盘光猫桥接模式下的离奇断网事件：不是光纤断了，不是路由器挂了，而是管理进程被系统调度器“冻”住了。看完这篇，你也能自己修好同类故障。"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="圣芙蕾雅学园"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="/img/dls.webp"><link rel="apple-touch-icon" href="/img/dls.webp" sizes="180x180"><script>console.log(' %c Solitude %c ' + '3.0.21' + ' %c https://github.com/everfu/hexo-theme-solitude',
+    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
+</script><link rel="stylesheet" href="/live2d-widget/waifu.css"><link rel="stylesheet" href="https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css"><style>@font-face{font-family:'Courier Prime';font-style:normal;font-weight:400;src:url('https://blog.delishahk.com/fonts/courier-prime-latin-400-normal.woff2') format('woff2');}</style><meta name="referrer" content="no-referrer-when-downgrade"><script>(()=>{
+        const saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
+
+                if (!itemStr) {
+                    return undefined
+                }
+                const item = JSON.parse(itemStr)
+                const now = new Date()
+
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        };
+        window.utils = {
+            saveToLocal: saveToLocal,
+            getCSS: (url, id = false) => new Promise((resolve, reject) => {
+              const link = document.createElement('link')
+              link.rel = 'stylesheet'
+              link.href = url
+              if (id) link.id = id
+              link.onerror = reject
+              link.onload = link.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                link.onload = link.onreadystatechange = null
+                resolve()
+              }
+              document.head.appendChild(link)
+            }),
+            getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+              const script = document.createElement('script')
+              script.src = url
+              script.async = true
+              script.onerror = reject
+              script.onload = script.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                script.onload = script.onreadystatechange = null
+                resolve()
+              }
+
+              Object.keys(attr).forEach(key => {
+                script.setAttribute(key, attr[key])
+              })
+
+              document.head.appendChild(script)
+            }),
+            addGlobalFn: (key, fn, name = false, parent = window) => {
+                const globalFn = parent.globalFn || {}
+                const keyObj = globalFn[key] || {}
+
+                if (name && keyObj[name]) return
+
+                name = name || Object.keys(keyObj).length
+                keyObj[name] = fn
+                globalFn[key] = keyObj
+                parent.globalFn = globalFn
+            },
+            addEventListenerPjax: (ele, event, fn, option = false) => {
+              ele.addEventListener(event, fn, option)
+              utils.addGlobalFn('pjax', () => {
+                  ele.removeEventListener(event, fn, option)
+              })
+            },
+            diffDateFormat: (selector) => {
+                selector.forEach(item => {
+                    const date = new Date(item.getAttribute('datetime') || item.textContent);
+                    item.textContent = (date.getMonth() + 1).toString()+'/'+date.getDate().toString();
+                });
+            },
+        }
+    })()</script><!-- theme--><script>initTheme = () => {
+    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const cachedMode = utils.saveToLocal.get('theme');
+    if (cachedMode === undefined) {
+        const nowMode =
+            isDarkMode ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', nowMode);
+    } else {
+        document.documentElement.setAttribute('data-theme', cachedMode);
+    }
+    typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
+}
+initTheme()</script><script>const GLOBAL_CONFIG = {
+    root: '/',
+    algolia: undefined,
+    localsearch: undefined,
+    runtime: 'Thu Jan 22 2026 05:18:25 GMT+0800 (香港标准时间)',
+    lazyload: {
+        enable: true,
+        error: '/img/error_load.avif'
+    },
+    copyright: {"limit":50,"author":"作者: 挽着红月缓缓走","link":"链接: ","source":"来源: 圣芙蕾雅学园","info":"著作权归作者所有。 商业转载请联系作者获得授权，非商业转载请注明出处。"},
+    highlight: {"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},
+    randomlink: false,
+    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可"},
+    aside: {
+        state: {
+            morning: "✨ 早上好，新的一天开始了舰长",
+            noon: "🍲 记得吃午餐哦，舰长",
+            afternoon: "🌞 下午好呀，舰长",
+            night: "早点休息哦，舰长",
+            goodnight: "晚安啦舰长 😴",
+        },
+        witty_words: [],
+        witty_comment: {
+            prefix: '好久不见，',
+            back: '欢迎再次回来，',
+        },
+    },
+    covercolor: {
+        enable: false
+    },
+    comment: false,
+    lightbox: 'null',
+    right_menu: false,
+    translate: {"translateDelay":0,"defaultEncoding":2},
+    lure: {"jump":"欢迎再来哦","back":"ヾ(≧∇≦*)ゝ你回来啦"},
+    expire: false,
+};</script><script id="config-diff">var PAGE_CONFIG = {
+    is_post: true,
+    is_page: false,
+    is_home: false,
+    page: '',
+    toc: true,
+    comment: true,
+    ai_text: false,
+    color: false,
+}</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="圣芙蕾雅学园" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="圣芙蕾雅学园" type="application/rss+xml">
+</head><body id="body"><div><div id="loading-box" onclick="preloader.endLoading();" style="zoom:1"><div class="loading-bg"><img class="loading-img nolazyload" src="/img/dls.webp" alt="loading image"></div></div><script>const preloader = {
+    isLoaded: false,
+    endLoading: () => {
+        if (!preloader.isLoaded) {
+            document.getElementById('loading-box').classList.add('loaded');
+            preloader.isLoaded = true;
+            preloader.togglePaceDone();
+        }
+    },
+    initLoading: () => {
+        document.getElementById('loading-box').classList.remove('loaded');
+        preloader.isLoaded = false;
+        preloader.togglePaceDone();
+    },
+    togglePaceDone: () => {
+        document.getElementById('body').className = preloader.isLoaded ? 'pace-done' : '';
+    }
+}
+
+window.addEventListener('load', () => {
+    preloader.endLoading();
+});
+
+window.addEventListener('pjax:send', () => {
+    preloader.initLoading();
+});
+
+document.addEventListener('pjax:complete', () => {
+    preloader.endLoading();
+});
+
+setTimeout(() => {
+    preloader.endLoading();
+}, 5000);</script></div><div id="console"><div class="close-btn" onclick="sco.hideConsole()"><i class="solitude fas fa-xmark"></i></div><div class="console-card-group"><div class="console-card-group-right"><div class="console-card tags" onclick="sco.hideConsole()"><div class="card-content"><div class="author-content-item-tips">标签</div><div class="author-content-item-title">寻找感兴趣的领域</div></div><div class="card-tag-cloud"><a href="/tags/%E5%BE%B7%E4%B8%BD%E8%8E%8E/">-德丽莎<sup>1</sup></a><a href="/tags/%E5%BE%B7%E4%B8%BD%E8%8E%8E/">德丽莎<sup>5</sup></a><a href="/tags/%E5%B4%A9%E5%9D%8F%E4%B8%89/">崩坏三<sup>2</sup></a><a href="/tags/%E7%94%BB%E5%BB%8A/">画廊<sup>1</sup></a><a href="/tags/%E6%9B%B4%E6%96%B0/">更新<sup>1</sup></a><a href="/tags/%E7%BD%91%E7%BB%9C%E8%BF%90%E7%BB%B4/">网络运维<sup>1</sup></a><a href="/tags/%E5%B8%83%E6%B4%9B%E5%A6%AE%E5%A8%85/">布洛妮娅<sup>1</sup></a><a href="/tags/RDAP/">RDAP<sup>1</sup></a><a href="/tags/WHOIS/">WHOIS<sup>1</sup></a><a href="/tags/API/">API<sup>1</sup></a><a href="/tags/%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94/">角色扮演<sup>1</sup></a><a href="/tags/%E7%A7%91%E6%99%AE/">科普<sup>1</sup></a><a href="/tags/%E5%B4%A9%E5%9D%8F3/">崩坏3<sup>1</sup></a></div></div><div class="console-card history" onclick="sco.hideConsole()"><ul class="card-archive-list"><li class="item"><a href="/archives/2026/09/"><span class="date">2026/09</span><div class="count-group"><span class="count">2</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2026/08/"><span class="date">2026/08</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2026/05/"><span class="date">2026/05</span><div class="count-group"><span class="count">2</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2026/03/"><span class="date">2026/03</span><div class="count-group"><span class="count">2</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2026/01/"><span class="date">2026/01</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/"><span class="date">全部文章</span><div class="count-group"><span class="count">8</span><span class="unit">篇</span></div></a></li></ul></div></div></div><div class="button-group"><div class="console-btn-item"><span class="darkmode_switchbutton" onclick="sco.switchDarkMode()" title="昼夜切换"><i class="solitude fas fa-circle-half-stroke"></i></span></div><div class="console-btn-item" id="consoleHideAside"><span class="asideSwitch" onclick="sco.switchHideAside()" title="边栏显示控制"><i class="solitude fas fa-arrows-left-right-to-line"></i></span></div></div><div class="console-mask" onclick="sco.hideConsole()"></div></div><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude fas fa-circle-half-stroke"></i><span>显示模式</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文章</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友情链接</span></a></li><li><a class="site-page child" href="/link_status/"><span>友链状态与朋友圈</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>工具合集</span></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://whoiscx.delishahk.com/"><span>whois查询工具</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="solitude  fas fa-user"></i><span>关于</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>博客时光机</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/time/"><span>博客时光机</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>RSS订阅</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/rss/"><i class="solitude  fas fa-rss"></i><span>RSS</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="card-tag-cloud"><a href="/tags/%E5%BE%B7%E4%B8%BD%E8%8E%8E/">-德丽莎<sup>1</sup></a><a href="/tags/%E5%BE%B7%E4%B8%BD%E8%8E%8E/">德丽莎<sup>5</sup></a><a href="/tags/%E5%B4%A9%E5%9D%8F%E4%B8%89/">崩坏三<sup>2</sup></a><a href="/tags/%E7%94%BB%E5%BB%8A/">画廊<sup>1</sup></a><a href="/tags/%E6%9B%B4%E6%96%B0/">更新<sup>1</sup></a><a href="/tags/%E7%BD%91%E7%BB%9C%E8%BF%90%E7%BB%B4/">网络运维<sup>1</sup></a><a href="/tags/%E5%B8%83%E6%B4%9B%E5%A6%AE%E5%A8%85/">布洛妮娅<sup>1</sup></a><a href="/tags/RDAP/">RDAP<sup>1</sup></a><a href="/tags/WHOIS/">WHOIS<sup>1</sup></a><a href="/tags/API/">API<sup>1</sup></a><a href="/tags/%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94/">角色扮演<sup>1</sup></a><a href="/tags/%E7%A7%91%E6%99%AE/">科普<sup>1</sup></a><a href="/tags/%E5%B4%A9%E5%9D%8F3/">崩坏3<sup>1</sup></a></div></div><span class="sidebar-menu-item-title">网站信息</span><div class="webinfo"><div class="webinfo-item"><div class="item-name">全站字数 :</div><div class="item-count">6.7k</div></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><a href="/" title="返回博客主页" id="site-name"><span class="title">圣芙蕾雅学园</span><i class="solitude fas fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">布洛妮娅带你了解光猫背后的秘密</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文章</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友情链接</span></a></li><li><a class="site-page child" href="/link_status/"><span>友链状态与朋友圈</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>工具合集</span></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://whoiscx.delishahk.com/"><span>whois查询工具</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="solitude  fas fa-user"></i><span>关于</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>博客时光机</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/time/"><span>博客时光机</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>RSS订阅</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/rss/"><i class="solitude  fas fa-rss"></i><span>RSS</span></a></li></ul></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="nav-totop" onclick="sco.toTop()"><a class="totopbtn"><i class="solitude fas fa-arrow-up"></i><span id="percent">0</span></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fas fa-bars"></i></a></div></div></div></nav><div class="coverdiv" id="coverdiv"><img class="nolazyload" id="post-cover" src="https://blog.delishahk.com/img/bh3_001.webp" alt="布洛妮娅带你了解光猫背后的秘密"></div><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original" title="该文章为原创文章，注意版权协议">原创</a><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%BD%91%E7%BB%9C%E8%BF%90%E7%BB%B4/"><span class="tags-name tags-punctuation"><i class="solitude fas fa-hashtag"></i>网络运维</span></a><a class="post-meta__tags" href="/tags/%E5%B8%83%E6%B4%9B%E5%A6%AE%E5%A8%85/"><span class="tags-name tags-punctuation"><i class="solitude fas fa-hashtag"></i>布洛妮娅</span></a></div></div></div></div><h1 class="post-title">布洛妮娅带你了解光猫背后的秘密</h1><div id="post-meta"><div class="meta-secondline"><span class="post-meta-date" title="发布于 2026-09-08 21:29:41"><i class="post-meta-icon solitude fas fa-calendar-days"></i><time datetime="2026-09-08T13:29:41.000Z">2026-09-08T13:29:41.000Z</time></span><span class="post-meta-wordcount"><i class="post-meta-icon solitude fas fa-file-word" title="文章字数"></i><span class="word-count">2k</span><span class="post-meta-separator"></span></span></div></div></div><div class="post-radius-bottom"></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content article-container"><p>（以下内容为战术日志脱敏摘录，原档记录于天命数据库。技术细节适用于所有采用TR-069管理协议的GPON&#x2F;EPON光猫设备。）</p>
+<h3 id="战术日志：光猫桥接模式下的ITMS掉线与租期重置分析"><a href="#战术日志：光猫桥接模式下的ITMS掉线与租期重置分析" class="headerlink" title="战术日志：光猫桥接模式下的ITMS掉线与租期重置分析"></a>战术日志：光猫桥接模式下的ITMS掉线与租期重置分析</h3><p><strong>记录人</strong>：布洛妮娅·扎伊切克（天命对崩坏第二小队代理队长）<br><strong>故障发生时间</strong>：2026年9月8日 03:00<br><strong>报告提交时间</strong>：2026年9月8日 07:30</p>
+<hr>
+<h4 id="一、-故障发现与初步排查（物理层与数据链路层）"><a href="#一、-故障发现与初步排查（物理层与数据链路层）" class="headerlink" title="一、 故障发现与初步排查（物理层与数据链路层）"></a>一、 故障发现与初步排查（物理层与数据链路层）</h4><p>今日凌晨我[布洛妮娅]注意到网络出现异常，经排查确认为光猫桥接模式下管理进程被冻结所致，已于凌晨修复。现将完整分析与处理记录整理如下。</p>
+<p>首先检查路由器状态指示灯，地球图标亮起红灯，WAN口信息显示“拨号失败”。按标准流程执行“重启光猫与路由器”的基础战术动作后，故障依旧。</p>
+<p><strong>分析研判</strong>：<br>当时光猫的 <strong>PON灯（Passive Optical Network，无源光网络指示灯）</strong> 处于常亮状态。<br><em>技术点解析</em>：PON灯常亮，意味着光猫与运营商机房的OLT（光线路终端）之间的物理光纤链路完好，光信号收发正常。这排除了“外部光纤折断”或“局端断电”的可能性。结论明确：问题源于光猫的逻辑配置或上层协议交互。</p>
+<hr>
+<h4 id="二、-深入底层：接入管理平面与ITMS机制（网络层与管理层）"><a href="#二、-深入底层：接入管理平面与ITMS机制（网络层与管理层）" class="headerlink" title="二、 深入底层：接入管理平面与ITMS机制（网络层与管理层）"></a>二、 深入底层：接入管理平面与ITMS机制（网络层与管理层）</h4><p>为获取底层数据，我将终端的IP地址修改为与光猫同网段的静态地址（<code>192.168.1.x</code>）。<br><em>技术点解析</em>：光猫的管理IP通常为 <code>192.168.1.1</code>。在桥接模式下，路由器通过PPPoE拨号获取公网IP，终端与光猫管理接口不在同一广播域。修改静态IP可使管理终端与光猫处于同一广播域内，从而直接访问其Web管理后台。</p>
+<p>舰长，在继续之前，我先简要梳理三种常见的终端上网配置方式，这对理解后续操作至关重要：</p>
+<ul>
+<li><p><strong>静态IP（Static IP）</strong>：由网络管理员在终端上<strong>手动指定</strong>固定的IP地址、子网掩码、网关和DNS。这种方式适用于服务器或需要固定地址的设备，不会自动变化。我刚才将电脑IP改为 <code>192.168.1.100</code>，就属于静态配置——目的是让我的终端与光猫（<code>192.168.1.1</code>）处于同一网段，以便直接通信。</p>
+</li>
+<li><p><strong>DHCP（Dynamic Host Configuration Protocol，动态主机配置协议）</strong>：这是家庭网络中最常用的方式。终端开机后向网络中的DHCP服务器（通常是路由器或光猫）广播请求，服务器自动从地址池中分配一个可用IP，并附带子网掩码、网关、DNS等信息，租约到期后需续约。整个过程无需手动干预，即插即用。</p>
+</li>
+<li><p><strong>拨号上网（PPPoE，Point-to-Point Protocol over Ethernet）</strong>：这是运营商宽带接入的主流方式。终端（如路由器）通过PPPoE协议，使用运营商提供的<strong>用户名和密码</strong>向局端的BRAS（宽带远程接入服务器）发起认证请求，认证通过后获得一个<strong>公网IP地址</strong>，从而接入Internet。桥接模式下，正是由我的路由器执行这一拨号过程，而非光猫。</p>
+</li>
+</ul>
+<p><strong>三者关系小结</strong>：  </p>
+<ul>
+<li>静态IP和DHCP主要解决<strong>局域网内</strong>设备的地址分配问题；  </li>
+<li>PPPoE拨号则是<strong>从局域网通向广域网（Internet）</strong> 的认证与连接手段。<br>在本次排查中，我需要<strong>临时</strong>使用静态IP进入光猫后台，而路由器原本通过PPPoE拨号上网，光猫则通过DHCP从局端获取管理地址。正是桥接模式下光猫的DHCP租约和PPPoE会话同时失效，才导致了断网。</li>
+</ul>
+<p>进入后台后，筛除冗余干扰信息，锁定核心异常状态——系统日志明确显示 <strong>“ITMS未注册”</strong>。</p>
+<p><strong>技术要点</strong>：<br>舰长，记住这个关键节点。<strong>ITMS（Intelligent Terminal Management System，综合终端管理系统）</strong> 是运营商远程管理光猫的神经中枢。光猫内部运行基于 <strong>TR-069协议</strong> 的客户端进程，定期向ITMS服务器发送心跳包并同步配置。<br><em>技术点解析：数据面策略锁</em>。当光猫显示“ITMS未注册”时，意味着它与运营商管理服务器断连。为防范非法接入或配置篡改，运营商安全策略会在光猫脱管时触发本地的<strong>数据面策略锁（Data Plane Policy Lock）</strong>。这相当于在系统内核中下发一条最高优先级的ACL（访问控制列表），直接丢弃所有目标为Internet方向的数据帧。这正是路由器拨号失败且无法上网的根本原因。</p>
+<hr>
+<h4 id="三、-战术执行：模式切换与状态刷新"><a href="#三、-战术执行：模式切换与状态刷新" class="headerlink" title="三、 战术执行：模式切换与状态刷新"></a>三、 战术执行：模式切换与状态刷新</h4><p>找到病灶后，解决步骤简洁明了。我的战术指令如下：  </p>
+<ol>
+<li><strong>切换模式</strong>：在光猫后台，将网络连接模式从“桥接（Bridge）”切换为“路由（Route）”。  </li>
+<li><strong>等待握手</strong>：等待光猫路由模块重启，与局端OLT重新建立通信，获取新的ITMS配置及DHCP地址租约。  </li>
+<li><strong>恢复桥接</strong>：将模式重新改回“桥接”，由路由器重新发起PPPoE拨号。</li>
+</ol>
+<p><strong>注意</strong>：执行模式切换前，务必对当前各配置页进行截图备份。保留原始参数是优秀指挥官的基础素养，不要做无谓的冒险。</p>
+<hr>
+<h4 id="四、-原理总结：系统调度、进程冷冻与心跳丢失"><a href="#四、-原理总结：系统调度、进程冷冻与心跳丢失" class="headerlink" title="四、 原理总结：系统调度、进程冷冻与心跳丢失"></a>四、 原理总结：系统调度、进程冷冻与心跳丢失</h4><p>舰长可能会疑惑，为何仅是“路由改回桥接”就能排除故障？这并非玄学，而是底层系统调度策略的必然结果。</p>
+<p><strong>深度原理解析</strong>：  </p>
+<ol>
+<li><strong>桥接模式下的“进程冷冻”</strong>：<br>桥接模式下，光猫仅负责二层数据透明传输，CPU负载极低。为优化功耗，光猫内置的Linux系统调度器（如CPUFreq或CFS）会将低优先级的后台管理进程（包括TR-069心跳进程）挂起或大幅降低其调度频率。这导致ITMS心跳包发送超时，服务器端判定光猫离线并注销会话。  </li>
+<li><strong>OLT会话与DHCP租约的同步失效</strong>：<br>心跳丢失不仅导致ITMS未注册，更引发连锁反应——局端OLT会话因超时断开；同时光猫侧DHCP租约到期，因管理进程被“冷冻”，无法及时向服务器发起续约请求，导致地址租约失效。  </li>
+<li><strong>路由模式的“强制唤醒”与状态重置</strong>：<br>切换至路由模式后，光猫需承担NAT、DHCP Server、路由表计算等三层网络功能。CPU负载瞬间提升，系统调度器被迫“唤醒”所有被冷冻的后台进程。此时TR-069进程重新向ITMS服务器发起注册，获取全新配置参数与地址租约。  </li>
+<li><strong>规避故障窗口</strong>：<br>再次切回桥接模式时，因ITMS刚刚完成注册，且DHCP租约已被刷新至最新状态，光猫保留了有效租约状态，从而完美规避了之前因“进程冷冻”导致的故障窗口。</li>
+</ol>
+<hr>
+<p>网络已完全恢复，路由器指示灯转为正常状态。<br>此次故障根因在于桥接模式下管理进程被调度器挂起，导致ITMS心跳丢失与租约过期。下次若遇同类问题，建议优先检查光猫管理后台的ITMS注册状态。</p>
+<p>日志归档完毕。重装小兔，关闭诊断模块，休眠。</p>
+<p>早安，舰长。本次故障报告至此结束。</p>
+</article><div class="post-copyright"><div class="post-copyright__author_group"><div class="post-copyright__author_img"><img class="post-copyright__author_img_front" src= "" data-lazy-src="/img/dls.webp"></div><div class="post-copyright__author_name">挽着红月缓缓走</div><div class="post-copyright__author_desc">圣芙蕾雅学园</div></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div id="quit-box" onclick="RemoveRewardMask()"></div><div class="reward-link mode"><a class="reward-link-button" href="/rss2.xml"><i class="solitude fas fa-seedling"></i>订阅</a></div></div></div><div class="social-share"><a class="social-share-ico icon-qq" target="_blank" rel="noopener" href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fblog.delishahk.com%2FITMS%2F&amp;title=%E5%B8%83%E6%B4%9B%E5%A6%AE%E5%A8%85%E5%B8%A6%E4%BD%A0%E4%BA%86%E8%A7%A3%E5%85%89%E7%8C%AB%E8%83%8C%E5%90%8E%E7%9A%84%E7%A7%98%E5%AF%86&amp;desc=%E2%80%9CPON%E7%81%AF%E5%B8%B8%E4%BA%AE%EF%BC%8C%E4%BD%86%E7%BD%91%E6%96%AD%E4%BA%86%E3%80%82%E2%80%9D%E2%80%94%E2%80%94%E4%B8%80%E4%BB%BD%E4%BB%8E%E5%A4%A9%E5%91%BD%E6%95%B0%E6%8D%AE%E5%BA%93%E8%84%B1%E6%95%8F%E6%B5%81%E5%87%BA%E7%9A%84%E6%88%98%E6%9C%AF%E6%97%A5%E5%BF%97%E3%80%82%E5%B8%83%E6%B4%9B%E5%A6%AE%E5%A8%85%E4%BB%A5%E6%8C%87%E6%8C%A5%E5%AE%98%E8%A7%86%E8%A7%92%E5%AE%8C%E6%95%B4%E5%A4%8D%E7%9B%98%E5%85%89%E7%8C%AB%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E7%A6%BB%E5%A5%87%E6%96%AD%E7%BD%91%E4%BA%8B%E4%BB%B6%EF%BC%9A%E4%B8%8D%E6%98%AF%E5%85%89%E7%BA%A4%E6%96%AD%E4%BA%86%EF%BC%8C%E4%B8%8D%E6%98%AF%E8%B7%AF%E7%94%B1%E5%99%A8%E6%8C%82%E4%BA%86%EF%BC%8C%E8%80%8C%E6%98%AF%E7%AE%A1%E7%90%86%E8%BF%9B%E7%A8%8B%E8%A2%AB%E7%B3%BB%E7%BB%9F%E8%B0%83%E5%BA%A6%E5%99%A8%E2%80%9C%E5%86%BB%E2%80%9D%E4%BD%8F%E4%BA%86%E3%80%82%E7%9C%8B%E5%AE%8C%E8%BF%99%E7%AF%87%EF%BC%8C%E4%BD%A0%E4%B9%9F%E8%83%BD%E8%87%AA%E5%B7%B1%E4%BF%AE%E5%A5%BD%E5%90%8C%E7%B1%BB%E6%95%85%E9%9A%9C%E3%80%82&amp;summary=%E2%80%9CPON%E7%81%AF%E5%B8%B8%E4%BA%AE%EF%BC%8C%E4%BD%86%E7%BD%91%E6%96%AD%E4%BA%86%E3%80%82%E2%80%9D%E2%80%94%E2%80%94%E4%B8%80%E4%BB%BD%E4%BB%8E%E5%A4%A9%E5%91%BD%E6%95%B0%E6%8D%AE%E5%BA%93%E8%84%B1%E6%95%8F%E6%B5%81%E5%87%BA%E7%9A%84%E6%88%98%E6%9C%AF%E6%97%A5%E5%BF%97%E3%80%82%E5%B8%83%E6%B4%9B%E5%A6%AE%E5%A8%85%E4%BB%A5%E6%8C%87%E6%8C%A5%E5%AE%98%E8%A7%86%E8%A7%92%E5%AE%8C%E6%95%B4%E5%A4%8D%E7%9B%98%E5%85%89%E7%8C%AB%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E7%A6%BB%E5%A5%87%E6%96%AD%E7%BD%91%E4%BA%8B%E4%BB%B6%EF%BC%9A%E4%B8%8D%E6%98%AF%E5%85%89%E7%BA%A4%E6%96%AD%E4%BA%86%EF%BC%8C%E4%B8%8D%E6%98%AF%E8%B7%AF%E7%94%B1%E5%99%A8%E6%8C%82%E4%BA%86%EF%BC%8C%E8%80%8C%E6%98%AF%E7%AE%A1%E7%90%86%E8%BF%9B%E7%A8%8B%E8%A2%AB%E7%B3%BB%E7%BB%9F%E8%B0%83%E5%BA%A6%E5%99%A8%E2%80%9C%E5%86%BB%E2%80%9D%E4%BD%8F%E4%BA%86%E3%80%82%E7%9C%8B%E5%AE%8C%E8%BF%99%E7%AF%87%EF%BC%8C%E4%BD%A0%E4%B9%9F%E8%83%BD%E8%87%AA%E5%B7%B1%E4%BF%AE%E5%A5%BD%E5%90%8C%E7%B1%BB%E6%95%85%E9%9A%9C%E3%80%82&amp;site=%E5%B8%83%E6%B4%9B%E5%A6%AE%E5%A8%85%E5%B8%A6%E4%BD%A0%E4%BA%86%E8%A7%A3%E5%85%89%E7%8C%AB%E8%83%8C%E5%90%8E%E7%9A%84%E7%A7%98%E5%AF%86&amp;pics=https%3A%2F%2Fblog.delishahk.com%2Fimg%2Fbh3_001.webp" title="分享到QQ"><i class="solitude fab fa-qq"></i></a><a class="social-share-ico icon-weibo" target="_blank" rel="noopener" href="http://service.weibo.com/share/share.php?url=https%3A%2F%2Fblog.delishahk.com%2FITMS%2F&amp;title=%E5%B8%83%E6%B4%9B%E5%A6%AE%E5%A8%85%E5%B8%A6%E4%BD%A0%E4%BA%86%E8%A7%A3%E5%85%89%E7%8C%AB%E8%83%8C%E5%90%8E%E7%9A%84%E7%A7%98%E5%AF%86&amp;pic=https%3A%2F%2Fblog.delishahk.com%2Fimg%2Fbh3_001.webp" title="分享到微博"><i class="solitude fab fa-weibo"></i></a><a class="social-share-ico icon-whatsapp" target="_blank" rel="noopener" href="https://api.whatsapp.com/send?text=%E5%B8%83%E6%B4%9B%E5%A6%AE%E5%A8%85%E5%B8%A6%E4%BD%A0%E4%BA%86%E8%A7%A3%E5%85%89%E7%8C%AB%E8%83%8C%E5%90%8E%E7%9A%84%E7%A7%98%E5%AF%86 https%3A%2F%2Fblog.delishahk.com%2FITMS%2F" title="分享到WhatsApp"><i class="solitude fab fa-whatsapp"></i></a></div><div class="post-copyright__notice"><span class="post-copyright-info">本文是原创文章，采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">CC BY-NC-SA 4.0</a>协议，完整转载请注明来自<a href="/">圣芙蕾雅学园</a></span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%BD%91%E7%BB%9C%E8%BF%90%E7%BB%B4/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>网络运维<span class="tagsPageCount">1</span></span></a><a class="post-meta__tags" href="/tags/%E5%B8%83%E6%B4%9B%E5%A6%AE%E5%A8%85/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>布洛妮娅<span class="tagsPageCount">1</span></span></a></div></div></div><nav class="needEndHide pagination-post" id="pagination"><div class="next-post pull-full"><a href="/rdap/"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">用崩坏三双人对话，带你轻松搞懂 RDAP 与我的免费域名查询 API</div></div></a></div></nav><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="solitude fas fa-comment"></i><span> 评论</span></div></div><div class="comment-wrap"><div id="twikoo-wrap"></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><div class="top-group"><div class="sayhi" id="sayhi" onclick="sco.changeWittyWord()"></div></div></div><div class="avatar"><img alt="头像" src= "" data-lazy-src="/img/dls.webp"></div><div class="description"></div><div class="bottom-group"><span class="left"><div class="name">挽着红月缓缓走</div><div class="desc">终会相聚，与你同在</div></span><div class="social-icons is-center"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="solitude fas fa-bars"></i><span>文章目录</span></div><div class="toc-content" id="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%98%E6%9C%AF%E6%97%A5%E5%BF%97%EF%BC%9A%E5%85%89%E7%8C%AB%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84ITMS%E6%8E%89%E7%BA%BF%E4%B8%8E%E7%A7%9F%E6%9C%9F%E9%87%8D%E7%BD%AE%E5%88%86%E6%9E%90"><span class="toc-text">战术日志：光猫桥接模式下的ITMS掉线与租期重置分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81-%E6%95%85%E9%9A%9C%E5%8F%91%E7%8E%B0%E4%B8%8E%E5%88%9D%E6%AD%A5%E6%8E%92%E6%9F%A5%EF%BC%88%E7%89%A9%E7%90%86%E5%B1%82%E4%B8%8E%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%EF%BC%89"><span class="toc-text">一、 故障发现与初步排查（物理层与数据链路层）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E3%80%81-%E6%B7%B1%E5%85%A5%E5%BA%95%E5%B1%82%EF%BC%9A%E6%8E%A5%E5%85%A5%E7%AE%A1%E7%90%86%E5%B9%B3%E9%9D%A2%E4%B8%8EITMS%E6%9C%BA%E5%88%B6%EF%BC%88%E7%BD%91%E7%BB%9C%E5%B1%82%E4%B8%8E%E7%AE%A1%E7%90%86%E5%B1%82%EF%BC%89"><span class="toc-text">二、 深入底层：接入管理平面与ITMS机制（网络层与管理层）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E3%80%81-%E6%88%98%E6%9C%AF%E6%89%A7%E8%A1%8C%EF%BC%9A%E6%A8%A1%E5%BC%8F%E5%88%87%E6%8D%A2%E4%B8%8E%E7%8A%B6%E6%80%81%E5%88%B7%E6%96%B0"><span class="toc-text">三、 战术执行：模式切换与状态刷新</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E3%80%81-%E5%8E%9F%E7%90%86%E6%80%BB%E7%BB%93%EF%BC%9A%E7%B3%BB%E7%BB%9F%E8%B0%83%E5%BA%A6%E3%80%81%E8%BF%9B%E7%A8%8B%E5%86%B7%E5%86%BB%E4%B8%8E%E5%BF%83%E8%B7%B3%E4%B8%A2%E5%A4%B1"><span class="toc-text">四、 原理总结：系统调度、进程冷冻与心跳丢失</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude fas fa-map"></i><span>最近发布</span></div><div class="aside-list"><a class="aside-list-item" href="/ITMS/" title="布洛妮娅带你了解光猫背后的秘密"><div class="thumbnail"><img alt="布洛妮娅带你了解光猫背后的秘密" src= "" data-lazy-src="https://blog.delishahk.com/img/bh3_001.webp"></div><div class="content"><span class="title" href="/ITMS/" title="布洛妮娅带你了解光猫背后的秘密">布洛妮娅带你了解光猫背后的秘密</span></div></a><a class="aside-list-item" href="/rdap/" title="用崩坏三双人对话，带你轻松搞懂 RDAP 与我的免费域名查询 API"><div class="thumbnail"><img alt="用崩坏三双人对话，带你轻松搞懂 RDAP 与我的免费域名查询 API" src= "" data-lazy-src="https://blog.delishahk.com/img/qyn079.webp"></div><div class="content"><span class="title" href="/rdap/" title="用崩坏三双人对话，带你轻松搞懂 RDAP 与我的免费域名查询 API">用崩坏三双人对话，带你轻松搞懂 RDAP 与我的免费域名查询 API</span></div></a><a class="aside-list-item" href="/000004/" title="德丽莎是谁？一份给纯路人的圣芙蕾雅入坑指南"><div class="thumbnail"><img alt="德丽莎是谁？一份给纯路人的圣芙蕾雅入坑指南" src= "" data-lazy-src="https://blog.delishahk.com/img/qyn079.webp"></div><div class="content"><span class="title" href="/000004/" title="德丽莎是谁？一份给纯路人的圣芙蕾雅入坑指南">德丽莎是谁？一份给纯路人的圣芙蕾雅入坑指南</span></div></a><a class="aside-list-item" href="/00000003/" title="德丽莎画廊重磅更新！"><div class="thumbnail"><img alt="德丽莎画廊重磅更新！" src= "" data-lazy-src="/img/dls(57).webp"></div><div class="content"><span class="title" href="/00000003/" title="德丽莎画廊重磅更新！">德丽莎画廊重磅更新！</span></div></a><a class="aside-list-item" href="/000000006/" title="德丽莎 · 天命学园长画廊"><div class="thumbnail"><img alt="德丽莎 · 天命学园长画廊" src= "" data-lazy-src="/img/dls(5).webp"></div><div class="content"><span class="title" href="/000000006/" title="德丽莎 · 天命学园长画廊">德丽莎 · 天命学园长画廊</span></div></a></div></div></div></div></main><footer id="footer"><div id="st-footer"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2026 By<a class="footer-bar-link" href="/" title="挽着红月缓缓走">挽着红月缓缓走</a></div><div class="beian-group"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://hexo.io/" title="框架：Hexo">框架：Hexo</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude" title="主题：Solitude">主题：Solitude</a></div></div><div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/yuexia-delisha" title="">挽着红月缓缓走</a><a class="footer-bar-link" href="/about/" title="">如果觉得文章对你有帮助</a><a class="footer-bar-link" href="/about/" title="">可以分享文章或者赞赏支持一下哦</a></div></div></div></div><div class="comment-barrage needEndHide"></div></footer></div><div><!-- Critical scripts loaded synchronously--><script src="/js/utils.js?v=3.0.21"></script><script src="/js/main.js?v=3.0.21"></script><!-- Non-critical scripts loaded asynchronously--><script async src="/js/third_party/waterfall.min.js?v=3.0.21"></script><script src="https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/pjax/0.2.8/pjax.min.js"></script><!-- Feature-specific scripts loaded asynchronously--><script defer src="/js/tw_cn.js?v=3.0.21"></script><!-- UI enhancement scripts--><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><script defer src="https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/node-snackbar/0.1.16/snackbar.min.js"></script><!-- Music player scripts--><!-- Cover color processing scripts--><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+utils.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+</script><script src="https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/pace/1.2.4/pace.min.js"></script><!-- Search functionality--><!-- Right menu functionality--><script src="/live2d-widget/autoload.js"></script><div class="js-pjax"><script>(() => {
+    const getCount = () => {
+        const ele = document.querySelectorAll('.twikoo-count')
+        if (!ele) return
+        twikoo.getCommentsCount({
+            envId: 'https://rinaidelisha.netlify.app/.netlify/functions/twikoo',
+            region: '',
+            urls: [window.location.pathname],
+            includeReply: false
+        }).then(res => {
+            ele.forEach(item => item.textContent = res[0].count)
+        }).catch(err => {
+            console.error(err)
+        })
+    }
+    const init = () => {
+        twikoo.init(Object.assign({
+            el: '#twikoo-wrap',
+            envId: 'https://rinaidelisha.netlify.app/.netlify/functions/twikoo',
+            region: '',
+            path: window.location.pathname,
+            onCommentLoaded: () => {
+                GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+            }
+        }, null))
+
+        
+        sco.owoBig({
+            body: '.OwO-body',
+            item: '.OwO-items li'
+        })
+
+        false && barrageTwikoo()
+    }
+
+    const loadTwikoo = () => {
+        if (typeof twikoo === 'object') setTimeout(init,0)
+        else utils.getScript('https://unpkg.com/twikoo@1.7.12/dist/twikoo.all.min.js').then(init)
+    }
+
+    if ('Twikoo' === 'Twikoo' || true) {
+        if (true) utils.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+        else loadTwikoo()
+    } else {
+        window.loadTwoComment = loadTwikoo
+    }
+})()
+</script></div></div><!-- pjax--><script>let pjax = null;
+
+function initPjax() {
+    if (typeof Pjax === 'undefined') {
+        console.warn('Pjax is not loaded yet, retrying...');
+        setTimeout(initPjax, 100);
+        return;
+    }
+
+    pjax = new Pjax({
+        elements: 'a:not([target="_blank"])',
+        selectors: ["title","#body-wrap","#site-config","meta[name=\"description\"]",".js-pjax","meta[property^=\"og:\"]","#config-diff",".rs_show",".rs_hide"],
+        cacheBust: false,
+        analytics: false,
+        scrollRestoration: false
+    })
+
+    // 将 pjax 实例挂载到全局
+    window.pjax = pjax;
+
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+        const newScript = document.createElement('script')
+        const content = item.text || item.textContent || item.innerHTML || ""
+        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+        newScript.appendChild(document.createTextNode(content))
+        item.parentNode.replaceChild(newScript, item)
+    })
+
+    document.addEventListener('pjax:complete', () => {
+        window.refreshFn()
+
+        document.querySelectorAll('script[data-pjax]').forEach(item => {
+            const newScript = document.createElement('script')
+            const content = item.text || item.textContent || item.innerHTML || ""
+            Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+            newScript.appendChild(document.createTextNode(content))
+            item.parentNode.replaceChild(newScript, item)
+        })
+
+        GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+    })
+
+    document.addEventListener('pjax:error', (e) => {
+        if (e.request.status === 404) {
+            pjax.loadUrl('/404.html')
+        }
+    })
+}
+
+// 初始化 Pjax
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPjax);
+} else {
+    initPjax();
+}</script><!-- google adsense--></body></html>
+        <script>
+            const posts = ["ITMS/","rdap/","000004/","00000003/","000000006/","000000012/","00000000002/","0000001/"];
+            function toRandomPost() {
+                const randomPost = posts[Math.floor(Math.random() * posts.length)];
+                pjax.loadUrl(GLOBAL_CONFIG.root + randomPost);
+            }
+        </script>

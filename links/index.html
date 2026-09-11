@@ -64,6 +64,7 @@
             border-radius: 8px;
             padding: 1.25rem;
             word-break: normal;
+            overflow-wrap: anywhere;
         }
         #link-page-scoped .lp-card h2 {
             font-size: 1.1rem;
@@ -76,6 +77,8 @@
             font-size: 0.88rem;
             margin-bottom: 0.6rem;
             line-height: 1.65;
+            word-break: break-word;
+            overflow-wrap: anywhere;
         }
         #link-page-scoped .lp-code-block {
             background: #f3f4f6;
@@ -87,6 +90,7 @@
             color: #374151;
             overflow-x: auto;
             white-space: pre;
+            word-break: break-word;
         }
         #link-page-scoped .lp-disclaimer-list { list-style: none; counter-reset: lp-disc; }
         #link-page-scoped .lp-disclaimer-list li {
@@ -96,6 +100,8 @@
             font-size: 0.83rem;
             color: #4b5563;
             line-height: 1.6;
+            word-break: break-word;
+            overflow-wrap: anywhere;
         }
         #link-page-scoped .lp-disclaimer-list li::before {
             content: counter(lp-disc);
@@ -725,6 +731,14 @@
             #link-page-scoped .lp-topbar { top: 0.6rem; right: 0.6rem; }
             #link-page-scoped .lp-site-header { margin-bottom: 1.5rem; }
             #link-page-scoped .lp-info-section { margin-bottom: 2rem; }
+            #link-page-scoped .lp-card { padding: 1rem; }
+            #link-page-scoped .lp-card p,
+            #link-page-scoped .lp-card a,
+            #link-page-scoped .lp-disclaimer-list li,
+            #link-page-scoped .lp-code-block {
+                word-break: break-word;
+                overflow-wrap: anywhere;
+            }
             #link-page-scoped .lp-friend-card { height: 260px; }
         }
     </style>

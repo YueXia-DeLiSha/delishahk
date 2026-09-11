@@ -262,27 +262,6 @@
   </url>
   
   <url>
-    <loc>https://blog.delishahk.com/tags/%E5%B4%A9%E5%9D%8F3/</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.delishahk.com/tags/%E7%BD%91%E7%BB%9C%E8%BF%90%E7%BB%B4/</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.delishahk.com/tags/%E5%B8%83%E6%B4%9B%E5%A6%AE%E5%A8%85/</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.delishahk.com/tags/RDAP/</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -312,6 +291,27 @@
   
   <url>
     <loc>https://blog.delishahk.com/tags/%E7%A7%91%E6%99%AE/</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.delishahk.com/tags/%E7%BD%91%E7%BB%9C%E8%BF%90%E7%BB%B4/</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.delishahk.com/tags/%E5%B8%83%E6%B4%9B%E5%A6%AE%E5%A8%85/</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.delishahk.com/tags/%E5%B4%A9%E5%9D%8F3/</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

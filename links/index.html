@@ -16,12 +16,10 @@
             color: #1a1a1a;
             line-height: 1.6;
             background-color: var(--lp-root-bg, #ffffff);
-            width: 100vw;
+            width: 100%;
+            max-width: 100%;
             position: relative;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
+            margin: 0;
             padding: 2rem 1rem 3rem;
             overflow-x: hidden;
             transition: background-color 0.3s ease;
@@ -723,6 +721,7 @@
 
         /* Mobile responsive */
         @media (max-width: 480px) {
+            #link-page-scoped { padding-left: 0.75rem; padding-right: 0.75rem; }
             #link-page-scoped .lp-topbar { top: 0.6rem; right: 0.6rem; }
             #link-page-scoped .lp-site-header { margin-bottom: 1.5rem; }
             #link-page-scoped .lp-info-section { margin-bottom: 2rem; }

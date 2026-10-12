@@ -1,0 +1,24 @@
+/* 增强 Live2D 显示效果 */
+#live2d-canvas {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* 调整消息框位置 */
+.live2d-tips {
+  bottom: 150px !important;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  #live2d-widget {
+    right: 0 !important;
+    transform: scale(0.8) !important;
+    transform-origin: right bottom !important;
+  }
+  
+  .live2d-tips {
+    font-size: 12px !important;
+    max-width: 80% !important;
+  }
+}

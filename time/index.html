@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客时光机</title>
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="icon" type="image/webp" href="https://delishahk.com/img/dls.webp">
+    <script defer src="https://main.delishahk.com/assets/main.js" data-website-id="a31974de-1e20-499a-956e-ecf28537bb8f" data-host-url="https://main.delishahk.com"></script>
+    <link rel="stylesheet" href="https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css">
+</head>
+<body>
+
+<div id="event-log-scoped" data-theme="light">
+<style>
+/* ===== Scoped Reset ===== */
+#event-log-scoped {
+    font-family: 'LXGW WenKai Screen', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif !important;
+    color: #1a1a1a;
+    line-height: 1.6;
+    background: transparent;
+    width: 100vw !important;
+    position: relative;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    padding: 2rem 1rem 4rem;
+    overflow-x: hidden;
+}
+#event-log-scoped * { box-sizing: border-box; margin: 0; padding: 0; }
+#event-log-scoped a { color: inherit; text-decoration: none; }
+#event-log-scoped img { display: block; max-width: 100%; }
+
+/* ---- Topbar (fixed top-right) ---- */
+#event-log-scoped .el-topbar {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: var(--el-bg, #fff);
+    border: 1px solid #e5e7eb;
+    border-radius: 999px;
+    padding: 0.3rem 0.35rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+#event-log-scoped .el-topbar-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.28rem 0.85rem 0.28rem 0.3rem;
+    border-radius: 999px;
+    background: #f3f4f6;
+    color: #111;
+    font-size: 0.83rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+#event-log-scoped .el-topbar-home:hover { background: #e5e7eb; }
+#event-log-scoped .el-topbar-avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+#event-log-scoped .el-theme-btn {
+    width: 32px; height: 32px;
+    border: none; border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    color: #374151;
+    transition: background 0.2s ease;
+}
+#event-log-scoped .el-theme-btn:hover { background: #f3f4f6; }
+#event-log-scoped .el-icon-sun { display: none; }
+#event-log-scoped .el-icon-sun, #event-log-scoped .el-icon-moon {
+    width: 16px; height: 16px;
+    display: block;
+}
+
+/* ---- Header ---- */
+#event-log-scoped .el-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding-top: 1.5rem;
+}
+#event-log-scoped .el-header h1 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 700;
+    color: #111;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.4rem;
+}
+#event-log-scoped .el-header p {
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+/* ---- Timeline Entry ---- */
+#event-log-scoped .el-timeline {
+    max-width: 680px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 2rem;
+}
+#event-log-scoped .el-timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e5e7eb;
+}
+#event-log-scoped .el-entry {
+    position: relative;
+    margin-bottom: 2.5rem;
+    animation: elFadeIn 0.4s ease both;
+}
+@keyframes elFadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+/* Dot on timeline */
+#event-log-scoped .el-entry::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 8px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid #3b82f6;
+    z-index: 1;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+#event-log-scoped .el-entry:hover::before {
+    background: #3b82f6;
+    transform: scale(1.15);
+}
+
+/* ---- Date + Title Row ---- */
+#event-log-scoped .el-date-title {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.6rem;
+}
+#event-log-scoped .el-date {
+    color: #3b82f6;
+    font-size: 0.88rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+#event-log-scoped .el-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.4;
+}
+
+/* ---- Content Card ---- */
+#event-log-scoped .el-content-card {
+    background: var(--el-bg, #fff);
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    font-size: 0.92rem;
+    color: #374151;
+    line-height: 1.75;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+#event-log-scoped .el-content-card:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+#event-log-scoped .el-content-card p { margin-bottom: 0.5rem; }
+#event-log-scoped .el-content-card p:last-child { margin-bottom: 0; }
+#event-log-scoped .el-content-card ul,
+#event-log-scoped .el-content-card ol {
+    padding-left: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+#event-log-scoped .el-content-card li { margin-bottom: 0.25rem; }
+#event-log-scoped .el-content-card code {
+    background: #f3f4f6;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.85em;
+}
+#event-log-scoped .el-content-card a {
+    color: #3b82f6;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+#event-log-scoped .el-content-card a:hover { color: #1d4ed8; }
+#event-log-scoped .el-content-card blockquote {
+    border-left: 3px solid #e5e7eb;
+    padding-left: 0.8rem;
+    color: #6b7280;
+    margin: 0.5rem 0;
+}
+
+/* ---- Empty State ---- */
+#event-log-scoped .el-empty {
+    text-align: center;
+    color: #9ca3af;
+    font-size: 0.95rem;
+    padding: 3rem 0;
+}
+
+/* ---- Footer ---- */
+#event-log-scoped footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+    font-size: 0.82rem;
+    color: #9ca3af;
+}
+
+/* ===== Dark Mode ===== */
+#event-log-scoped[data-theme="dark"] {
+    --el-bg: #1a1a1a;
+    color: #d1d5db;
+}
+#event-log-scoped[data-theme="dark"] .el-header h1,
+#event-log-scoped[data-theme="dark"] .el-title {
+    color: #f3f4f6 !important;
+}
+#event-log-scoped[data-theme="dark"] .el-header p { color: #9ca3af !important; }
+#event-log-scoped[data-theme="dark"] .el-content-card {
+    background: var(--el-bg, #1a1a1a);
+    border-color: #333;
+    color: #a1a1aa;
+}
+#event-log-scoped[data-theme="dark"] .el-content-card:hover {
+    border-color: #4b5563;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+#event-log-scoped[data-theme="dark"] .el-timeline::before { background: #333; }
+#event-log-scoped[data-theme="dark"] .el-entry::before {
+    background: #1a1a1a;
+    border-color: #3b82f6;
+}
+#event-log-scoped[data-theme="dark"] .el-content-card code {
+    background: #2a2a2a;
+    color: #d1d5db;
+}
+#event-log-scoped[data-theme="dark"] .el-content-card blockquote {
+    border-left-color: #333;
+    color: #6b7280;
+}
+#event-log-scoped[data-theme="dark"] .el-topbar {
+    border-color: #333;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+#event-log-scoped[data-theme="dark"] .el-topbar-home {
+    background: #2a2a2a; color: #f3f4f6;
+}
+#event-log-scoped[data-theme="dark"] .el-topbar-home:hover { background: #333; }
+#event-log-scoped[data-theme="dark"] .el-theme-btn { color: #d1d5db; }
+#event-log-scoped[data-theme="dark"] .el-theme-btn:hover { background: #2a2a2a; }
+#event-log-scoped[data-theme="dark"] .el-icon-sun { display: block; }
+#event-log-scoped[data-theme="dark"] .el-icon-moon { display: none; }
+#event-log-scoped[data-theme="dark"] footer {
+    border-top-color: #333;
+    color: #6b7280;
+}
+
+@media (max-width: 480px) {
+    #event-log-scoped .el-topbar { top: 0.6rem; right: 0.6rem; }
+    #event-log-scoped .el-date-title { flex-direction: column; gap: 0.15rem; }
+}
+</style>
+
+<!-- Topbar -->
+<div class="el-topbar">
+    <a class="el-topbar-home" href="https://delishahk.com/" title="返回首页">
+        <img class="el-topbar-avatar" src="https://delishahk.com/img/dls.webp" alt="头像">
+        <span>返回首页</span>
+    </a>
+    <button class="el-theme-btn" id="el-theme-toggle" type="button" title="切换明暗主题">
+        <svg class="el-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="el-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+</div>
+
+<!-- Header -->
+<header class="el-header">
+    <h1>博客事件记录</h1>
+    <p>时光轴上的每一个注脚</p>
+</header>
+
+<!-- Timeline Container -->
+<div class="el-timeline" id="el-timeline"></div>
+
+<!-- Footer -->
+<footer>© <span id="el-year"></span> 博客事件记录</footer>
+
+<script>
+/* ====================================================
+   DATA CONFIG — 编辑此处即可管理事件
+   新条目 push 到数组最前方，自动按日期排序（新→旧）
+   ==================================================== */
+const EVENTS = [
+    {
+        date: '2026-09-28',
+        title: '新增功能',
+        content: `新增搜索功能，增强各位的访问体验！`
+    },
+    {
+        date: '2026-09-15',
+        title: '删除画廊',
+        content: `很抱歉，由于访问量不佳导致圣芙蕾雅博客经过讨论决定，删除德丽莎画廊`
+    },
+    {
+        date: '2026-09-11',
+        title: '更新概要',
+        content: `在博客页面底部新增一个详细的博客建立时间戳精细到分钟`
+    },
+    {
+        date: '2026-08-26',
+        title: '上线博客时光机页面',
+        content: `上线了博客时光机页面方便各位舰长了解本博客并改名为圣芙蕾雅学园`
+    },
+    {
+        date: '2026-01-22',
+        title: '发布第一篇技术文章',
+        content: `介绍了为什么搭建博客与介绍德丽莎`
+    },
+    {
+        date: '2026-01-21',
+        title: '博客正式上线 ',
+        content: `域名注册并一切从零开始，搭建了自己的博客站点。感谢所有工具和开源项目的贡献者。`
+    }
+];
+
+/* ====================================================
+   RENDER LOGIC — 一般无需修改
+   ==================================================== */
+(function () {
+    const root   = document.getElementById('event-log-scoped');
+    const tl     = document.getElementById('el-timeline');
+    const yearEl = document.getElementById('el-year');
+
+    // Year
+    yearEl.textContent = new Date().getFullYear();
+
+    // Sort by date descending (newest first), then render
+    function render() {
+        const sorted = [...EVENTS].sort((a, b) => b.date.localeCompare(a.date));
+        tl.innerHTML = '';
+
+        if (sorted.length === 0) {
+            tl.innerHTML = '<div class="el-empty">暂无事件记录</div>';
+            return;
+        }
+
+        sorted.forEach(function (ev, i) {
+            const card = document.createElement('article');
+            card.className = 'el-entry';
+            card.style.animationDelay = (i * 0.06) + 's';
+
+            const dateTitle = document.createElement('div');
+            dateTitle.className = 'el-date-title';
+
+            const dateSpan = document.createElement('span');
+            dateSpan.className = 'el-date';
+            dateSpan.textContent = ev.date;
+
+            const titleSpan = document.createElement('span');
+            titleSpan.className = 'el-title';
+            titleSpan.textContent = ev.title;
+
+            dateTitle.appendChild(dateSpan);
+            dateTitle.appendChild(titleSpan);
+
+            const contentCard = document.createElement('div');
+            contentCard.className = 'el-content-card';
+            contentCard.innerHTML = ev.content
+                .split('\n\n')
+                .map(function (block) {
+                    return block.trim() ? '<p>' + block.trim() + '</p>' : '';
+                })
+                .join('');
+
+            card.appendChild(dateTitle);
+            card.appendChild(contentCard);
+            tl.appendChild(card);
+        });
+    }
+
+    render();
+
+    /* ---------- Dark / Light Toggle ---------- */
+    var toggle = document.getElementById('el-theme-toggle');
+    if (!root || !toggle) return;
+
+    function applyTheme(theme) {
+        root.setAttribute('data-theme', theme);
+        try { localStorage.setItem('el-theme', theme); } catch(e){}
+    }
+
+    var saved = null;
+    try { saved = localStorage.getItem('el-theme'); } catch(e){}
+    if (!saved) {
+        saved = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    applyTheme(saved);
+
+    toggle.addEventListener('click', function () {
+        applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+
+    /* ---------- Home Link (relative path, no hardcoding) ---------- */
+})();
+</script>
+
+</div>
+<div style="text-align:right;padding:10px 20px 10px 0;background:var(--efu-bg);"><img src="https://svg.delishahk.com/?site=sfly" style="height:100px!important" loading="lazy" alt="访客计数"></div>
+</body>
+</html>

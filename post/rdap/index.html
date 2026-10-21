@@ -237,7 +237,7 @@ utils.addGlobalFn('pjaxSend', () => {
             dark: 'html[data-theme="dark"]',
             path: window.location.pathname,
             comment: false,
-            ...{"lang":"zh","dark":"auto","commentSorting":"latest","login":"disable","meta":["nick","mail","link"],"requiredMeta":["nick","mail"],"turnstileKey":"0x4AAAAAAFea763r6peTtAwu"}
+            ...{"lang":"zh","dark":"auto","commentSorting":"latest","login":"disable","meta":["nick","mail","link"],"requiredMeta":["nick","mail"],"turnstileKey":"0x4AAAAAAFea763r6peTtAwu","placeholder":"评论需要审核后才会显示，请耐心等待~"}
         }
         const walineInstance = initFn(walineOptions)
         utils.addGlobalFn('pjax', () => walineInstance.destroy(), 'destroyWaline')

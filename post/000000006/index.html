@@ -283,8 +283,8 @@ utils.addGlobalFn('pjaxSend', () => {
     async function loadWaline() {
         if (walineInitFunction) initWaline(walineInitFunction)
         else {
-            await utils.getCSS('/%5Bobject%20Object%5D')
-            const {init} = await import('/%5Bobject%20Object%5D')
+            await utils.getCSS('https://cdn.jsdmirror.com/npm/@waline/client@3.16.1/dist/waline.css')
+            const {init} = await import('https://cdn.jsdmirror.com/npm/@waline/client@3.16.1/dist/waline.js')
             walineInitFunction = init || Waline.init
             initWaline(walineInitFunction)
             window.walineFn = walineInitFunction

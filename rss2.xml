@@ -6,9 +6,16 @@
     <description>德丽莎·阿波卡利斯粉丝聚集地</description>
     <language>zh-CN</language>
     <copyright>All rights reserved 2026, 挽着红月缓缓走</copyright>
-    <lastBuildDate>Mon, 12 Oct 2026 13:48:48 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 10:59:13 GMT</lastBuildDate>
     <generator>Hexo</generator>
     <atom:link href="https://delishahk.com/rss2.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>test</title>
+      <link>https://delishahk.com/post/test/</link>
+      <author>挽着红月缓缓走</author>
+      <enclosure url="https://delishahk.com/w" type="application/octet-stream"/>
+      <pubDate>Fri, 23 Oct 2026 10:59:13 GMT</pubDate>
+    </item>
     <item>
       <title>布洛妮娅带你了解光猫背后的秘密-圣芙蕾雅学园</title>
       <link>https://delishahk.com/post/ITMS/</link>

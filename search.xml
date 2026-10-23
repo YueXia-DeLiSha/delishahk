@@ -205,9 +205,4 @@ OLT会话与DHCP租约的同步失效：心跳丢失不仅导致ITMS未注册，
         <tag>科普</tag>
       </tags>
   </entry>
-  <entry>
-    <title>test</title>
-    <url>/post/test/</url>
-    <content><![CDATA[]]></content>
-  </entry>
 </search>

@@ -10,7 +10,30 @@
   <rights>All rights reserved 2026, 挽着红月缓缓走</rights>
   <subtitle>德丽莎·阿波卡利斯粉丝聚集地</subtitle>
   <title>圣芙蕾雅学园</title>
-  <updated>2026-10-12T13:48:48.000Z</updated>
+  <updated>2026-10-25T14:52:40.022Z</updated>
+  <entry>
+    <author>
+      <name>挽着红月缓缓走</name>
+    </author>
+    <category term="崩坏三" scheme="https://delishahk.com/tags/%E5%B4%A9%E5%9D%8F%E4%B8%89/"/>
+    <category term="圣芙蕾雅" scheme="https://delishahk.com/tags/%E5%9C%A3%E8%8A%99%E8%95%BE%E9%9B%85/"/>
+    <category term="网站速度优化" scheme="https://delishahk.com/tags/%E7%BD%91%E7%AB%99%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96/"/>
+    <category term="CDN缓存" scheme="https://delishahk.com/tags/CDN%E7%BC%93%E5%AD%98/"/>
+    <category term="浏览器缓存" scheme="https://delishahk.com/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98/"/>
+    <category term="性能优化" scheme="https://delishahk.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    <category term="技术日常" scheme="https://delishahk.com/tags/%E6%8A%80%E6%9C%AF%E6%97%A5%E5%B8%B8/"/>
+    <content>
+      <![CDATA[<p><img src="https://delishahk.com/img/bh3rd(6).webp" alt="blog-speed-optimization" /></p>
+舰长发现圣芙蕾雅网站加载要2–4秒，于是在办公室给德丽莎讲起浏览器缓存与CDN缓存，并通过设置缓存策略、压缩图片把访问速度优化到0.6–1.6秒。用崩坏三日常对话讲清网站速度优化。]]>
+    </content>
+    <id>https://delishahk.com/post/blog-speed-optimization/</id>
+    <link href="https://delishahk.com/post/blog-speed-optimization/" rel="alternate"/>
+    <link href="https://delishahk.com/img/bh3rd(6).webp" rel="enclosure" type="image/webp"/>
+    <published>2026-10-24T14:25:41.000Z</published>
+    <summary>舰长发现圣芙蕾雅网站加载要2–4秒，于是在办公室给德丽莎讲起浏览器缓存与CDN缓存，并通过设置缓存策略、压缩图片把访问速度优化到0.6–1.6秒。用崩坏三日常对话讲清网站速度优化。</summary>
+    <title>blog-speed-optimization</title>
+    <updated>2026-10-25T14:52:40.022Z</updated>
+  </entry>
   <entry>
     <author>
       <name>挽着红月缓缓走</name>

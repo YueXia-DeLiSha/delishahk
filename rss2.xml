@@ -6,9 +6,28 @@
     <description>德丽莎·阿波卡利斯粉丝聚集地</description>
     <language>zh-CN</language>
     <copyright>All rights reserved 2026, 挽着红月缓缓走</copyright>
-    <lastBuildDate>Mon, 12 Oct 2026 13:48:48 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 14:52:40 GMT</lastBuildDate>
     <generator>Hexo</generator>
     <atom:link href="https://delishahk.com/rss2.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>blog-speed-optimization</title>
+      <link>https://delishahk.com/post/blog-speed-optimization/</link>
+      <description>舰长发现圣芙蕾雅网站加载要2–4秒，于是在办公室给德丽莎讲起浏览器缓存与CDN缓存，并通过设置缓存策略、压缩图片把访问速度优化到0.6–1.6秒。用崩坏三日常对话讲清网站速度优化。</description>
+      <author>挽着红月缓缓走</author>
+      <category domain="https://delishahk.com/tags/%E5%B4%A9%E5%9D%8F%E4%B8%89/">崩坏三</category>
+      <category domain="https://delishahk.com/tags/%E5%9C%A3%E8%8A%99%E8%95%BE%E9%9B%85/">圣芙蕾雅</category>
+      <category domain="https://delishahk.com/tags/%E7%BD%91%E7%AB%99%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96/">网站速度优化</category>
+      <category domain="https://delishahk.com/tags/CDN%E7%BC%93%E5%AD%98/">CDN缓存</category>
+      <category domain="https://delishahk.com/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98/">浏览器缓存</category>
+      <category domain="https://delishahk.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">性能优化</category>
+      <category domain="https://delishahk.com/tags/%E6%8A%80%E6%9C%AF%E6%97%A5%E5%B8%B8/">技术日常</category>
+      <enclosure url="https://delishahk.com/img/bh3rd(6).webp" type="image/webp"/>
+      <pubDate>Sat, 24 Oct 2026 14:25:41 GMT</pubDate>
+      <content:encoded>
+        <![CDATA[<p><img src="https://delishahk.com/img/bh3rd(6).webp" alt="blog-speed-optimization" /></p>
+舰长发现圣芙蕾雅网站加载要2–4秒，于是在办公室给德丽莎讲起浏览器缓存与CDN缓存，并通过设置缓存策略、压缩图片把访问速度优化到0.6–1.6秒。用崩坏三日常对话讲清网站速度优化。]]>
+      </content:encoded>
+    </item>
     <item>
       <title>布洛妮娅带你了解光猫背后的秘密-圣芙蕾雅学园</title>
       <link>https://delishahk.com/post/ITMS/</link>

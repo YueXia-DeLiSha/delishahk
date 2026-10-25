@@ -6,11 +6,11 @@
     <description>德丽莎·阿波卡利斯粉丝聚集地</description>
     <language>zh-CN</language>
     <copyright>All rights reserved 2026, 挽着红月缓缓走</copyright>
-    <lastBuildDate>Sun, 25 Oct 2026 14:52:40 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 15:08:40 GMT</lastBuildDate>
     <generator>Hexo</generator>
     <atom:link href="https://delishahk.com/rss2.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>blog-speed-optimization</title>
+      <title>网站加载从2–4秒降到0.6–1.6秒：浏览器缓存与CDN缓存优化记录-圣芙蕾雅</title>
       <link>https://delishahk.com/post/blog-speed-optimization/</link>
       <description>舰长发现圣芙蕾雅网站加载要2–4秒，于是在办公室给德丽莎讲起浏览器缓存与CDN缓存，并通过设置缓存策略、压缩图片把访问速度优化到0.6–1.6秒。用崩坏三日常对话讲清网站速度优化。</description>
       <author>挽着红月缓缓走</author>
@@ -24,7 +24,7 @@
       <enclosure url="https://delishahk.com/img/bh3rd(6).webp" type="image/webp"/>
       <pubDate>Sat, 24 Oct 2026 14:25:41 GMT</pubDate>
       <content:encoded>
-        <![CDATA[<p><img src="https://delishahk.com/img/bh3rd(6).webp" alt="blog-speed-optimization" /></p>
+        <![CDATA[<p><img src="https://delishahk.com/img/bh3rd(6).webp" alt="网站加载从2–4秒降到0.6–1.6秒：浏览器缓存与CDN缓存优化记录-圣芙蕾雅" /></p>
 舰长发现圣芙蕾雅网站加载要2–4秒，于是在办公室给德丽莎讲起浏览器缓存与CDN缓存，并通过设置缓存策略、压缩图片把访问速度优化到0.6–1.6秒。用崩坏三日常对话讲清网站速度优化。]]>
       </content:encoded>
     </item>
